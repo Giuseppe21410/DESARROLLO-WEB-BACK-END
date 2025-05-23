@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculadora {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 280px;
+}
+
+.cabecera{
+  display: flex;
+  align-items: center;
+}
+
+.ingresar{
+    width: 30px;
+    height: 30px;
+    background-color: greenyellow;
+    border-radius: 15px;
+    margin-right: 10px;
+    transition: all 0.3s;
+    transform: translate(0,-30%)
+}
+
+.ingresar:hover{
+    filter: brightness(0.7);
+}
+#pantalla {
+  width: 100%;
+  font-size: 24px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.botones button {
+  flex: 1 1 45%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botones button:hover {
+  background-color: #2980b9;
+}
+
+.limpiar {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.limpiar:hover {
+  background-color: #c0392b;
+}
