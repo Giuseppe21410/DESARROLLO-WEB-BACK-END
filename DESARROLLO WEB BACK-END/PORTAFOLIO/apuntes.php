@@ -5,9 +5,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portafolio_Giuseppe</title>
 	<link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+    <script>
+     // Espera a que el DOM esté completamente cargado
+     document.addEventListener("DOMContentLoaded", function() {
+        const header = document.getElementById("miEncabezado");
+        // Es buena idea verificar si el header existe antes de añadir el listener
+        if (header) {
+            const posicionTrigger = 80; // Aumenté un poco para que sea más notable
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY >= posicionTrigger) {
+                    header.classList.add("fijo");
+                } else {
+                    header.classList.remove("fijo");
+                }
+            });
+        } else {
+            console.error("El elemento con ID 'miEncabezado' no fue encontrado.");
+        }
+     });
+    </script>
 </head>
 <body>
-<header class="Encabezado_Google">
+<header class="Encabezado_Google" id="miEncabezado">
 	<a href="../../index.php"><img class="Logo_Google" src="./ASSETS/IMAGES/Google_2015_logo.svg.png" alt="Google_Logo"></a>
 	<div class="Buscador">
 		<form action="">
@@ -21,14 +41,15 @@
 		<button class="Boton_3"><img class="Imagen_Boton_3" src="./ASSETS/IMAGES/Buscar.png" alt="Boton_Buscar"></button>
 	</div>
 	<div class="Elementos_Derecha">
-		<button class="Boton_4">
-		<img class="Imagen_Boton_4" src="./ASSETS/IMAGES/Aplicaciones.png" alt="Boton_Aplicaciones">
-	    </button>
+		<div class="Imagen_fondo">
+			<img class="Imagen_Boton_4" src="./ASSETS/IMAGES/Aplicaciones.png" alt="Boton_Aplicaciones">
+		</div>
 	    <img  class="Logo_Usuario" src="./ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
     </div>
 </header>
 <div class="Linea"></div>
-<main>
+<div class="page_content">
+	<main>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
@@ -151,10 +172,27 @@
 		<a download="11_Array.php" class="Link" href="../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
 		<p class="subtitulo">Las superglobales son variables predefinidas en PHP que permiten acceder a información importante como los datos enviados por formularios ($_POST), parámetros de URL ($_GET), sesiones ($_SESSION), y más.</p>
 	</div>
-
-	
-	
 </main>
-</div>	
+
+<footer>
+	<div class="footer_content">
+		<div class="footer_content_1">
+		<p class="españa">España</p>
+		<div class="barra"></div>
+		<div class="circulo"></div>
+		<p class="ubiación">38830,Guamasa-Santa Cruz de Tenerife</p>
+	    </div>
+		<div class="linea_1"></div>
+		<div class="footer_content_2">
+			<p>Ayuda</p>
+			<p>Enviar Comentarios</p>
+			<p>Privacidad</p>
+			<p>Términos</p>
+		</div>
+	</div>
+</footer>
+
+</div>
+
 </body>
 </html>
