@@ -1,3 +1,17 @@
+<?php
+$error="";
+$cantidad=null;
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $cantidad=$_POST['cantidad'] ?? 0;
+  if ($cantidad > 10 || $cantidad < 0) {
+    $error= 'Ingresa un número correcto.';
+    $cantidad=null;
+  }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,14 +30,14 @@
           <div class="card-body">
             <h3 class="card-title text-center mb-4">Tabla de Multiplicar</h3>
 
-            <form>
+            <form method="post">
               <div class="mb-3">
                 <label for="numero" class="form-label">Introduce un número:</label>
-                <input type="number" class="form-control" id="numero" placeholder="Por ejemplo, 5">
+                <input type="number" class="form-control" name="cantidad" placeholder="Por ejemplo, 5">
               </div>
 
               <div class="mb-4">
-                <button type="submit" class="btn btn-primary w-100" disabled>Mostrar tabla</button>
+                <button type="submit" class="btn btn-primary w-100">Mostrar tabla</button>
               </div>
             </form>
 
@@ -35,19 +49,21 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>1 ×</td><td></td></tr>
-                <tr><td>2 ×</td><td></td></tr>
-                <tr><td>3 ×</td><td></td></tr>
-                <tr><td>4 ×</td><td></td></tr>
-                <tr><td>5 ×</td><td></td></tr>
-                <tr><td>6 ×</td><td></td></tr>
-                <tr><td>7 ×</td><td></td></tr>
-                <tr><td>8 ×</td><td></td></tr>
-                <tr><td>9 ×</td><td></td></tr>
-                <tr><td>10 ×</td><td></td></tr>
+                <?php
+                if (isset($cantidad)) {
+                for ($i = 1; $i <= 10; $i++) {
+                $resultado = $i * $cantidad;
+                echo "<tr><td>$i × $cantidad</td><td>$resultado</td></tr>";
+                }
+              }
+                ?>
+                
               </tbody>
             </table>
-
+                <?php if (isset($error)){
+                echo '<div class="container-center w-100 mt-5" style="color:red;">' . htmlspecialchars($error) . '</div>';
+                }
+                ?>
           </div>
         </div>
 
