@@ -115,13 +115,15 @@ form {
 }
 
 .Logo_Usuario{
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .Elementos_Derecha{
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
   margin-right: 40px;
 }
@@ -138,18 +140,39 @@ form {
 
 
 .Imagen_Boton_4 {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
 }
 
 .Imagen_fondo{
   background-color: transparent;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.Imagen_Boton_5 {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.Imagen_fondo_1{
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Imagen_fondo_1:hover{
+  background-color: gainsboro;
+  border-radius: 50px;
 }
 
 
@@ -158,11 +181,45 @@ form {
   border-radius: 50px;
 }
 
+.Elementos_sub{
+  display: flex;
+  align-items: center;
+  max-width: 680px;
+  margin-left: 18%;
+}
+
+.Elementos_sub a{
+  text-decoration: none;
+  color: #777b80;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  margin-left: 25px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.Elementos_sub a.active{
+  color: black;
+}
+
+.Elementos_sub a.active::before {
+      content: '';
+      position: absolute;
+      top: 25px; /* Ajusta para pegarlo a la línea gris */
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: black;
+    }
+
+.Elementos_sub a:hover{
+  color: black;
+}
 
 .Linea{
-  background-color: grey;
+  background-color: #dadce0;
   width: 100%;
-  height: 0.5px;
+  height: 0.1px;
   margin-bottom: 40px;
 }
 
@@ -191,7 +248,18 @@ form {
 
 .Contenedor_Proyect{
   margin-bottom: 30px;
+}
 
+.Contenedor_1{
+  display: flex;
+  align-items: center;
+  height: 10px;
+}
+
+.Contenedor_1 img{
+  width: 8px;
+  height: 8px;
+  margin-left: 3px;
 }
 
 .Titulo_Logo{
@@ -315,7 +383,7 @@ body{
 
 .footer_content_2 p{
   font-size: 15px;
-  color: grey;
+  color: #777b80;
   transition: all 0.3 ease;
   cursor: pointer;
   margin-left: 20px;

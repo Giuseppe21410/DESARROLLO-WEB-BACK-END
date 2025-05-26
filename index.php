@@ -25,7 +25,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
         const header = document.getElementById("miEncabezado");
         // Es buena idea verificar si el header existe antes de añadir el listener
         if (header) {
-            const posicionTrigger = 80; // Aumenté un poco para que sea más notable
+            const posicionTrigger = 108; // Aumenté un poco para que sea más notable
 
             window.addEventListener("scroll", function () {
                 if (window.scrollY >= posicionTrigger) {
@@ -55,12 +55,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		</form>
 	</div>
 	<div class="Elementos_Derecha">
+		<div class="Imagen_fondo_1">
+			<img class="Imagen_Boton_5" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/config.png" alt="Boton_Configuración">
+		</div>
 		<div class="Imagen_fondo">
 			<img class="Imagen_Boton_4" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Aplicaciones.png" alt="Boton_Aplicaciones">
 		</div>
 	    <img  class="Logo_Usuario" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
     </div>
 </header>
+<div class="Elementos_sub">
+	<a href="" class="active">PHP</a>
+	<a href="">Maria DB</a>
+	<a href="">Codelgniter</a>
+	<a href="./DESARROLLO WEB BACK-END/PORTAFOLIO/apuntes.php">Apuntes</a>
+</div>
 <div class="Linea"></div>
 
 <div class="page_content">
@@ -71,7 +80,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">👋</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Hola Mundo!</h4>
-				<p class="Subtitulo_">https://www.hola_mundo.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.hola_mundo.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		</div>
 			
 		</div>
@@ -79,25 +92,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">Este proyecto imprime "Hola Mundo" como prueba inicial.Sirve para verificar que el entorno PHP está funcionando correctamente.</p>
 	</div>
 
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Apuntes</h4>
-				<p class="Subtitulo_">https://www.apuntes.es</p>
-		</div>
-			
-		</div>
-		<a class="Link" href="./DESARROLLO WEB BACK-END/PORTAFOLIO/apuntes.php">Se visualiza un conjunto de apuntes sobre el curso</a>
-		<p class="subtitulo">Los apuntes de PHP son la base perfecta para entender cómo funciona la lógica del lado del servidor y cómo interactuar con formularios, bases de datos y usuarios.</p>
-	</div>
 	
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
 			<p class="Logo_Proyecto">🧮</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Calculadora</h4>
-				<p class="Subtitulo_">https://www.calculadora.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.calculadora.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/01_Calculadora/index.php">Permite crea una calculadora virtual</a>
@@ -109,7 +113,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">👤</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Inicia Sesión</h4>
-				<p class="Subtitulo_">https://www.sesion_inicio.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.sesion_inicio.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/02_Inicia_Sesion/index.php">Despliega una interfaz de sesión</a>
@@ -121,7 +128,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📝</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Notas Alumnado</h4>
-				<p class="Subtitulo_">https://www.notas.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.notas.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/03_Notas/index.php">Despliega una interfaz que permite almacenar las notas del alumnado</a>
@@ -133,7 +143,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">💵</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Cambio divisa</h4>
-				<p class="Subtitulo_">https://www.divisa_change.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.divisa_change.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/04_Cambio_Divisa/index.php">Despliega una interfaz que permite cambiar el valor de una moneda a otra</a>
@@ -145,7 +158,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">❔</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Funciones matemáticas</h4>
-				<p class="Subtitulo_">https://www.funciones.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.funciones.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/05_Funciones/index.php">Despliega una interfaz que te permite realizar diferentes tipos de operaciones</a>
@@ -157,7 +173,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">🧮</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Tabla de multiplicaciones</h4>
-				<p class="Subtitulo_">https://www.tabla_multiplicar.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.tabla_multiplicar.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/06_Tablas_de_Multiplicar/index.php">Despliega una tabla de multiplicar</a>
@@ -169,7 +188,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📦</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Mostrar inventario</h4>
-				<p class="Subtitulo_">https://www.inventario.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.inventario.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/07_Inventario_Array/index.php">Despliega el inventario de productos de un cliente</a>
@@ -181,7 +203,10 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📦</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Mostrar inventario de ventas</h4>
-				<p class="Subtitulo_">https://www.inventario_ventas.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.inventario_ventas.es</p>
+					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>		
 		</div>
 		</div>
 		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/08_Inventario_CSV/index.php">Despliega el inventario de ventas de una empresa</a>

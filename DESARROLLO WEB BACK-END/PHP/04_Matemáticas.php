@@ -22,5 +22,5 @@ echo rand(10,1000)// Da un  número aleatorio del 10 al 1000.
 
 // Constantes: 
 
-define("NOMBRE","Giuseppe");
+// define("NOMBRE","Giuseppe");
 ?>

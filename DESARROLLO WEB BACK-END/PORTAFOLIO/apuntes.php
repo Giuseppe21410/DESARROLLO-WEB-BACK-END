@@ -26,7 +26,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
         const header = document.getElementById("miEncabezado");
         // Es buena idea verificar si el header existe antes de añadir el listener
         if (header) {
-            const posicionTrigger = 80; // Aumenté un poco para que sea más notable
+            const posicionTrigger = 108; // Aumenté un poco para que sea más notable
 
             window.addEventListener("scroll", function () {
                 if (window.scrollY >= posicionTrigger) {
@@ -57,12 +57,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		
 	</div>
 	<div class="Elementos_Derecha">
+		<div class="Imagen_fondo_1">
+			<img class="Imagen_Boton_5" src="./ASSETS/IMAGES/config.png" alt="Boton_Configuración">
+		</div>
 		<div class="Imagen_fondo">
 			<img class="Imagen_Boton_4" src="./ASSETS/IMAGES/Aplicaciones.png" alt="Boton_Aplicaciones">
 		</div>
 	    <img  class="Logo_Usuario" src="./ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
     </div>
 </header>
+<div class="Elementos_sub">
+	<a href="../../index.php" >PHP</a>
+	<a href="">Maria DB</a>
+	<a href="">Codelgniter</a>
+	<a class="active" href="./apuntes.php">Apuntes</a>
+</div>
 <div class="Linea"></div>
 <div class="page_content">
 	<main>
@@ -72,7 +81,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Variables</h4>
-				<p class="Subtitulo_">https://www.Variables.com</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.Variables.com</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		</div>
 			
 		</div>
@@ -85,7 +98,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">String</h4>
-				<p class="Subtitulo_">https://www.string.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.string.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		</div>
 			
 		</div>
@@ -98,7 +115,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Maths</h4>
-				<p class="Subtitulo_">https://www.maths.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.maths.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="04_Matemáticas.php" class="Link" href="../PHP/04_Matemáticas.php">Se descarga los apuntes sobre matemáticas básicas.</a>
@@ -110,7 +131,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Operadores</h4>
-				<p class="Subtitulo_">https://www.operadores.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.operadores.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="05_Operadores.php" class="Link" href="../PHP/05_Operadores.php">Se descarga los apuntes sobre operadores.</a>
@@ -122,7 +147,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Condicionales</h4>
-				<p class="Subtitulo_">https://www.condicionales.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.condicionales.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="06_Condicionales.php" class="Link" href="../PHP/06_Condicionales.php">Se descarga los apuntes sobre condicionales.</a>
@@ -134,7 +163,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Switch</h4>
-				<p class="Subtitulo_">https://www.switch.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.switch.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="07_Switch.php" class="Link" href="../PHP/07_Switch.php">Se descarga los apuntes sobre switch.</a>
@@ -146,7 +179,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Bucles</h4>
-				<p class="Subtitulo_">https://www.bucles.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.bucles.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="08_Bucles.php" class="Link" href="../PHP/08_Bucles.php">Se descarga los apuntes sobre bucles.</a>
@@ -158,7 +195,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Funciones</h4>
-				<p class="Subtitulo_">https://www.funciones.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.funciones.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="09_Funciones.php" class="Link" href="../PHP/09_Funciones.php">Se descarga los apuntes sobre funciones.</a>
@@ -170,7 +211,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Array</h4>
-				<p class="Subtitulo_">https://www.array.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.array.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="10_Array.php" class="Link" href="../PHP/10_Array.php">Se descarga los apuntes sobre los array.</a>
@@ -182,7 +227,11 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Super Globals</h4>
-				<p class="Subtitulo_">https://www.super_globals.es</p>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.super_globals.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
 		    </div>
 		</div>
 		<a download="11_Array.php" class="Link" href="../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
