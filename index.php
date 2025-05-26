@@ -1,3 +1,17 @@
+<?php
+if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
+	if (isset($_POST['busqueda']) && !empty($_POST['busqueda'])) {
+		$busqueda = htmlspecialchars(trim($_POST['busqueda']));
+		header("Location:https://www.google.com/search?q=" . urlencode($busqueda));
+		exit();
+	} else {
+		// Si no hay término de búsqueda, redirigir a la página principal
+		header("Location: ./DESARROLLO WEB BACK-END/PORTAFOLIO/apuntes.php");
+		exit();
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,15 +44,15 @@
 <header class="Encabezado_Google" id="miEncabezado">
 	<img class="Logo_Google" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Google_2015_logo.svg.png" alt="Google_Logo">
 	<div class="Buscador">
-		<form action="">
-			<input type="text" class="Buscador_">
+		<form action="" method="post">
+			<input name="busqueda" type="text" class="Buscador_">
 			<button class="Boton_1" type="reset">
 				<img class="Imagen_Boton_1" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Boton_Borrar.png" alt="Boton_borrar">
-			</button>
-		</form>
+	        </button>
 		<div class="Barra_lateral"></div>
-		<button class="Boton_2"><img class="Imagen_Boton_2" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Sonido.png" alt="Boton_Voz"></button>
-		<button class="Boton_3"><img class="Imagen_Boton_3" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Buscar.png" alt="Boton_Buscar"></button>
+		<button disabled class="Boton_2"><img class="Imagen_Boton_2" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Sonido.png" alt="Boton_Voz"></button>
+		<button  class="Boton_3"><img class="Imagen_Boton_3" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Buscar.png" alt="Boton_Buscar"></button>
+		</form>
 	</div>
 	<div class="Elementos_Derecha">
 		<div class="Imagen_fondo">
