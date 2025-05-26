@@ -150,6 +150,30 @@
 		<p class="subtitulo">Multiplicar 3 por 4 significa sumar el número 3 cuatro veces, lo que da como resultado 12.</p>
 	</div>
 
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📦</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Mostrar inventario</h4>
+				<p class="Subtitulo_">https://www.inventario.es</p>
+		</div>
+		</div>
+		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/07_Inventario_Array/index.php">Despliega el inventario de productos de un cliente</a>
+		<p class="subtitulo">El inventario de productos está actualizado y refleja con precisión la disponibilidad de cada artículo en el almacén.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📦</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Mostrar inventario de ventas</h4>
+				<p class="Subtitulo_">https://www.inventario_ventas.es</p>
+		</div>
+		</div>
+		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/08_Inventario_CSV/index.php">Despliega el inventario de ventas de una empresa</a>
+		<p class="subtitulo">El inventario de ventas de la empresa refleja los productos comercializados, sus precios, unidades vendidas y fechas clave, permitiendo un control eficiente del rendimiento y la demanda del mercado.</p>
+	</div>
+
     <h3  class="Titulo_Imagenes">Imágenes</h3>
     <div class="Imagenes">
 		<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/image_1.jpeg" alt="Imagen_1">

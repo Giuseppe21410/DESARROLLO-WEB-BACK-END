@@ -42,4 +42,7 @@ if (isset($_REQUEST["color"])) {
     echo "Tu color favorito accedido con REQUEST es: " . $_REQUEST["color"] . "<br>";
 }
 
+
+// $_GET vs $_POST, mientras que $_GET es visible en la URL, $_POST no lo es. Por lo tanto, si se trata de datos sensibles, es mejor usar $_POST. Además, $_GET tiene un límite de tamaño en la URL, mientras que $_POST no lo tiene (aunque hay límites en el tamaño del cuerpo de la solicitud que pueden variar según la configuración del servidor).
+
 ?>

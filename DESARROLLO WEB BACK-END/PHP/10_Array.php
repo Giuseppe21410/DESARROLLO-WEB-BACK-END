@@ -6,6 +6,12 @@
 // 1. Array indexado (clásico)
 $frutas = array("Manzana", "Banana", "Cereza");
 
+// Funciones útiles para arrays: 
+array_push($frutas, "Naranja"); // Añadir un elemento al final
+array_pop($frutas); // Eliminar el último elemento
+// Contar elementos en el array
+$longitud = count($frutas);
+
 // Mostrar elementos individuales
 echo "Primera fruta: " . $frutas[0] . "<br>";
 echo "Segunda fruta: " . $frutas[1] . "<br>";
