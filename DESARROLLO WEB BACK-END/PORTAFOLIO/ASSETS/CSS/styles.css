@@ -299,7 +299,165 @@ form {
 
 }
 
+/* Indexación */ 
 
+.Indexacion{
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.Google{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left:415px;
+  transform: translate(-50%,-50%);
+}
+
+.Google_2{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left:393px;
+  transform: translate(-50%,-50%);
+}
+
+.G{
+  width: 25px;
+  height: 25px;
+  top:2%;
+}
+
+.g{
+  width: 16px;
+  height: 22px;
+  position: relative;
+  top:5px;
+  margin-left: 2px;
+
+}
+
+.L{
+  width: 5px;
+  height: 27px;
+  position: relative;
+  bottom:2px;
+  margin-left: 2px;
+}
+
+.E{
+  width: 18px;
+  height: 17px;
+  position: relative;
+  top:3px;
+  margin-left: 2px;
+}
+
+.Google p{
+  margin-left: 2px;
+  font-size: 32px;
+  color: #fbbc05;
+}
+
+.Google_2 p{
+  margin-left: 2px;
+  font-size: 32px;
+  color: #fbbc05;
+}
+
+.G_1{
+  width: 22px;
+  height: 26px;
+  position: relative;
+  top:0px;
+  margin-left: 2px;
+}
+
+.Enlaces{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left:313px;
+}
+
+.Enlaces_1{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left:314px;
+
+}
+
+.Enlaces a{
+  text-decoration: none;
+  color: #4285f4;
+  font-size: 14px;
+}
+
+.Enlaces_1 a {
+  text-decoration: none;
+  color: #4285f4;
+  font-size: 14px;
+}
+
+.Enlaces_1 a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Enlaces a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Enlace_2{
+  margin-left: 13px;
+}
+
+.Enlace_4{
+  margin-right: 13px;
+}
+
+.Enlace_3{
+  margin-left: 12px;
+}
+
+.Enlaces a.active{
+  color: black;
+}
+
+.Enlaces_1 a.active{
+  color: black;
+}
+
+.Google p.active{
+  color: #ec4738;
+}
+
+.Google_2 p.active{
+  color:#ec4738;
+}
+
+.mayor{
+  margin-left: 10px;
+}
+
+.mayor img{
+  filter: saturate(4);
+}
+
+.mayor_1{
+  margin-right: 10px;
+}
+
+.mayor_1 img{
+  filter: saturate(4);
+  transform: rotate(180deg);
+}
 
 
 /* Footer */ 
@@ -318,7 +476,7 @@ form {
 
  main{
   flex-grow: 1;
-  max-width: 680px;
+  width: 680px;
   margin-left: 18%;
 }
 

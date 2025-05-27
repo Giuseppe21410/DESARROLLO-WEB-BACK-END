@@ -234,6 +234,27 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/image_2.jpg" alt="Imagen_2">
 		<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/image_3.jpg" alt="Image_3">
 	</div>
+
+	<div class="Indexacion">
+		<div class="Google_1">
+			<div class="Google">
+			<img class="G_1" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/G_1.png" alt="e_google">
+			<p class="active">o</p>
+			<p class="O">o</p>
+			<p class="O">o</p>
+			<img class="g" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/g.png" alt="g_google">
+			<img class="L" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/l.png" alt="l_google">
+			<img class="E" src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
+			<a class="mayor" href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index_1.php"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+		    </div>
+		</div>
+		
+		<div class="Enlaces">
+			<a class="active">1</a>
+			<a href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index_1.php" class="Enlace_2">2</a>
+			<a class="Enlace_3">3</a>
+	   </div>
+ </div>
 </main>
 <footer>
 	<div class="footer_content">

@@ -222,21 +222,28 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">Un array permite almacenar múltiples valores en una sola variable, ya sea como una lista (índices numéricos) o como un conjunto de pares clave-valor (arrays asociativos).</p>
 	</div>
 
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Super Globals</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.super_globals.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
+	
+
+	<div class="Indexacion">
+		<div class="Google_1">
+			<div class="Google">
+			<img class="G_1" src="./ASSETS/IMAGES/G_1.png" alt="e_google">
+			<p class="active">o</p>
+			<p class="O">o</p>
+			<p class="O">o</p>
+			<img class="g" src="./ASSETS/IMAGES/g.png" alt="g_google">
+			<img class="L" src="./ASSETS/IMAGES/l.png" alt="l_google">
+			<img class="E" src="./ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
+			<a class="mayor" href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index_1.php"><img src="./ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 		    </div>
 		</div>
-		<a download="11_Array.php" class="Link" href="../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
-		<p class="subtitulo">Las superglobales son variables predefinidas en PHP que permiten acceder a información importante como los datos enviados por formularios ($_POST), parámetros de URL ($_GET), sesiones ($_SESSION), y más.</p>
-	</div>
+		
+		<div class="Enlaces">
+			<a class="active">1</a>
+			<a href="./PUBLIC/APUNTES/apuntes_1.php" class="Enlace_2">2</a>
+			<a class="Enlace_3">3</a>
+	   </div>
+    </div>
 </main>
 
 <footer>
