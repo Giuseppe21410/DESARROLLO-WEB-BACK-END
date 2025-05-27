@@ -1,0 +1,20 @@
+.flex{
+    display: flex;
+
+}
+
+.Primer_Selector{
+    margin-left: 10%;
+}
+
+.Primer_Selector select{
+    width: 400px;
+}
+
+.Primer_Input input{
+    width: 600px;
+}
+
+.Primer_Input select{
+    width: 600px;
+}
