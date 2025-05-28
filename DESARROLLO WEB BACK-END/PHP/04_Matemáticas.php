@@ -18,6 +18,12 @@ echo sqrt(pow($numeros,2)); // Da la raíz cuadrada de un número elevado al cua
 
 echo round(0.6); // Redondea un número a la unidad más cercana.
 
+echo ceil(0.6); // Redondea un número al entero más cercano hacia arriba.
+
+echo floor(0.6); // Redondea un número al entero más cercano hacia abajo.
+
+echo number_format(1234.5678, 2, ",", "."); // Formatea un número con separador de miles y decimales.
+
 echo rand(10,1000)// Da un  número aleatorio del 10 al 1000.
 
 // Constantes: 

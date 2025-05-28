@@ -213,20 +213,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">El inventario de ventas de la empresa refleja los productos comercializados, sus precios, unidades vendidas y fechas clave, permitiendo un control eficiente del rendimiento y la demanda del mercado.</p>
 	</div>
 
-	 <div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">🧷</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Centro de notas</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.centro_notas.es</p>
-					<img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>		
-		</div>
-		</div>
-		<a class="Link" href="./DESARROLLO WEB BACK-END/EJERCICIOS/09_Centro_de_Notas/index.php">Despliega el conjunto de las notas de los alumnos de varios centro</a>
-		<p class="subtitulo">Un buen centro de notas no solo guarda calificaciones, sino que refleja el esfuerzo, el progreso y el compromiso del estudiante.</p>
-	</div>
 
     <h3  class="Titulo_Imagenes">Imágenes</h3>
     <div class="Imagenes">

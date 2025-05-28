@@ -77,24 +77,40 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">👋</p>
+			<p class="Logo_Proyecto">🧾</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Hola Mundo!</h4>
+				<h4 class="Titulo_">Facturas</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.hola_mundo.es</p>
+					<p class="Subtitulo_">https://www.facturas.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>	
 		</div>
 		</div>
-		<a class="Link" href="./DESARROLLO WEB BACK-END/PHP/01_Hello_World.php">Se imprime "Hola Mundo"</a>
-		<p class="subtitulo">Este proyecto imprime "Hola Mundo" como prueba inicial.Sirve para verificar que el entorno PHP está funcionando correctamente.</p>
+		<a class="Link" href="../../../EJERCICIOS/10_Facturas/index.php">Se genera una interfaz para visualizar facturas</a>
+		<p class="subtitulo">Una factura no es solo un documento: es el reflejo formal de un compromiso cumplido entre quien ofrece y quien recibe.</p>
+</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">🧷</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Centro de notas</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.centro_notas.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>		
+		</div>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/09_Centro_de_Notas/index.php">Despliega el conjunto de las notas de los alumnos de varios centro</a>
+		<p class="subtitulo">Un buen centro de notas no solo guarda calificaciones, sino que refleja el esfuerzo, el progreso y el compromiso del estudiante.</p>
 	</div>
 
     <h3  class="Titulo_Imagenes">Imágenes</h3>
     <div class="Imagenes">
-		<img src="../../ASSETS/IMAGES/image_1.jpeg" alt="Imagen_1">
-		<img src="../../ASSETS/IMAGES/image_2.jpg" alt="Imagen_2">
-		<img src="../../ASSETS/IMAGES/image_3.jpg" alt="Image_3">
+		<img src="../../ASSETS/IMAGES/image_4.jpg" alt="Imagen_1">
+		<img src="../../ASSETS/IMAGES/image_5.webp" alt="Imagen_2">
+		<img src="../../ASSETS/IMAGES/image_6.webp" alt="Image_3">
 	</div>
 
 	<div class="Indexacion">

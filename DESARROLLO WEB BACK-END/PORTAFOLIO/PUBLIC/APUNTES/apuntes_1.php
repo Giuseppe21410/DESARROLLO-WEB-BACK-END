@@ -87,8 +87,56 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 		    </div>
 		</div>
-		<a download="11_Array.php" class="Link" href="../../../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
+		<a download="11_SuperGlobals.php" class="Link" href="../../../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
 		<p class="subtitulo">Las superglobales son variables predefinidas en PHP que permiten acceder a información importante como los datos enviados por formularios ($_POST), parámetros de URL ($_GET), sesiones ($_SESSION), y más.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Array</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.array.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="10_Array.php" class="Link" href="../../../PHP/10_Array.php">Se descarga los apuntes sobre los array</a>
+		<p class="subtitulo">Un array permite almacenar múltiples valores en una sola variable, ya sea como una lista (índices numéricos) o como un conjunto de pares clave-valor (arrays asociativos).</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Fechas</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.fechas.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="12_Fechas.php" class="Link" href="../../../PHP/12_Fechas.php">Se descarga los apuntes sobre las fechas</a>
+		<p class="subtitulo">Las fechas marcan momentos, pero los recuerdos les dan sentido.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">PDF</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.pdf.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="13_PDF.php" class="Link" href="../../../PHP/13_PDF.php">Se descarga los apuntes sobre como generar un PDF.</a>
+		<p class="subtitulo">Los documentos PDF conservan la forma, el contenido y la intención, sin importar dónde o cómo se abran.</p>
 	</div>
 
 	<div class="Indexacion">

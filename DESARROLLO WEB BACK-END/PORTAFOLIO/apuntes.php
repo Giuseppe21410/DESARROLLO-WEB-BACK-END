@@ -206,22 +206,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">Las funciones son bloques de código que se pueden definir una vez y reutilizar muchas veces, ayudando a organizar mejor el código y evitar repeticiones innecesarias.</p>
 	</div>
 
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Array</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.array.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="10_Array.php" class="Link" href="../PHP/10_Array.php">Se descarga los apuntes sobre los array.</a>
-		<p class="subtitulo">Un array permite almacenar múltiples valores en una sola variable, ya sea como una lista (índices numéricos) o como un conjunto de pares clave-valor (arrays asociativos).</p>
-	</div>
-
 	
 
 	<div class="Indexacion">
