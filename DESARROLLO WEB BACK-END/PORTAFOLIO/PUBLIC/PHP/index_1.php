@@ -106,6 +106,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">Un buen centro de notas no solo guarda calificaciones, sino que refleja el esfuerzo, el progreso y el compromiso del estudiante.</p>
 	</div>
 
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">🏧</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Centro Bancario</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.banco.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>		
+		</div>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/11_Transferencia_Bancaria/index.php">Despliega una interfaz bancaria</a>
+		<p class="subtitulo">Una interfaz bancaria debe ser clara, segura y fácil de usar, permitiendo al usuario gestionar su dinero con confianza y comodidad.</p>
+	</div>
+
     <h3  class="Titulo_Imagenes">Imágenes</h3>
     <div class="Imagenes">
 		<img src="../../ASSETS/IMAGES/image_4.jpg" alt="Imagen_1">

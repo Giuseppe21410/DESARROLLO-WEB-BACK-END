@@ -15,9 +15,11 @@ if (isset($_GET["nombre"]) && isset($_GET["edad"])) {
 }
 
 // $_SERVER devuelve información sobre el servidor y el entorno de ejecución
-echo "Estás visitando: " . $_SERVER['PHP_SELF'] . "<br>";
-echo "Método de solicitud: " . $_SERVER['REQUEST_METHOD'] . "<br>";
-echo "Nombre del host: " . $_SERVER['HTTP_HOST'] . "<br>";
+echo "Estás visitando: " . $_SERVER['PHP_SELF'] . "<br>"; // Muestra el nombre del archivo actual-
+echo "Método de solicitud: " . $_SERVER['REQUEST_METHOD'] . "<br>"; // Muestra el método de solicitud (GET, POST, etc.)
+echo "Nombre del host: " . $_SERVER['HTTP_HOST'] . "<br>"; // Muestra el nombre del host del servidor
+echo "Agente de usuario: " . $_SERVER['HTTP_USER_AGENT'] . "<br>"; // Muestra el agente de usuario del navegador
+
 
 // Formulario para usar $_POST
 ?>

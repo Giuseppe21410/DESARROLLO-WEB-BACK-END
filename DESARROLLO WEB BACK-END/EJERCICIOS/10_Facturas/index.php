@@ -176,11 +176,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                  $mail->Host       = 'smtp.office365.com'; // Cambia esto por el servidor SMTP de tu proveedor de correo.
                  $mail->SMTPAuth   = true;
                  $mail->Username   = 'vava23@outlook.com';
-                 $mail->Password   = 'kuzbanzchyjlmypw';
+                 $mail->Password   = ''; // Aquí va la contraseña de aplicación. 
                  $mail->SMTPSecure = 'tls';
                  $mail->Port       = 587;   
 
-                 $mail->SMTPOptions = [ // Mejoras de seguridad para el envío de correos.
+                 $mail->SMTPOptions = [ // Mejoras de seguridad para el envío de correos y el servidor SMTP.
                   'ssl' => [
                       'verify_peer' => false,
                       'verify_peer_name' => false,
@@ -198,8 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                  // Si quieres adjuntar un PDF
                  $mail->addAttachment($ruta_pdf, 'factura.pdf'); // Adjunta el PDF generado.
-
-                 
+                 $mail->isHTML(true); // Establece el formato del correo como HTML.
 
 
                  try {

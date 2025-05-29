@@ -1,0 +1,12 @@
+[
+    {
+        "usuario": "pepe",
+        "clave": "1234",
+        "dinero": 1400
+    },
+    {
+        "usuario": "maria",
+        "clave": "5678",
+        "dinero": 1000
+    }
+]

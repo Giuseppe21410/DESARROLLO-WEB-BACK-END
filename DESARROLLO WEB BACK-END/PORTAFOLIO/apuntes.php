@@ -204,6 +204,38 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 		<a download="09_Funciones.php" class="Link" href="../PHP/09_Funciones.php">Se descarga los apuntes sobre funciones.</a>
 		<p class="subtitulo">Las funciones son bloques de código que se pueden definir una vez y reutilizar muchas veces, ayudando a organizar mejor el código y evitar repeticiones innecesarias.</p>
+	</div> 
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Super Globals</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.super_globals.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="11_SuperGlobals.php" class="Link" href="../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
+		<p class="subtitulo">Las superglobales son variables predefinidas en PHP que permiten acceder a información importante como los datos enviados por formularios ($_POST), parámetros de URL ($_GET), sesiones ($_SESSION), y más.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Array</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.array.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="10_Array.php" class="Link" href="../PHP/10_Array.php">Se descarga los apuntes sobre los array</a>
+		<p class="subtitulo">Un array permite almacenar múltiples valores en una sola variable, ya sea como una lista (índices numéricos) o como un conjunto de pares clave-valor (arrays asociativos).</p>
 	</div>
 
 	
