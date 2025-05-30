@@ -69,6 +69,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	<a href="">Maria DB</a>
 	<a href="">Codelgniter</a>
 	<a href="./DESARROLLO WEB BACK-END/PORTAFOLIO/apuntes.php">Apuntes</a>
+	<a  href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PROYECTOS/proyectos.php">Proyectos</a>
 </div>
 <div class="Linea"></div>
 
