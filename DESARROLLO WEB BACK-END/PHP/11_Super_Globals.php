@@ -47,4 +47,32 @@ if (isset($_REQUEST["color"])) {
 
 // $_GET vs $_POST, mientras que $_GET es visible en la URL, $_POST no lo es. Por lo tanto, si se trata de datos sensibles, es mejor usar $_POST. Además, $_GET tiene un límite de tamaño en la URL, mientras que $_POST no lo tiene (aunque hay límites en el tamaño del cuerpo de la solicitud que pueden variar según la configuración del servidor).
 
+// $_SESSION se usa para almacenar datos entre diferentes solicitudes del usuario. 
+session_start(); // Inicia la sesión
+if (!isset($_SESSION["contador"])) {
+    $_SESSION["contador"] = 0; // Inicializa el contador si no existe
+}
+$_SESSION["contador"]++;
+echo "Has visitado esta página " . $_SESSION["contador"] . " veces.<br>";
+// $_COOKIE se usa para almacenar datos en el navegador del usuario
+if (!isset($_COOKIE["visitas"])) {
+    setcookie("visitas", 1, time() + (86400 * 30)); // Establece una cookie que expira en 30 días
+    echo "Bienvenido por primera vez.<br>";
+} else {
+    $visitas = $_COOKIE["visitas"] + 1;
+    setcookie("visitas", $visitas, time() + (86400 * 30)); // Actualiza la cookie
+    echo "Has visitado esta página $visitas veces.<br>";
+}
+// $_FILES se usa para manejar archivos subidos por el usuario
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['archivo'])) {
+    $archivo = $_FILES['archivo'];
+    if ($archivo['error'] == UPLOAD_ERR_OK) {
+        $nombreTemporal = $archivo['tmp_name'];
+        $nombreArchivo = $archivo['name'];
+        move_uploaded_file($nombreTemporal, "uploads/$nombreArchivo");
+        echo "Archivo '$nombreArchivo' subido exitosamente.<br>";
+    } else {
+        echo "Error al subir el archivo.<br>";
+    }
+}
 ?>

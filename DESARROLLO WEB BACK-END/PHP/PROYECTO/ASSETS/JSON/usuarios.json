@@ -1,0 +1,16 @@
+[
+    {
+        "usuario": "Tu_padre23",
+        "correo": "jan54@gmail.com",
+        "password": "$2y$10$BMORzlf57SzHtx\/BgP41aOjScIMFtcywpr4oGsFWJsO.lmNFqz\/ou",
+        "imagen_perfil": "img3.jpg",
+        "conectado": false
+    },
+    {
+        "usuario": "Tu_padre00",
+        "correo": "jan54@gmail.com",
+        "password": "$2y$10$qpFHCu05REVZxKsFucSHQucBhdmj9zkd0Rs64hjKbis9RLaCox6BG",
+        "imagen_perfil": "defecto.jpg",
+        "conectado": true
+    }
+]

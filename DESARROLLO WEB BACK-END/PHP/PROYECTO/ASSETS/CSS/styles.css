@@ -151,6 +151,7 @@ main{
 
 .p_1{
   margin-left: 20px;
+  align-self: center;
 }
 
 .main_container_1 i{
@@ -405,6 +406,49 @@ main{
     margin-bottom: 60px;
   }
 
+  /* MAIN FORO */
+  .main_foro_1{
+  display: grid;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 75px;
+  margin-right: 75px;
+  grid-template-columns: 25% 75%;
+  gap: 20px;
+  height: 90vh;
+}
+.main_foro_container_1{
+  grid-column: 1 / 2;
+  background-color: var(--color-card);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main_foro_container_2{
+  grid-column: 2 / 3;
+  background-color: var(--color-card);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main_container_4{
+  margin-top: 20px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+}
+
+i{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.mas{
+  align-self: flex-end;
+  width: 20px;
+  height: 20px;
+  margin-left: 450px;
+}
 /* FOOTER */
 
 footer {

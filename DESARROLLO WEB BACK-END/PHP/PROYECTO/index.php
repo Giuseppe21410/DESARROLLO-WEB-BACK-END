@@ -1,3 +1,23 @@
+<?php
+if (!isset($_SESSION)) {
+    $portal_cuenta=false;
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    if (isset($_POST['sesion_inciar'])) {
+        header('Location: ./PUBLIC/Iniciar_Sesion.php');
+        exit();
+    } elseif (isset($_POST['registrar'])) {
+        header('Location: ./PUBLIC/Registro.php');
+        exit();
+    }
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +32,16 @@
             <a href="./index.php"><img src="./ASSETS/IMAGES/Logo.png" alt="Logo"></a>
         </div>
         <div class="Acceder">
+            <?php
+            if (!$portal_cuenta == true){ 
+            echo '<form method="post">
             <button class="button_1" name="sesion_inciar">Iniciar Sesión</button>
             <button class="button_2" name="registrar">Registrarse</button>
+            </form>';
+            }else { 
+            }
+            ?>
+            
         </div>
     </header>
     <div class="page_container">
@@ -29,10 +57,10 @@
                         <div class="main_foro_titulo"><h1>Contenido</h1></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/social.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_social.php"><img src="./ASSETS/IMAGES/social.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Social</a>
+                                <a href="./PUBLIC/FOROS/foro_social.php">Social</a>
                             </div>
                             <div class="foro_hilos">
                                 <p class="p_3">Hilos:</p>
@@ -46,10 +74,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/arte.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_arte.php"><img src="./ASSETS/IMAGES/arte.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Arte</a>
+                                <a href="./PUBLIC/FOROS/foro_arte.php">Arte</a>
                             </div>
                             <div class="foro_hilos_2">
                                 <p class="p_3">Hilos:</p>
@@ -63,10 +91,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/videojuegos.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_videojuego.php"><img src="./ASSETS/IMAGES/videojuegos.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Videojuegos</a>
+                                <a href="./PUBLIC/FOROS/foro_videojuego.php">Videojuegos</a>
                             </div>
                             <div class="foro_hilos_3">
                                 <p class="p_3">Hilos:</p>
@@ -80,10 +108,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/libros.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_libros.php"><img src="./ASSETS/IMAGES/libros.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Libros</a>
+                                <a href="./PUBLIC/FOROS/foro_libros.php">Libros</a>
                             </div>
                             <div class="foro_hilos_4">
                                 <p class="p_3">Hilos:</p>
@@ -100,7 +128,7 @@
                                 <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/tecnologia.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Tecnología</a>
+                                <a href="./PUBLIC/FOROS/foro_tecnologia.php">Tecnología</a>
                             </div>
                             <div class="foro_hilos_5">
                                 <p class="p_3">Hilos:</p>
@@ -114,10 +142,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/oposiciones.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_oposiciones.php"><img src="./ASSETS/IMAGES/oposiciones.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Oposiciones</a>
+                                <a href="./PUBLIC/FOROS/foro_oposiciones.php">Oposiciones</a>
                             </div>
                             <div class="foro_hilos_6">
                                 <p class="p_3">Hilos:</p>
@@ -131,10 +159,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/cine.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_cine.php"><img src="./ASSETS/IMAGES/cine.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Cine</a>
+                                <a href="./PUBLIC/FOROS/foro_cine.php">Cine</a>
                             </div>
                             <div class="foro_hilos_7">
                                 <p class="p_3">Hilos:</p>
@@ -148,10 +176,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/anecdotas.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_anecdotas.php"><img src="./ASSETS/IMAGES/anecdotas.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Anecdotas</a>
+                                <a href="./PUBLIC/FOROS/foro_anecdotas.php">Anecdotas</a>
                             </div>
                             <div class="foro_hilos_8">
                                 <p class="p_3">Hilos:</p>
@@ -165,10 +193,10 @@
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_tecnologia.php"><img src="./ASSETS/IMAGES/coches.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_coches.php"><img src="./ASSETS/IMAGES/coches.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="">Coches</a>
+                                <a href="./PUBLIC/FOROS/foro_coches.php">Coches</a>
                             </div>
                             <div class="foro_hilos_9">
                                 <p class="p_3">Hilos:</p>

@@ -1,3 +1,73 @@
+<?php
+//session_start();
+
+if (session_start()) {
+    // Si ya está logueado, redirige a index.php
+    header('Location: ../index.php');
+    exit();
+}
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $usuario = $_POST['usuario'] ?? '';
+    $correo = $_POST['correo'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $confirmar_password = $_POST['confirmar_password'] ?? '';
+    $imagen_perfil = $_POST['imagen_perfil'] ?? 'defecto.jpg';
+    $terminos = isset($_POST['terminos']);
+
+    // Cargar usuarios existentes (si el archivo no existe, crear array vacío)
+    $ruta_json = '../ASSETS/JSON/usuarios.json';
+    if (file_exists($ruta_json)) {
+        $usuarios = json_decode(file_get_contents($ruta_json), true);
+        if (!is_array($usuarios)) {
+            $usuarios = [];
+        }
+    } else {
+        $usuarios = [];
+    }
+
+    // 1) Validar que las contraseñas coincidan
+    if ($confirmar_password !== $password) {
+        $error = 'Las contraseñas no coinciden.';
+    }
+    // 2) Validar que se acepten los términos
+    elseif (! $terminos) {
+        $error = 'Debes aceptar los términos y condiciones.';
+    }
+    // 3) Validar que el usuario no exista ya en el JSON
+    else {
+        foreach ($usuarios as $user) {
+            if ($user['usuario'] === $usuario) {
+                $error = 'El usuario ya existe.';
+                break;
+            }
+        }
+    }
+
+    // 4) Si no hubo error, agregamos el usuario nuevo
+    if ($error === '') {
+        $nuevo_usuario = [
+            'usuario'        => $usuario,
+            'correo'         => $correo,
+            'password'       => password_hash($password, PASSWORD_DEFAULT),
+            'imagen_perfil'  => $imagen_perfil,
+            'conectado'      => false // Por defecto, el usuario no está conectado
+        ];
+
+        $usuarios[] = $nuevo_usuario;
+        file_put_contents($ruta_json, json_encode($usuarios, JSON_PRETTY_PRINT));
+
+        header('Location: ./Iniciar_Sesion.php');
+        exit();
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +89,7 @@
   <div class="main_container_registro">
     <h2 class="mb-4 text-primary"><i>¡Crea tu cuenta y únete a la conversación!</i></h2>
 
-    <form class="p-4 ml-5 mr-5 bg-white rounded shadow" method="POST">
+    <form class="p-4 ml-5 mr-5 bg-white rounded shadow" method="post">
       <fieldset class="mb-4">
         <!-- Usuario -->
         <div class="mb-3">
@@ -59,7 +129,7 @@
           <div class="d-flex flex-wrap gap-3">
             <!-- Imagen 1 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img1.jpg" class="d-none" required>
+              <input type="radio" name="imagen_perfil" value="img1.jpg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_1.jpeg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 1">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>
@@ -109,6 +179,11 @@
       <div class="d-flex justify-content-end gap-4">
         <button type="submit" class="btn btn-primary">Registrarme</button>
       </div>
+      <?php if ($error): ?>
+        <div class="alert alert-danger mt-3" role="alert">
+          <?php echo $error; ?>
+        </div>
+      <?php endif; ?>
     </form>
   </div>
 </main>
