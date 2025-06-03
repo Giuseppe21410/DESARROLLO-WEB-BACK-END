@@ -1,21 +1,73 @@
 <?php
-if (!isset($_SESSION)) {
-    $portal_cuenta=false;
+session_start(); // Siempre al inicio y fuera de condicionales
+
+if (!isset($_SESSION['usuario']) && !isset($_COOKIE['usuario'])) {
+    $portal_cuenta = false; // Portal de cuenta no activo
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
-    if (isset($_POST['sesion_inciar'])) {
-        header('Location: ./PUBLIC/Iniciar_Sesion.php');
-        exit();
-    } elseif (isset($_POST['registrar'])) {
-        header('Location: ./PUBLIC/Registro.php');
-        exit();
+
+$portal_cuenta = ""; // Variable para controlar si el portal de cuenta está activo
+
+if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario'])) {
+    // Si ya hay una sesión iniciada, se puede acceder a los datos del usuario
+    if (isset($_SESSION['usuario'])) {
+        $usuario = $_SESSION['usuario'];
+        $foto_perfil = $_SESSION['foto_perfil'];
+        $portal_cuenta = true; // Portal de cuenta activo
+    } elseif (isset($_COOKIE['usuario'])) {
+        // Si no hay sesión pero hay una cookie, se puede usar la cookie
+        $usuario = $_COOKIE['usuario'];
+        $foto_perfil = $_COOKIE['foto_perfil']; // Valor por defecto si no existe la cookie de foto
+        $portal_cuenta = true; // Portal de cuenta activo
     }
+} 
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['sesion_inciar'])) {
+    header('Location: ./PUBLIC/Iniciar_Sesion.php');
+    exit();
+} elseif (isset($_POST['registrar'])) {
+    header('Location: ./PUBLIC/Registro.php');
+    exit();
 }
+}
+
+if (isset($_POST['cerrar_sesion'])) {
+    $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
+
+    if (file_exists('./ASSETS/JSON/usuarios.json')) {
+        $usuarios = json_decode(file_get_contents('./ASSETS/JSON/usuarios.json'), true);
+        if (is_array($usuarios)) {
+            foreach ($usuarios as $idx => $usuario_data) {
+                if (isset($usuario_data['usuario']) && $usuario_data['usuario'] == $nombre_usuario) {
+                    $usuarios[$idx]['conectado'] = false;
+                    break;
+                }
+            }
+            file_put_contents('./ASSETS/JSON/usuarios.json', json_encode($usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        }
+    }
+
+    session_destroy();
+    // Eliminar cookies:
+            setcookie('usuario', '', [
+               'expires' => time() - 3600,
+               'path' => '/',
+               'secure' => true,
+               'httponly' => true,
+               'samesite' => 'Strict'       
+            ]);
+            setcookie('foto_perfil', '', [
+               'expires' => time() - 3600,
+               'path' => '/',
+               'secure' => true,
+               'httponly' => true,
+               'samesite' => 'Strict'
+            ]);        
+    header('Location: ./index.php');
+    exit();
+}
+
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -25,6 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto_1.index</title>
     <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    
 </head>
 <body>
     <header>
@@ -33,15 +87,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="Acceder">
             <?php
-            if (!$portal_cuenta == true){ 
+            if (!$portal_cuenta){ 
             echo '<form method="post">
             <button class="button_1" name="sesion_inciar">Iniciar Sesión</button>
             <button class="button_2" name="registrar">Registrarse</button>
             </form>';
             }else { 
+                echo '<form method="post" class="cerrar-sesion-form">
+                <button class="button_1" name="cerrar_sesion">Cerrar Sesión</button>
+                </form>';  
+                echo '<div class="usuario_conectado">';
+                echo '<img style="width: 60px; height: 60px;" src="./ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
+                echo '</div>';                        
             }
-            ?>
-            
+            ?>   
         </div>
     </header>
     <div class="page_container">
@@ -211,17 +271,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="main_usuarios">
                    <div class="main_usuarios_text">
-                    <h1>Miembros conectados</h1>
+                    <h1>Miembros conectados:</h1>
                    </div>
                    <div class="barra_horizontal"></div>
+                    <div class="scroll">
+                        <?php 
+                   if (file_exists('./ASSETS/JSON/usuarios.json')) {
+                      $usuarios = json_decode(file_get_contents('./ASSETS/JSON/usuarios.json'), true);
+                      if (is_array($usuarios)) {
+                         foreach ($usuarios as $idx => $usuario) {
+                          if (isset($usuario['usuario']) && $usuario['conectado'] == 'true') {
+                            echo '<div class="usuario_conectado_1">';
+                            echo '<img style="width: 40px; margin-left:20px; height: 40px;" src="./ASSETS/IMAGES/' . htmlspecialchars($usuario['imagen_perfil']) . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                            echo '<p class="usuario_nombre_1">' . htmlspecialchars($usuario['usuario']) . '</p>';
+                            echo '</div>';
+                            echo '<div class="barra_horizontal"></div>';
+                          }
+                        }     
+                    }
+                 }              
+                   ?>
+                   </div>
+                   
                 </div>
                 <div class="main_estadistica">
                     <div class="main_usuarios_text">
-                    <h1>Estadísticas</h1>
+                    <h1>Estadísticas:</h1>
                    </div>
                    <div class="barra_horizontal"></div>
                    <div class="main_estadistica_text">
-                    <p>Usuarios registrados: 0</p>
+                    <?php 
+                     if (file_exists('./ASSETS/JSON/usuarios.json')) {
+                        $usuarios = json_decode(file_get_contents('./ASSETS/JSON/usuarios.json'), true);
+                        $num_usuarios = is_array($usuarios) ? count($usuarios) : 0;
+                        echo "<p>Usuarios registrados: $num_usuarios</p>";
+                     }
+                    ?>
                     <p>Hilos creados: 0</p>
                     <p>Mensajes enviados: 0</p>
                 </div>

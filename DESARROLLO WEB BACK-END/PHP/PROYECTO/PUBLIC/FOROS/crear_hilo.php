@@ -10,11 +10,7 @@
 <body>
     <header>
         <div class="Logo">
-            <a href="../index.php"><img src="../../ASSETS/IMAGES/Logo.png" alt="Logo"></a>
-        </div>
-        <div class="Acceder">
-            <button class="button_1" name="sesion_inciar">Iniciar Sesión</button>
-            <button class="button_2" name="registrar">Registrarse</button>
+            <a href="../../index.php"><img src="../../ASSETS/IMAGES/Logo.png" alt="Logo"></a>
         </div>
     </header>
     <div class="page_container">
@@ -30,6 +26,20 @@
           <label for="titulo" class="form-label">Título del hilo:</label>
           <input type="text" id="titulo" name="titulo" class="form-control" required>
         </div>
+        <div class="mb-3">
+        <label class="form-label">Foro:</label>
+        <select  class="form-select" name="foro" id="pais">
+          <option selected disabled>Selecciona el foro en el que se añada:</option>
+           <option value="social">Social</option>
+              <option value="arte">Arte</option>
+              <option value="videojuegos">Videojuegos</option>
+              <option value="libros">Libros</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="cine">Cine</option>
+              <option value="coches">Coches</option>            
+        </select> 
+        </div>
+        
 
         <!-- Contenido del hilo -->
         <div class="mb-3">

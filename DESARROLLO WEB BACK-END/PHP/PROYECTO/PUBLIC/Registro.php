@@ -1,11 +1,4 @@
 <?php
-//session_start();
-
-if (session_start()) {
-    // Si ya está logueado, redirige a index.php
-    header('Location: ../index.php');
-    exit();
-}
 
 $error = '';
 
@@ -14,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $correo = $_POST['correo'] ?? '';
     $password = $_POST['password'] ?? '';
     $confirmar_password = $_POST['confirmar_password'] ?? '';
-    $imagen_perfil = $_POST['imagen_perfil'] ?? 'defecto.jpg';
+    $imagen_perfil = $_POST['imagen_perfil'] ?? 'defecto.webp';
     $terminos = isset($_POST['terminos']);
 
     // Cargar usuarios existentes (si el archivo no existe, crear array vacío)
@@ -129,42 +122,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="d-flex flex-wrap gap-3">
             <!-- Imagen 1 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img1.jpg" class="d-none">
+              <input type="radio" name="imagen_perfil" value="perfil_1.jpeg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_1.jpeg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 1">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>
 
             <!-- Imagen 2 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img2.jpg" class="d-none">
+              <input type="radio" name="imagen_perfil" value="perfil_2.jpeg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_2.jpeg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 2">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>
 
             <!-- Imagen 3 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img3.jpg" class="d-none">
+              <input type="radio" name="imagen_perfil" value="perfil_3.jpeg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_3.jpeg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 3">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>
 
             <!-- Imagen 4 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img4.jpg" class="d-none">
+              <input type="radio" name="imagen_perfil" value="perfil_4.jpeg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_4.jpeg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 4">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>
 
             <!-- Imagen 5 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img5.jpg" class="d-none">
+              <input type="radio" name="imagen_perfil" value="perfil_5.jpeg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_5.jpeg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 5">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>
 
             <!-- Imagen 6 -->
             <label class="perfil-option position-relative">
-              <input type="radio" name="imagen_perfil" value="img6.jpg" class="d-none">
+              <input type="radio" name="imagen_perfil" value="perfil_6.jpg" class="d-none">
               <img src="../ASSETS/IMAGES/perfil_6.jpg" class="img-fluid rounded-circle border border-2 border-secondary perfil-img" alt="perfil 6">
               <div class="check-overlay"><i class="bi bi-check-circle-fill text-primary fs-2"></i></div>
             </label>

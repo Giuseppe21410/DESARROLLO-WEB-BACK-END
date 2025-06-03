@@ -1,11 +1,5 @@
 <?php
-
-
-// Redirigir si ya está logueado
-if (session_start()) {
-    header('Location: ../index.php');
-    exit();
-}
+session_start();
 
 // Leer usuarios desde usuarios.json
 $ruta_json = '../ASSETS/JSON/usuarios.json';
@@ -30,14 +24,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($usuario['usuario'] === $nombre && password_verify($clave, $usuario['password'])) {
             // Guardar datos en sesión
             $_SESSION['usuario'] = $usuario['usuario'];
+            $_SESSION['foto_perfil'] = $usuario['imagen_perfil'];
 
             // Marcar como conectado en el array completo
             $usuarios[$idx]['conectado'] = true;
-
+            
+            if (isset($_POST['recordarme'])) {
+                setcookie('usuario', $usuario['usuario'], [
+                'expires' => time() + (86400 * 30),
+                'path' => '/',
+                'secure' => true, // solo por HTTPS
+                'httponly' => true, // inaccesible desde JS
+                'samesite' => 'Strict'
+               ]);            
+                setcookie('foto_perfil', $usuario['imagen_perfil'], [
+                'expires' => time() + (86400 * 30),
+                'path' => '/',
+                'secure' => true, // solo por HTTPS
+                'httponly' => true, // inaccesible desde JS
+                'samesite' => 'Strict'
+            ]);            
+            } else {
+                // Eliminar cookies si no se marcó "Recordarme"
+            setcookie('usuario', '', [
+               'expires' => time() - 3600,
+               'path' => '/',
+               'secure' => true,
+               'httponly' => true,
+               'samesite' => 'Strict'       
+            ]);
+            setcookie('foto_perfil', '', [
+               'expires' => time() - 3600,
+               'path' => '/',
+               'secure' => true,
+               'httponly' => true,
+               'samesite' => 'Strict'
+            ]);        
+            }
             // Actualizar el JSON completo
             file_put_contents($ruta_json, json_encode($usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-            
-            session_start();
             header('Location: ../index.php');
             exit();
         }
@@ -46,8 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $error = "Usuario o contraseña incorrectos.";
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,13 +102,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!--Contraseña:-->
         <div class="mb-3">
           <label for="password" class="form-label"> Contraseña:</label><br>
-          <input type="text" id="password" name="password" class="form-control" required>
+          <input type="password" id="password" name="password" class="form-control" required>
         </div>
 
         <div class="mb-0">
           <a class="enlace_registro" href="./Registro.php">¿Estás registrado?</a>
         </div>
     </fieldset>
+        <!-- Términos y condiciones -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="terminos" name="recordarme">
+          <label class="form-check-label" for="terminos">Recordarme</a>
+          </label>
+        </div>
         <!--Botones-->
         <div class="d-flex justify-content-end gap-4">
         <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
