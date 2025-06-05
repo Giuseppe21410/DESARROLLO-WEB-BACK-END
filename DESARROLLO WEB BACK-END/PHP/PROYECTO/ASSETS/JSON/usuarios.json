@@ -4,13 +4,13 @@
         "correo": "giusepestu@gmail.com",
         "password": "$2y$10$oq6rFPcgNbCW29.WPKps6eIfW5iXFsrMdJ6Z7ZlVlzYZRrY6KGrfa",
         "imagen_perfil": "perfil_5.jpeg",
-        "conectado": false
+        "conectado": true
     },
     {
         "usuario": "Alexh12319",
         "correo": "jfkdugk38r74@gmail.com",
-        "password": "$2y$10$I8lqGgyxokiLEcy2Rvv6b.q06R8xp5i596ETj3g6KIBi6bIKZRkkG",
-        "imagen_perfil": "defecto.webp",
+        "password": "$2y$10$LssW7OhfICZ8qfLW78VUyOy..oIVJ5X5ofQDHSKIhsnEcLagZ17bK",
+        "imagen_perfil": "perfil_2.jpeg",
         "conectado": true
     }
 ]

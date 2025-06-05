@@ -135,10 +135,19 @@ if (isset($_POST['cerrar_sesion'])) {
                 echo '<form method="post" class="cerrar-sesion-form">
                 <button class="button_1" name="cerrar_sesion">Cerrar Sesión</button>
                 </form>';  
-                echo '<div class="usuario_conectado">';
-                echo '<img style="width: 60px; height: 60px;" src="../ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
-                echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
-                echo '</div>';                        
+                  if (isset($_SESSION['usuario'])) {
+                    echo '<div class="usuario_conectado">';
+                    echo '<img style="width: 60px; height: 60px;" src="../ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                    echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
+                    echo '</div>';    
+                    
+                } elseif (isset($_COOKIE['usuario'])) {
+                    echo '<div class="usuario_conectado">';
+                    echo '<img style="width: 60px; height: 60px;" src="../ASSETS/IMAGES/' . $_COOKIE['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                    echo '<p class="usuario_nombre">' . htmlspecialchars($_COOKIE['usuario']) . '</p>';
+                    echo '</div>'; 
+                    
+                }                        
             }
             ?>   
         </div>

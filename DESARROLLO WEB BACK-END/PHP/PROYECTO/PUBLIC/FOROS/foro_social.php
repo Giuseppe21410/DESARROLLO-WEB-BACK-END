@@ -1,11 +1,27 @@
 <?php
 session_start(); // Siempre al inicio y fuera de condicionales
 
+if (isset($_GET['actualizar_mensajes']) && isset($_SESSION['json_asociado'])) {
+    $ruta_json = '../../ASSETS/JSON_MENSAJES/SOCIAL/' . $_SESSION['json_asociado'];
+
+    if (file_exists($ruta_json)) {
+        $mensajes = json_decode(file_get_contents($ruta_json), true);
+        header('Content-Type: application/json');
+        echo json_encode($mensajes, JSON_UNESCAPED_UNICODE);
+        exit();
+    } else {
+        http_response_code(404);
+        echo json_encode(['error' => 'Archivo no encontrado']);
+        exit();
+    }
+}
+
 if (!isset($_SESSION['usuario']) && !isset($_COOKIE['usuario'])) {
     $portal_cuenta = false; // Portal de cuenta no activo
 }
 
 $portal_cuenta = ""; // Variable para controlar si el portal de cuenta está activo
+$accion= ""; // Variable para controlar la acción del usuario, sino está conectado, no puede acceder a los hilos del foro o crear nuevos hilos
 
 if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario'])) {
     // Si ya hay una sesión iniciada, se puede acceder a los datos del usuario
@@ -13,11 +29,13 @@ if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario'])) {
         $usuario = $_SESSION['usuario'];
         $foto_perfil = $_SESSION['foto_perfil'];
         $portal_cuenta = true; // Portal de cuenta activo
+        $accion= true;
     } elseif (isset($_COOKIE['usuario'])) {
         // Si no hay sesión pero hay una cookie, se puede usar la cookie
         $usuario = $_COOKIE['usuario'];
         $foto_perfil = $_COOKIE['foto_perfil']; // Valor por defecto si no existe la cookie de foto
         $portal_cuenta = true; // Portal de cuenta activo
+        $accion= true;
     }
 } 
 
@@ -35,7 +53,7 @@ if (isset($_POST['cerrar_sesion'])) {
     $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
 
     if (file_exists('../../ASSETS/JSON/usuarios.json')) {
-        $usuarios = json_decode(file_get_contents('../ASSETS/JSON/usuarios.json'), true);
+        $usuarios = json_decode(file_get_contents('../../ASSETS/JSON/usuarios.json'), true);
         if (is_array($usuarios)) {
             foreach ($usuarios as $idx => $usuario_data) {
                 if (isset($usuario_data['usuario']) && $usuario_data['usuario'] == $nombre_usuario) {
@@ -67,6 +85,47 @@ if (isset($_POST['cerrar_sesion'])) {
     exit();
 }
 
+
+
+if (isset($_POST['enviar'])){
+    $error = '';
+    $contenido = $_POST['contenido'] ?? '';
+    $creador = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
+    $foto_perfil_creador = $_SESSION['foto_perfil'] ?? ($_COOKIE['foto_perfil'] ?? 'default.png');
+    $ruta_json = '../../ASSETS/JSON_MENSAJES/SOCIAL/' . $_SESSION['json_asociado'];
+
+    if (file_exists($ruta_json)) {
+        $mensajes = json_decode(file_get_contents($ruta_json), true);
+        if (!is_array($mensajes)) {
+            $mensajes = [];
+        }
+    } else {
+        $mensajes = [];
+    }
+
+    if ($error == '') {
+        $nuevo_mensaje = [
+            'contenido' => $contenido,
+            'creador' => $creador,
+            'foto_perfil_creador' => $foto_perfil_creador,
+            'fecha_creacion' => date('Y-m-d H:i:s')
+        ];
+
+        $mensajes[] = $nuevo_mensaje;
+
+        if (file_put_contents($ruta_json, json_encode($mensajes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) === false) {
+            die("Error: no se pudo crear el archivo en $ruta_json");
+        }
+
+        header('Location: foro_social.php'); // Redirigir al foro después de enviar el mensaje
+        exit();
+    }  
+}
+
+
+
+
+
 ?>
 
 
@@ -79,6 +138,46 @@ if (isset($_POST['cerrar_sesion'])) {
     <title>Proyecto_1.index</title>
     <link rel="stylesheet" href="../../ASSETS/CSS/styles.css">
 </head>
+<script>
+    async function cargarMensajes() {
+        try {
+            const res = await fetch(window.location.pathname + '?actualizar_mensajes=1');
+            if (!res.ok) throw new Error("No se pudieron cargar los mensajes");
+            const mensajes = await res.json();
+
+            const contenedor = document.getElementById('contenedorMensajes');
+            contenedor.innerHTML = ''; // Vaciar mensajes anteriores
+
+            mensajes.forEach(mensaje => {
+                const esUsuario = mensaje.creador === "<?php echo $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? ''); ?>";
+                let html = '';
+
+                if (esUsuario) {
+                    html += `<div class="mensaje_usuario"><p>${mensaje.contenido}</p></div>`;
+                } else {
+                    html += `
+                        <div class="mensaje_otros_usuarios_img">
+                            <img src="../../ASSETS/IMAGES/${mensaje.foto_perfil_creador}" alt="Foto de perfil">
+                            <div class="mensaje_otros_usuarios">
+                                <h4>${mensaje.creador}</h4>
+                                <p>${mensaje.contenido}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                contenedor.innerHTML += html;
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    // Cargar mensajes cada 3 segundos
+    setInterval(cargarMensajes, 3000);
+    cargarMensajes(); // Cargar inicialmente
+</script>
+
 <body>
     <header>
         <div class="Logo">
@@ -95,10 +194,20 @@ if (isset($_POST['cerrar_sesion'])) {
                 echo '<form method="post" class="cerrar-sesion-form">
                 <button class="button_1" name="cerrar_sesion">Cerrar Sesión</button>
                 </form>';  
-                echo '<div class="usuario_conectado">';
-                echo '<img style="width: 60px; height: 60px;" src="../../ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
-                echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
-                echo '</div>';                        
+                if (isset($_SESSION['usuario'])) {
+                    echo '<div class="usuario_conectado">';
+                    echo '<img style="width: 60px; height: 60px;" src="../../ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                    echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
+                    echo '</div>';    
+                    
+                } elseif (isset($_COOKIE['usuario'])) {
+                    echo '<div class="usuario_conectado">';
+                    echo '<img style="width: 60px; height: 60px;" src="../../ASSETS/IMAGES/' . $_COOKIE['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                    echo '<p class="usuario_nombre">' . htmlspecialchars($_COOKIE['usuario']) . '</p>';
+                    echo '</div>'; 
+                    
+                }
+                                        
             }
             ?>  
         </div>
@@ -106,16 +215,93 @@ if (isset($_POST['cerrar_sesion'])) {
     <div class="page_container">
     <main>
         <div class="main_container_foro">
+        <div class="main_container_foro_6">
             <div class="main_container_4">
                 <p> <i>Social</i></p>
                 <div class="barra"></div>
-                <p class="p_1">Inicia la conversación que todos quieren tener.</p>
-                <a class="mas" href="./crear_hilo.php"><img class="mas" src="../../ASSETS/IMAGES/mas.png" alt="imagen_más"></a>
+                <p class="p_1">Inicia la conversación que todos quieren tener.</p>     
             </div>
+            <div class="main_container_5">
+                    <?php
+                if ($accion) {
+                    echo '<a class="mas" href="./crear_hilo.php"><img class="mas" src="../../ASSETS/IMAGES/mas.png" alt="imagen_más"></a>';
+                } else {
+                    echo '<p class="p_1">¡Inicia sesión para participar!</p>';
+                }
+                ?>
+            </div>
+
+        
+
+        </div>  
             <div class="main_foro_1">
                 <div class="main_foro_container_1">
+                        <div class="main_foro_titulo"><h1>Hilos:</h1></div>
+                        <div class="main_foro_container_hilos_1">
+                            <?php
+                            $ruta_json = '../../ASSETS/JSON/hilos.json';
+                            if (file_exists($ruta_json)) {
+                                $hilos = json_decode(file_get_contents($ruta_json), true);
+                                if (is_array($hilos)) {
+                                    foreach ($hilos as $hilo) {
+                                        if ($hilo['foro'] === 'social') {
+                                            echo '<div class="main_foro_container_hilos">';
+                                            echo '<div class="main_container_hilos_1">';
+                                            echo '<img src="../../ASSETS/IMAGES/' . htmlspecialchars($hilo['foto_perfil_creador']) . '" alt="foto_perfil_creador_hilo" class="perfil_hilo">';
+                                            echo '<p class="usuario_hilo">' . htmlspecialchars($hilo['creador']) . '</p>';
+                                            echo '</div>';
+                                            echo '<div class="main_container_hilos_2">';
+                                            echo '<form method="post">';
+                                            if (!isset($_SESSION['usuario']) && !isset($_COOKIE['usuario']) ) {
+                                                 echo '<button class="boton_hilo_1" disabled type="submit" name="ver_hilo" value="' . htmlspecialchars($hilo['array_asociado']) . '">'. htmlspecialchars($hilo['titulo']) . '</button>';
+                                            }else {
+                                                echo '<button class="boton_hilo_2" type="submit" name="ver_hilo" value="' . htmlspecialchars($hilo['array_asociado']) . '">'. htmlspecialchars($hilo['titulo']) . '</button>';
+                                            }
+                                            if (isset($_POST['ver_hilo'])){
+                                                $_SESSION['json_asociado']=$_POST['ver_hilo'];
+                                            }
+                                            echo '<p>' . htmlspecialchars($hilo['descripcion']) . '</p>';
+                                            echo '</form>';
+                                            echo '</div>';
+                                            echo '</div>';
+                                            echo '<div class="barra_hilo"></div>'; 
+                                        }
+                                    }
+                                }
+                            } else {
+                                echo '<p>Error al cargar los hilos.</p>';
+                            }
+                            ?>
+
+                        </div>
+                        
                 </div>
-                <div class="main_foro_container_2">a
+                <div class="main_foro_container_2">
+                   <div class="Buscador">
+		              <form class="Buscador_1"  method="post">
+			          <textarea id="mensaje" name="contenido" type="text" class="Buscador_"></textarea>
+                      <?php
+                      if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario'])) {
+                         echo '<button id="enviar" name="enviar"  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
+                      } else {
+                          echo '<button name="enviar" disabled  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
+                      } 
+                        ?>
+
+                        <script>
+                          const textarea = document.getElementById('mensaje');
+                          const boton = document.getElementById('enviar');
+
+                          textarea.addEventListener('input', () => {
+                              boton.disabled = textarea.value.trim() === '';
+                           });
+                        </script>                           
+		              </form>
+	               </div>         
+                   <div class="mensajes" id="contenedorMensajes">
+                    </div>
+                    
+                   </div>
                 </div>
             </div>
         </div>

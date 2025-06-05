@@ -2,7 +2,7 @@
 session_start(); // Siempre al inicio y fuera de condicionales
 
 if (isset($_GET['actualizar_mensajes']) && isset($_SESSION['json_asociado'])) {
-    $ruta_json = '../../ASSETS/JSON_MENSAJES/OPOSICIONES/' . $_SESSION['json_asociado'];
+    $ruta_json = '../../ASSETS/JSON_MENSAJES/VIDEOJUEGOS/' . $_SESSION['json_asociado'];
 
     if (file_exists($ruta_json)) {
         $mensajes = json_decode(file_get_contents($ruta_json), true);
@@ -92,7 +92,7 @@ if (isset($_POST['enviar'])){
     $contenido = $_POST['contenido'] ?? '';
     $creador = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
     $foto_perfil_creador = $_SESSION['foto_perfil'] ?? ($_COOKIE['foto_perfil'] ?? 'default.png');
-    $ruta_json = '../../ASSETS/JSON_MENSAJES/OPOSICIONES/' . $_SESSION['json_asociado'];
+    $ruta_json = '../../ASSETS/JSON_MENSAJES/VIDEOJUEGOS/' . $_SESSION['json_asociado'];
 
     if (file_exists($ruta_json)) {
         $mensajes = json_decode(file_get_contents($ruta_json), true);
@@ -117,7 +117,7 @@ if (isset($_POST['enviar'])){
             die("Error: no se pudo crear el archivo en $ruta_json");
         }
 
-        header('Location: foro_oposiciones.php'); // Redirigir al foro después de enviar el mensaje
+        header('Location: foro_videojuegos.php'); // Redirigir al foro después de enviar el mensaje
         exit();
     }  
 }
@@ -217,9 +217,9 @@ if (isset($_POST['enviar'])){
         <div class="main_container_foro">
         <div class="main_container_foro_6">
             <div class="main_container_4">
-                <p> <i>Opisiciones</i></p>
+                <p> <i>Videojuegos</i></p>
                 <div class="barra"></div>
-                <p class="p_1">Comparte el esfuerzo que inspira.</p>     
+                <p class="p_1">Comparte tus partidas y mucho más.</p>     
             </div>
             <div class="main_container_5">
                     <?php
@@ -244,7 +244,7 @@ if (isset($_POST['enviar'])){
                                 $hilos = json_decode(file_get_contents($ruta_json), true);
                                 if (is_array($hilos)) {
                                     foreach ($hilos as $hilo) {
-                                        if ($hilo['foro'] === 'oposiciones') {
+                                        if ($hilo['foro'] === 'videojuegos') {
                                             echo '<div class="main_foro_container_hilos">';
                                             echo '<div class="main_container_hilos_1">';
                                             echo '<img src="../../ASSETS/IMAGES/' . htmlspecialchars($hilo['foto_perfil_creador']) . '" alt="foto_perfil_creador_hilo" class="perfil_hilo">';

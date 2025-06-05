@@ -96,10 +96,19 @@ if (isset($_POST['cerrar_sesion'])) {
                 echo '<form method="post" class="cerrar-sesion-form">
                 <button class="button_1" name="cerrar_sesion">Cerrar Sesión</button>
                 </form>';  
-                echo '<div class="usuario_conectado">';
-                echo '<img style="width: 60px; height: 60px;" src="./ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
-                echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
-                echo '</div>';                        
+                 if (isset($_SESSION['usuario'])) {
+                    echo '<div class="usuario_conectado">';
+                    echo '<img style="width: 60px; height: 60px;" src="./ASSETS/IMAGES/' . $_SESSION['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                    echo '<p class="usuario_nombre">' . htmlspecialchars($_SESSION['usuario']) . '</p>';
+                    echo '</div>';    
+                    
+                } elseif (isset($_COOKIE['usuario'])) {
+                    echo '<div class="usuario_conectado">';
+                    echo '<img style="width: 60px; height: 60px;" src="./ASSETS/IMAGES/' . $_COOKIE['foto_perfil'] . '" alt="Foto de perfil" class="img-fluid rounded-circle perfil-img">';
+                    echo '<p class="usuario_nombre">' . htmlspecialchars($_COOKIE['usuario']) . '</p>';
+                    echo '</div>'; 
+                    
+                }                      
             }
             ?>   
         </div>
@@ -151,10 +160,10 @@ if (isset($_POST['cerrar_sesion'])) {
                         <div class="barra_horizontal"></div>
                         <div class="foro">
                             <div class="foro_img">
-                                <a href="./PUBLIC/FOROS/foro_videojuego.php"><img src="./ASSETS/IMAGES/videojuegos.png" alt=""></a>
+                                <a href="./PUBLIC/FOROS/foro_videojuegos.php"><img src="./ASSETS/IMAGES/videojuegos.png" alt=""></a>
                             </div>
                             <div class="foro_texto">
-                                <a href="./PUBLIC/FOROS/foro_videojuego.php">Videojuegos</a>
+                                <a href="./PUBLIC/FOROS/foro_videojuegos.php">Videojuegos</a>
                             </div>
                             <div class="foro_hilos_3">
                                 <p class="p_3">Hilos:</p>
@@ -307,7 +316,13 @@ if (isset($_POST['cerrar_sesion'])) {
                         echo "<p>Usuarios registrados: $num_usuarios</p>";
                      }
                     ?>
-                    <p>Hilos creados: 0</p>
+                    <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos =count($hilos);
+                        echo "<p>Hilos creados: $num_hilos</p>";
+                     }
+                    ?>
                     <p>Mensajes enviados: 0</p>
                 </div>
             </div>

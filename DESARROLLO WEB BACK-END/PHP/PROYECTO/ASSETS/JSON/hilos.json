@@ -1,0 +1,20 @@
+[
+    {
+        "titulo": "Holaaaa",
+        "foro": "oposiciones",
+        "descripcion": "dadad",
+        "array_asociado": "oposiciones_0.json",
+        "fecha_creacion": "2025-06-05 14:18:27",
+        "creador": "admin",
+        "foto_perfil_creador": "perfil_5.jpeg"
+    },
+    {
+        "titulo": "Giusepeeeeeee",
+        "foro": "social",
+        "descripcion": "Hola",
+        "array_asociado": "social_1.json",
+        "fecha_creacion": "2025-06-05 14:19:00",
+        "creador": "Alexh12319",
+        "foto_perfil_creador": "perfil_2.jpeg"
+    }
+]
