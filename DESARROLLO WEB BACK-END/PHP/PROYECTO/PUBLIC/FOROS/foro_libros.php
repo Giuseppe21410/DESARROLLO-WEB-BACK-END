@@ -108,7 +108,7 @@ if (isset($_POST['enviar'])){
             'contenido' => $contenido,
             'creador' => $creador,
             'foto_perfil_creador' => $foto_perfil_creador,
-            'fecha_creacion' => date('Y-m-d H:i:s')
+            'hora_creacion' => date("H:i")
         ];
 
         $mensajes[] = $nuevo_mensaje;
@@ -140,42 +140,56 @@ if (isset($_POST['enviar'])){
 </head>
 <script>
     async function cargarMensajes() {
-        try {
-            const res = await fetch(window.location.pathname + '?actualizar_mensajes=1');
-            if (!res.ok) throw new Error("No se pudieron cargar los mensajes");
-            const mensajes = await res.json();
+    try {
+        const res = await fetch(window.location.pathname + '?actualizar_mensajes=1');
+        if (!res.ok) throw new Error("No se pudieron cargar los mensajes");
+        const mensajes = await res.json();
 
-            const contenedor = document.getElementById('contenedorMensajes');
-            contenedor.innerHTML = ''; // Vaciar mensajes anteriores
+        const contenedor = document.getElementById('contenedorMensajes');
+        contenedor.innerHTML = ''; // Vaciar mensajes anteriores
 
-            mensajes.forEach(mensaje => {
-                const esUsuario = mensaje.creador === "<?php echo $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? ''); ?>";
-                let html = '';
+        mensajes.forEach(mensaje => {
+            const esUsuario = mensaje.creador === "<?php echo $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? ''); ?>";
+            let html = '';
 
-                if (esUsuario) {
-                    html += `<div class="mensaje_usuario"><p>${mensaje.contenido}</p></div>`;
-                } else {
-                    html += `
-                        <div class="mensaje_otros_usuarios_img">
-                            <img src="../../ASSETS/IMAGES/${mensaje.foto_perfil_creador}" alt="Foto de perfil">
-                            <div class="mensaje_otros_usuarios">
-                                <h4>${mensaje.creador}</h4>
-                                <p>${mensaje.contenido}</p>
-                            </div>
+            if (esUsuario) {
+                html += `<div class="mensaje_usuario"><p class="contenido">${mensaje.contenido}</p>
+                <p class="fecha">${mensaje.hora_creacion}</p></div>`;
+            } else {
+                html += `
+                    <div class="mensaje_otros_usuarios_img">
+                        <img src="../../ASSETS/IMAGES/${mensaje.foto_perfil_creador}" alt="Foto de perfil">
+                        <div class="mensaje_otros_usuarios">
+                            <h4>${mensaje.creador}</h4>
+                            <p class="contenido">${mensaje.contenido}</p>
+                            <p class="fecha">${mensaje.hora_creacion}</p>
                         </div>
-                    `;
-                }
+                    </div>
+                `;
+            }
 
-                contenedor.innerHTML += html;
-            });
-        } catch (e) {
-            console.error(e);
-        }
+            contenedor.innerHTML += html;
+        });
+
+        
+
+    } catch (e) {
+        console.error(e);
     }
+}
 
-    // Cargar mensajes cada 3 segundos
+
+    //Cargar mensajes cada 3 segundos
     setInterval(cargarMensajes, 3000);
     cargarMensajes(); // Cargar inicialmente
+</script>
+<script>
+    window.addEventListener('load', () => {
+        const contenedor = document.getElementById('contenedorMensajes');
+        if (contenedor) {
+            contenedor.scrollTop = contenedor.scrollHeight;
+        }
+    });
 </script>
 
 <body>
@@ -281,11 +295,15 @@ if (isset($_POST['enviar'])){
 		              <form class="Buscador_1"  method="post">
 			          <textarea id="mensaje" name="contenido" type="text" class="Buscador_"></textarea>
                       <?php
-                      if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario'])) {
+                      if (isset($_SESSION['json_asociado'])){
+                        if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario']) ) {
                          echo '<button id="enviar" name="enviar"  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
-                      } else {
+                          } 
+                      } else{
                           echo '<button name="enviar" disabled  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
-                      } 
+
+                      }
+                      
                         ?>
 
                         <script>
@@ -299,6 +317,11 @@ if (isset($_POST['enviar'])){
 		              </form>
 	               </div>         
                    <div class="mensajes" id="contenedorMensajes">
+                    <?php
+                    if (!isset($_SESSION['json_asociado'])){
+                        echo '<h2 class="aviso">¡Selecciona un hilo para empezar!</h2>';
+                      }
+                    ?>
                     </div>
                     
                    </div>
@@ -324,5 +347,12 @@ if (isset($_POST['enviar'])){
             </div>
         </footer>
     </div>
+    <script>
+    window.addEventListener('load', () => {
+        const mitad = document.body.scrollHeight / 8;
+        window.scrollTo(0, mitad);
+    });
+</script>
 </body>
 </html>
+

@@ -177,7 +177,8 @@ main{
 }
 
 .scroll{
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 90%;
 }
 .main_container_2 {
   display: grid;
@@ -632,9 +633,24 @@ i{
   flex-direction: column;
   margin-bottom: 80px;
   width: 100%;
-  height: 500px;
+  height: 100%;
   overflow-y: scroll;
 
+}
+
+.aviso{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  align-self: center;
+  margin-top: 25%;
+  transform: translate(0%,-50%);
+
+}
+
+.fecha{
+  font-size: 6px;
+  align-self: flex-end ;
 }
 
 .Boton_3{
@@ -663,6 +679,8 @@ i{
   justify-content: flex-end;
   align-items: center;
   padding: 60px;
+  height: 90vh;
+  
 }
 
 .mensaje_usuario{ 
@@ -677,6 +695,8 @@ i{
   font-family: sans-serif;
   align-self: flex-end;
   margin-right: 60px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Bocadillo: la "punta" */
@@ -692,26 +712,31 @@ i{
   border-bottom: 7px solid transparent;
   transform: rotate(180deg);
 }
-
+.contenido{
+  font-size: 13px;
+}
 .mensaje_usuario p {
   margin: 0;
-  font-size: 12px;
   word-wrap: break-word;   /* Para navegadores modernos */
   overflow-wrap: break-word; /* Estándar CSS más nuevo */
   white-space: normal;     /* Asegura que el texto se pueda dividir en líneas */
 }
 
+
+
 .mensaje_otros_usuarios{ 
   position: relative;
   background: #e0f7fa;
   color: #333;
-  padding: 12px 16px;
+  padding: 6px 10px;
   margin: 10px;
   max-width: 300px;
   max-height: max-content;
   border-radius: 0px 10px 10px 10px;
   font-family: sans-serif;
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -730,7 +755,6 @@ i{
 
 .mensaje_otros_usuarios p {
   margin: 0;
-  font-size: 12px;
   word-wrap: break-word;   /* Para navegadores modernos */
   overflow-wrap: break-word; /* Estándar CSS más nuevo */
   white-space: normal;     /* Asegura que el texto se pueda dividir en líneas */

@@ -20,10 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hilos = [];
     }
 
-    // Contar la cantidad de hilos existentes
-    $cantidad_hilos = count($hilos);
+    $cantidad_hilos=0;
+    foreach ($hilos as $hilo){
+        if ($hilo['foro']==$foro){
+            $cantidad_hilos++;
+        }
+    }
+   
 
-    // 
     if (strlen($descripcion)  > 180) {
         $error = 'Debe ingresar una descripción de menos de 180 caracteres.';
     }elseif (strlen($titulo) > 30 ) {
@@ -51,8 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'creador' => $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? ''),
             'foto_perfil_creador' => $_SESSION['foto_perfil'] ?? ($_COOKIE['foto_perfil'] ?? 'default.png')
         ];
- 
-        $nombre_archivo = "../../ASSETS/JSON_MENSAJES/SOCIAL/" . $array_asociado . ".json";
+
+        $foro= strtoupper($foro);
+        $nombre_archivo = "../../ASSETS/JSON_MENSAJES/" . $foro ."/" . $array_asociado . ".json";
+
+        $contenido_archivo = json_encode([], JSON_PRETTY_PRINT);
 
         if (file_put_contents($nombre_archivo, $contenido_archivo) === false) {
             die("Error: no se pudo crear el archivo en $nombre_archivo");
@@ -71,8 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 }
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -113,6 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <option value="libros">Libros</option>
               <option value="tecnologia">Tecnología</option>
               <option value="oposiciones">Oposiciones</option>
+              <option value="anecdotas">Anecdotas</option>
               <option value="cine">Cine</option>
               <option value="coches">Coches</option>            
         </select> 

@@ -1,6 +1,10 @@
 <?php
 session_start(); // Siempre al inicio y fuera de condicionales
 
+unset($_SESSION['json_asociado']);
+
+$mensajes_total=0;
+
 if (!isset($_SESSION['usuario']) && !isset($_COOKIE['usuario'])) {
     $portal_cuenta = false; // Portal de cuenta no activo
 }
@@ -133,11 +137,43 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Social=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='social'){
+                                $num_hilos_Social++;
+                            }
+                        }
+                        echo '<p class="p_4">' . $num_hilos_Social . '</p>';
+                     }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Social = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/SOCIAL/social_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Social += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Social;
+                                 echo '<p class="p_4">' . $mensajes_total . '</p>';
+                             ?>
+
+                                
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -150,11 +186,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_2">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Arte=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='arte'){
+                                $num_hilos_Arte++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Arte . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/ARTE/arte_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Arte += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Arte;
+                                 echo '<p class="p_4">' . $num_mensajes_Arte . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -167,11 +234,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_3">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Videojuegos=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='videojuegos'){
+                                $num_hilos_Videojuegos++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Videojuegos . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/VIDEOJUEGOS/videojuegos_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Videojuegos += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Videojuegos;
+                                 echo '<p class="p_4">' . $num_mensajes_Videojuegos . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -184,11 +282,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_4">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Libros=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='libros'){
+                                $num_hilos_Libros++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Libros . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/LIBROS/libros_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Libros += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Libros;
+                                 echo '<p class="p_4">' . $num_mensajes_Libros . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -201,11 +330,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_5">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Tecnología=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='tecnologia'){
+                                $num_hilos_Tecnología++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Tecnología . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/TECNOLOGIA/tecnologia_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Tecnologia += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Tecnologia;
+                                 echo '<p class="p_4">' . $num_mensajes_Tecnologia . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -218,11 +378,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_6">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Oposiciones=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='oposiciones'){
+                                $num_hilos_Oposiciones++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Oposiciones . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/OPOSICIONES/oposiciones_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Oposiciones += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Oposiciones;
+                                 echo '<p class="p_4">' . $num_mensajes_Oposiciones . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -235,11 +426,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_7">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Cine=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='cine'){
+                                $num_hilos_Cine++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Cine . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/CINE/cine_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Cine += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Cine;
+                                 echo '<p class="p_4">' . $num_mensajes_Cine . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -252,11 +474,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_8">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Anecdotas=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='anecdotas'){
+                                $num_hilos_Anecdotas++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Anecdotas . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/ANECDOTAS/anecdotas_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Anecdotas += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Anecdotas;
+                                 echo '<p class="p_4">' . $num_mensajes_Anecdotas . '</p>';
+                             ?>
                             </div>
                         </div>
                         <div class="barra_horizontal"></div>
@@ -269,11 +522,42 @@ if (isset($_POST['cerrar_sesion'])) {
                             </div>
                             <div class="foro_hilos_9">
                                 <p class="p_3">Hilos:</p>
-                                <p class="p_4">0</p>
+                                <?php 
+                     if (file_exists('./ASSETS/JSON/hilos.json')) {
+                        $hilos = json_decode(file_get_contents('./ASSETS/JSON/hilos.json'), true);
+                        $num_hilos_Coches=0;
+                        foreach ($hilos as $hilo){
+                            if ($hilo['foro']=='coches'){
+                                $num_hilos_Coches++;
+                
+                        }
+                     }
+                     echo '<p class="p_4">' . $num_hilos_Coches . '</p>';
+                    }
+                    ?>
                             </div>
                             <div class="foro_mensajes">
                                 <p class="p_3">Mensajes:</p>
-                                <p class="p_4">0</p>
+                                <?php
+                                 $condicion = true;
+                                 $i = 0;
+                                 $num_mensajes_Arte = 0;
+
+                                 while ($condicion) {
+                                     $ruta = "./ASSETS/JSON_MENSAJES/COCHES/coches_" . $i . ".json";
+                                     if (file_exists($ruta)) {
+                                         $mensajes = json_decode(file_get_contents($ruta), true);
+                                         $num_mensajes = count($mensajes);
+                                         $num_mensajes_Coches += $num_mensajes; // suma acumulativa
+                                         $i++;
+                                     } else {
+                                         $condicion = false;
+                                     }
+                                 }
+
+                                 $mensajes_total += $num_mensajes_Coches;
+                                 echo '<p class="p_4">' . $num_mensajes_Coches . '</p>';
+                             ?>
                             </div>
                         </div>
                     </div>
@@ -323,7 +607,9 @@ if (isset($_POST['cerrar_sesion'])) {
                         echo "<p>Hilos creados: $num_hilos</p>";
                      }
                     ?>
-                    <p>Mensajes enviados: 0</p>
+                    <?php
+                    echo '<p>Mensajes enviados:'. '                              ' . $mensajes_total . '</p>';
+                    ?>
                 </div>
             </div>
 

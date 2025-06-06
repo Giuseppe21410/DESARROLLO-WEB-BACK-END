@@ -1,20 +1,38 @@
 [
     {
-        "titulo": "Holaaaa",
-        "foro": "oposiciones",
-        "descripcion": "dadad",
-        "array_asociado": "oposiciones_0.json",
-        "fecha_creacion": "2025-06-05 14:18:27",
+        "titulo": "adada",
+        "foro": "social",
+        "descripcion": "daddqd",
+        "array_asociado": "social_0.json",
+        "fecha_creacion": "2025-06-06 13:58:49",
         "creador": "admin",
         "foto_perfil_creador": "perfil_5.jpeg"
     },
     {
-        "titulo": "Giusepeeeeeee",
+        "titulo": "dadadadadad",
         "foro": "social",
-        "descripcion": "Hola",
+        "descripcion": "dadada",
         "array_asociado": "social_1.json",
-        "fecha_creacion": "2025-06-05 14:19:00",
-        "creador": "Alexh12319",
-        "foto_perfil_creador": "perfil_2.jpeg"
+        "fecha_creacion": "2025-06-06 13:59:03",
+        "creador": "admin",
+        "foto_perfil_creador": "perfil_5.jpeg"
+    },
+    {
+        "titulo": "dadad",
+        "foro": "arte",
+        "descripcion": "dadad",
+        "array_asociado": "arte_0.json",
+        "fecha_creacion": "2025-06-06 14:35:57",
+        "creador": "admin",
+        "foto_perfil_creador": "perfil_5.jpeg"
+    },
+    {
+        "titulo": "dadaada",
+        "foro": "arte",
+        "descripcion": "dadad",
+        "array_asociado": "arte_1.json",
+        "fecha_creacion": "2025-06-06 14:36:16",
+        "creador": "admin",
+        "foto_perfil_creador": "perfil_5.jpeg"
     }
 ]
