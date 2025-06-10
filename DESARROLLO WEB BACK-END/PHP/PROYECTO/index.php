@@ -35,6 +35,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 }
 
+$inactividad=600; // 600 segundo, lo que son 10 minutos.
+    if (isset($_SESSION['tiempo'])) {
+    $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
+    $vida_sesion = time() - $_SESSION['tiempo'];
+       if ($vida_sesion > $inactividad) {
+          if (file_exists('./ASSETS/JSON/usuarios.json')) {
+               $usuarios = json_decode(file_get_contents('./ASSETS/JSON/usuarios.json'), true);
+               if (is_array($usuarios)) {
+               foreach ($usuarios as $idx => $usuario_data) {
+                  if (isset($usuario_data['usuario']) && $usuario_data['usuario'] == $nombre_usuario) {
+                    $usuarios[$idx]['conectado'] = false;
+                    break;
+                }
+            }
+            file_put_contents('./ASSETS/JSON/usuarios.json', json_encode($usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+           }
+         }
+          session_unset();
+          session_destroy();
+          header("Location: index.php");
+          exit();
+      }
+   }
+
 if (isset($_POST['cerrar_sesion'])) {
     $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
 
@@ -50,7 +74,6 @@ if (isset($_POST['cerrar_sesion'])) {
             file_put_contents('./ASSETS/JSON/usuarios.json', json_encode($usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
         }
     }
-
     session_destroy();
     // Eliminar cookies:
             setcookie('usuario', '', [
@@ -157,17 +180,15 @@ if (isset($_POST['cerrar_sesion'])) {
                                  $i = 0;
                                  $num_mensajes_Social = 0;
 
-                                 while ($condicion) {
+                                 for ($i=0; $i<100; $i++) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/SOCIAL/social_" . $i . ".json";
                                      if (file_exists($ruta)) {
                                          $mensajes = json_decode(file_get_contents($ruta), true);
                                          $num_mensajes = count($mensajes);
                                          $num_mensajes_Social += $num_mensajes; // suma acumulativa
                                          $i++;
-                                     } else {
-                                         $condicion = false;
-                                     }
                                  }
+                                }
 
                                  $mensajes_total += $num_mensajes_Social;
                                  echo '<p class="p_4">' . $mensajes_total . '</p>';
@@ -253,7 +274,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Videojuegos = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/VIDEOJUEGOS/videojuegos_" . $i . ".json";
@@ -301,7 +322,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Libros = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/LIBROS/libros_" . $i . ".json";
@@ -349,7 +370,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Tecnologia = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/TECNOLOGIA/tecnologia_" . $i . ".json";
@@ -397,7 +418,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Oposiciones = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/OPOSICIONES/oposiciones_" . $i . ".json";
@@ -445,7 +466,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Cine = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/CINE/cine_" . $i . ".json";
@@ -493,7 +514,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Anecdotas = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/ANECDOTAS/anecdotas_" . $i . ".json";
@@ -541,7 +562,7 @@ if (isset($_POST['cerrar_sesion'])) {
                                 <?php
                                  $condicion = true;
                                  $i = 0;
-                                 $num_mensajes_Arte = 0;
+                                 $num_mensajes_Coches = 0;
 
                                  while ($condicion) {
                                      $ruta = "./ASSETS/JSON_MENSAJES/COCHES/coches_" . $i . ".json";

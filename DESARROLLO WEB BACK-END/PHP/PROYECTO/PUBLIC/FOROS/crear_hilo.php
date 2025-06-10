@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (strlen($descripcion)  > 180) {
         $error = 'Debe ingresar una descripción de menos de 180 caracteres.';
-    }elseif (strlen($titulo) > 30 ) {
-        $error = 'Debe ingresar un título de menos de 30 caracteres.';
+    }elseif (strlen($titulo) > 20 ) {
+        $error = 'Debe ingresar un título de menos de 20 caracteres.';
     }elseif (empty($titulo) || empty($descripcion) || empty($foro)) {
         $error = 'Todos los campos son obligatorios.';
     }else {

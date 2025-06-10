@@ -20,6 +20,35 @@ if (!isset($_SESSION['usuario']) && !isset($_COOKIE['usuario'])) {
     $portal_cuenta = false; // Portal de cuenta no activo
 }
 
+// Gestión eliminación de hilos
+if (isset($_POST['eliminar_hilo'])) {
+    $_SESSION['json_asociado'] = $_POST['eliminar_hilo'];
+    $array_a_eliminar = $_POST['eliminar_hilo'];
+    $ruta_hilos = '../../ASSETS/JSON/hilos.json';
+    $hilos = [];
+
+    if (file_exists($ruta_hilos)) {
+        $hilos = json_decode(file_get_contents($ruta_hilos), true);
+        if (!is_array($hilos)) {
+            $hilos = [];
+        }
+    }
+
+    $ruta_mensajes = '../../ASSETS/JSON_MENSAJES/ANECDOTAS/' . $_SESSION['json_asociado'];
+
+    $hilos = array_filter($hilos, function ($hilo) use ($array_a_eliminar) {
+        return $hilo['array_asociado'] !== $array_a_eliminar;
+    });
+
+    file_put_contents($ruta_hilos, json_encode(array_values($hilos), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+    if (file_exists($ruta_mensajes)) {
+        unlink($ruta_mensajes);
+    }
+
+    unset($_SESSION['json_asociado']);
+}
+
 $portal_cuenta = ""; // Variable para controlar si el portal de cuenta está activo
 $accion= ""; // Variable para controlar la acción del usuario, sino está conectado, no puede acceder a los hilos del foro o crear nuevos hilos
 
@@ -48,6 +77,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 }
+
+$inactividad=600; // 600 segundo, lo que son 10 minutos.
+    if (isset($_SESSION['tiempo'])) {
+    $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
+    $vida_sesion = time() - $_SESSION['tiempo'];
+       if ($vida_sesion > $inactividad) {
+          if (file_exists('../../ASSETS/JSON/usuarios.json')) {
+               $usuarios = json_decode(file_get_contents('../../ASSETS/JSON/usuarios.json'), true);
+               if (is_array($usuarios)) {
+               foreach ($usuarios as $idx => $usuario_data) {
+                  if (isset($usuario_data['usuario']) && $usuario_data['usuario'] == $nombre_usuario) {
+                    $usuarios[$idx]['conectado'] = false;
+                    break;
+                }
+            }
+            file_put_contents('../../ASSETS/JSON/usuarios.json', json_encode($usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+           }
+         }
+          session_unset();
+          session_destroy();
+          header("Location: ../../index.php");
+          exit();
+      }
+   }
+
 
 if (isset($_POST['cerrar_sesion'])) {
     $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
@@ -121,10 +175,6 @@ if (isset($_POST['enviar'])){
         exit();
     }  
 }
-
-
-
-
 
 ?>
 
@@ -233,7 +283,7 @@ if (isset($_POST['enviar'])){
             <div class="main_container_4">
                 <p> <i>Anecdotas</i></p>
                 <div class="barra"></div>
-                <p class="p_1">Comparte tus historias y ríe con todos.</p>     
+                <p class="p_1">Comienza el diálogo donde cada escena cobra vida.</p>     
             </div>
             <div class="main_container_5">
                     <?php
@@ -260,7 +310,9 @@ if (isset($_POST['enviar'])){
                                     foreach ($hilos as $hilo) {
                                         if ($hilo['foro'] === 'anecdotas') {
                                             echo '<div class="main_foro_container_hilos">';
-                                            echo '<div class="main_container_hilos_1">';
+                                            echo '<div class="main_container_hilos_1" > ';
+                                            echo '<div class="main_container_hilos_11" id="contenedor_1">';
+                                            echo '</div>';
                                             echo '<img src="../../ASSETS/IMAGES/' . htmlspecialchars($hilo['foto_perfil_creador']) . '" alt="foto_perfil_creador_hilo" class="perfil_hilo">';
                                             echo '<p class="usuario_hilo">' . htmlspecialchars($hilo['creador']) . '</p>';
                                             echo '</div>';
@@ -269,7 +321,17 @@ if (isset($_POST['enviar'])){
                                             if (!isset($_SESSION['usuario']) && !isset($_COOKIE['usuario']) ) {
                                                  echo '<button class="boton_hilo_1" disabled type="submit" name="ver_hilo" value="' . htmlspecialchars($hilo['array_asociado']) . '">'. htmlspecialchars($hilo['titulo']) . '</button>';
                                             }else {
+                                                echo '<div class="contenido_1">';
                                                 echo '<button class="boton_hilo_2" type="submit" name="ver_hilo" value="' . htmlspecialchars($hilo['array_asociado']) . '">'. htmlspecialchars($hilo['titulo']) . '</button>';
+                                                if (isset($_SESSION['json_asociado']) && $usuario === $hilo['creador'] ){  
+                                                       echo '<button name="eliminar_hilo" value="' . htmlspecialchars($hilo['array_asociado']) . '" class="boton_eliminar">Eliminar</button>';
+                                                } else {
+                                                     if ($usuario === $hilo['creador']) {
+                                                       echo '<button disabled name="eliminar_hilo" value="' . htmlspecialchars($hilo['array_asociado']) . '" class="boton_eliminar">Eliminar</button>';
+                                                  }
+                                                }
+                                                
+                                            echo '</div>';                                           
                                             }
                                             if (isset($_POST['ver_hilo'])){
                                                 $_SESSION['json_asociado']=$_POST['ver_hilo'];
@@ -293,27 +355,30 @@ if (isset($_POST['enviar'])){
                 <div class="main_foro_container_2">
                    <div class="Buscador">
 		              <form class="Buscador_1"  method="post">
-			          <textarea id="mensaje" name="contenido" type="text" class="Buscador_"></textarea>
+			          <textarea placeholder="Ingresa aquí tu mensaje..." id="mensaje" name="contenido" type="text" class="Buscador_"></textarea>
                       <?php
                       if (isset($_SESSION['json_asociado'])){
                         if (isset($_SESSION['usuario']) || isset($_COOKIE['usuario']) && isset($_SESSION['json_asociado']) ) {
                          echo '<button id="enviar" name="enviar"  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
                           } 
                       } else{
-                                                  echo '<button name="enviar" disabled  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
+                        echo '<button name="enviar" disabled  class="Boton_3"><img class="Imagen_Boton_3" src="../../ASSETS/IMAGES/enviar.png" alt="Boton_Buscar"></button>';
 
                       }
                       
                         ?>
 
                         <script>
-                          const textarea = document.getElementById('mensaje');
-                          const boton = document.getElementById('enviar');
+                         document.addEventListener('DOMContentLoaded', () => {
+                           const textarea = document.getElementById('mensaje');
+                           const boton = document.getElementById('enviar');
+                           boton.disabled = textarea.value.trim() === '';
 
-                          textarea.addEventListener('input', () => {
-                              boton.disabled = textarea.value.trim() === '';
+                           textarea.addEventListener('input', () => {
+                             boton.disabled = textarea.value.trim() === '';
                            });
-                        </script>                           
+                         });
+                       </script>                         
 		              </form>
 	               </div>         
                    <div class="mensajes" id="contenedorMensajes">
@@ -355,3 +420,5 @@ if (isset($_POST['enviar'])){
 </script>
 </body>
 </html>
+
+

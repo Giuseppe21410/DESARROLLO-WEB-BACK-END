@@ -67,6 +67,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+$inactividad=600; // 600 segundo, lo que son 10 minutos.
+    if (isset($_SESSION['tiempo'])) {
+    $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
+    $vida_sesion = time() - $_SESSION['tiempo'];
+       if ($vida_sesion > $inactividad) {
+          if (file_exists('../ASSETS/JSON/usuarios.json')) {
+               $usuarios = json_decode(file_get_contents('../ASSETS/JSON/usuarios.json'), true);
+               if (is_array($usuarios)) {
+               foreach ($usuarios as $idx => $usuario_data) {
+                  if (isset($usuario_data['usuario']) && $usuario_data['usuario'] == $nombre_usuario) {
+                    $usuarios[$idx]['conectado'] = false;
+                    break;
+                }
+            }
+            file_put_contents('../ASSETS/JSON/usuarios.json', json_encode($usuarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+           }
+         }
+          session_unset();
+          session_destroy();
+          header("Location: ../index.php");
+          exit();
+      }
+   }
+
+
 if (isset($_POST['cerrar_sesion'])) {
     $nombre_usuario = $_SESSION['usuario'] ?? ($_COOKIE['usuario'] ?? '');
 

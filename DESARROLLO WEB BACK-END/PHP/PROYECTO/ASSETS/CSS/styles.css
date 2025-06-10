@@ -192,11 +192,27 @@ main{
   height: 90vh;
 }
 
+.boton_eliminar{
+  color: red;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 9px;
+
+}
+
+.contenido_1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+}
 
 .cerrar-sesion-form{
   margin-bottom: 0;
   align-self:flex-end ;
   margin-right: 20px;
+
 }
 
 .usuario_conectado{
@@ -238,6 +254,15 @@ main{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.circulo{
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  position: absolute;
+  top: -5px;
+  left: 2px;
+
+}
 .main_estadistica{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
@@ -552,12 +577,17 @@ i{
   font-size: 12px;
 }
 
+.main_container_hilos_11{
+  position: relative;
+}
+
 .perfil_hilo{
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-left:10px ;
   transform: translate(-10%, 0%);
+
 }
 
 .main_container_hilos_1{
@@ -582,6 +612,7 @@ i{
   align-items: flex-start;
   width: 220px;
   height: 70px;
+  max-width: 220px;
 }
 
 .main_container_hilos_2 p{
@@ -649,7 +680,7 @@ i{
 }
 
 .fecha{
-  font-size: 6px;
+  font-size: 7px;
   align-self: flex-end ;
 }
 

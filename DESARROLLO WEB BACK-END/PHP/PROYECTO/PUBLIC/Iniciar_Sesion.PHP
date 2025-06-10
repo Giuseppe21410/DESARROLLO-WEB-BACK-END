@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // Leer usuarios desde usuarios.json
 $ruta_json = '../ASSETS/JSON/usuarios.json';
 if (file_exists($ruta_json)) {
@@ -15,6 +16,7 @@ if (file_exists($ruta_json)) {
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['tiempo']=time();
     $nombre = $_POST['usuario'] ?? '';
     $clave  = $_POST['password'] ?? '';
 
@@ -28,8 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Marcar como conectado en el array completo
             $usuarios[$idx]['conectado'] = true;
+
+            
             
             if (isset($_POST['recordarme'])) {
+                $_SESSION['tiempo']=null;
                 setcookie('usuario', $usuario['usuario'], [
                 'expires' => time() + (86400 * 30),
                 'path' => '/',
