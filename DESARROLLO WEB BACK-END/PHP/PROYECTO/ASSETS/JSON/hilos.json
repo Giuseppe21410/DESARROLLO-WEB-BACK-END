@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "titulo": "Hola",
+        "foro": "social",
+        "descripcion": "dadad",
+        "array_asociado": "social_0.json",
+        "fecha_creacion": "2025-06-10 13:56:41",
+        "creador": "admin",
+        "foto_perfil_creador": "perfil_5.jpeg"
+    },
+    {
+        "titulo": "dada",
+        "foro": "social",
+        "descripcion": "dada",
+        "array_asociado": "social_1.json",
+        "fecha_creacion": "2025-06-10 14:06:17",
+        "creador": "admin",
+        "foto_perfil_creador": "perfil_5.jpeg"
+    }
+]

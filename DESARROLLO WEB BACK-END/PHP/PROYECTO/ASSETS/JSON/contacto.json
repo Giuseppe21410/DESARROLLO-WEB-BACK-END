@@ -1,3 +1,9 @@
 [
-
+    {
+        "nombre": "Diego",
+        "correo": "giusepestu@gmail.com",
+        "asunto": "dada",
+        "mensaje": "dadada",
+        "fecha": "2025-06-10 13:17:46"
+    }
 ]

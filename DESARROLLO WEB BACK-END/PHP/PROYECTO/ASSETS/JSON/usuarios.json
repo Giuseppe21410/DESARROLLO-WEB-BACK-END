@@ -4,13 +4,20 @@
         "correo": "giusepestu@gmail.com",
         "password": "$2y$10$oq6rFPcgNbCW29.WPKps6eIfW5iXFsrMdJ6Z7ZlVlzYZRrY6KGrfa",
         "imagen_perfil": "perfil_5.jpeg",
-        "conectado": false
+        "conectado": true
     },
     {
         "usuario": "admin_1",
         "correo": "giusepestu@gmail.com",
         "password": "$2y$10$YDZbpXldDvpX3IAJfWgnnukDaZBrWkDbg93LtEhHrIL\/5GDsE.stq",
         "imagen_perfil": "perfil_6.jpg",
+        "conectado": false
+    },
+    {
+        "usuario": "manolo",
+        "correo": "giusepestu@gmail.com",
+        "password": "$2y$10$4t4K1VArFt5NbtjQ6JaiR.5v9wYfChA0s1HmjN9cspwqWfBhMXO52",
+        "imagen_perfil": "perfil_4.jpeg",
         "conectado": false
     }
 ]
