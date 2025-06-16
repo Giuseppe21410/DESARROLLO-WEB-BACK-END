@@ -80,9 +80,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		</form>
 	</div>
 	<div class="Elementos_Derecha">
-		<div class="Imagen_fondo_1">
-			<a href="http://localhost/phpmyadmin/"><img class="Imagen_Boton_5" src="../../ASSETS/IMAGES/config.png" alt="Boton_Configuración"></a>
-		</div>
+
 		<div class="Imagen_fondo">
 			<svg class="Imagen_Boton_4" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
 		</div>
@@ -100,6 +98,36 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="page_content">
 	<main>
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Biblioteca</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https:/bases_datos_biblioteca.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
+		</div>
+		</div>
+		<a type="download" class="Link" href="../../../MARIADB/BASES DE DATOS/biblioteca_municipal.sql">Se genera un SQL sobre una biblioteca</a>
+		<p class="subtitulo">Un foro es un espacio abierto de intercambio donde las ideas, dudas y conocimientos se comparten para que todos aprendan.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📱</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Redes Sociales</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https:/bases_datos_RRSS.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
+		</div>
+		</div>
+		<a class="Link" href="../../../MARIADB/01_RRSS.php">Se genera un script para crear una base de datos</a>
+		<p class="subtitulo">Una base de datos para redes sociales es el corazón que conecta usuarios, gestiona sus relaciones y almacena sus publicaciones para crear una experiencia interactiva y dinámica.</p>
+	</div>
+
     <h3  class="Titulo_Imagenes">Imágenes</h3>
     <div class="Imagenes">
 		<img src="../../ASSETS/IMAGES/image_5.jpg" alt="Imagen_1">

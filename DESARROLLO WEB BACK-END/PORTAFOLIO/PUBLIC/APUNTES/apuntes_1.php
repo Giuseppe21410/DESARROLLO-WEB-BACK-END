@@ -80,9 +80,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		</form>
 	</div>
 	<div class="Elementos_Derecha">
-		<div class="Imagen_fondo_1">
-			<a href="http://localhost/phpmyadmin/"><img class="Imagen_Boton_5" src="../../ASSETS/IMAGES/config.png" alt="Boton_Configuración"></a>
-		</div>
 		<div class="Imagen_fondo">
 			<svg class="Imagen_Boton_4" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg>
 		</div>
@@ -214,6 +211,22 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 		<a download="13_PDF.php" class="Link" href="../../../PHP/13_PDF.php">Se descarga los apuntes sobre como generar un PDF.</a>
 		<p class="subtitulo">Los documentos PDF conservan la forma, el contenido y la intención, sin importar dónde o cómo se abran.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">MARIADB</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.mariadb.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="01_MariaDB.txt" class="Link" href="../../../MARIADB/APUNTES/01_MariaDB_comandos.txt">Se descarga los apuntes sobre como manipular bases de datos.</a>
+		<p class="subtitulo">MariaDB es un sistema de gestión de bases de datos relacional, libre y de alto rendimiento, desarrollado como una alternativa compatible con MySQL.</p>
 	</div>
 
 	<div class="Indexacion">

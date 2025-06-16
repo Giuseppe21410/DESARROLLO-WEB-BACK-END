@@ -27,7 +27,7 @@
   display: flex;
   border-radius: 50px;
   padding: 15px;
-  box-shadow:  0 0 5px rgba(0, 0, 0, 0.6);
+  box-shadow:  0 0 4px rgba(0, 0, 0, 0.2);
   height: 10px;
   width: 660px; 
 
@@ -38,7 +38,7 @@
 }
 
 .Buscador:hover{
-  box-shadow:  0 0 8px rgba(0, 0, 0, 0.6);
+  box-shadow:  0 0 5px rgba(0, 0, 0, 0.6);
 }
 
 .Encabezado_Google.fijo{
@@ -53,10 +53,10 @@
 }
 
 .Barra_lateral{
-  background-color: grey;
-  height: 25px;
+  background-color: #dadce0;
+  height: 30px;
   width: 0.5px;
-  transform: translate(-50%,-25%);
+  transform: translate(-50%,-30%);
 }
 
 
@@ -86,7 +86,7 @@ form {
   height: 20px;
   margin-right: 10px;
   cursor: pointer;
-  transform: translate(0%,-15%);
+  transform: translate(0%,-25%);
 }
 
 
@@ -102,7 +102,7 @@ form {
   margin-right: 10px;
   margin-left: 10px;
   cursor: pointer;
-  transform: translate(0%,-15%);
+  transform: translate(0%,-25%);
 }
 
 .Imagen_Boton_2{
@@ -115,7 +115,7 @@ form {
   height: 20px;
   margin-right: 10px;
   cursor: pointer;
-  transform: translate(0%,-15%);
+  transform: translate(0%,-25%);
 }
 
 .Imagen_Boton_3{
