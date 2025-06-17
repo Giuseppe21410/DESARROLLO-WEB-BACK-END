@@ -23,14 +23,33 @@
 
 .Buscador {
   position: absolute;
-  left: 275px;
-  display: flex;
+  left: 260px;
   border-radius: 50px;
   padding: 15px;
   box-shadow:  0 0 4px rgba(0, 0, 0, 0.2);
   height: 10px;
-  width: 660px; 
+  width: 680px; 
+  background-color: #ffffff;
+  
 
+}
+
+.Buscador_2 {
+  position: absolute;
+  left: 260px;
+  border-radius: 30px;
+  padding: 15px;
+  box-shadow:  0 0 4px rgba(0, 0, 0, 0.2);
+  height: 300px;
+  width: 680px; 
+  top: 20px;
+  background-color: #ffffff;
+  z-index: 1;
+
+}
+
+.Buscador_2:hover{
+  box-shadow:  0 0 5px rgba(0, 0, 0, 0.6);
 }
 
 .Tres_Puntos{
@@ -64,20 +83,97 @@
 .Buscador_{
   resize: none;
   outline: none;
-  width: 550px;
+  width: 570px;
   height: 25px;
   transform: translate(0%,-25%);
 }
+
+.Buscador_4{
+  resize: none;
+  outline: none;
+  width: 580px;
+  height: 25px;
+  transform: translate(0%,-25%);
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.Buscador_5{
+  resize: none;
+  outline: none;
+  width: 550px;
+  height: 25px;
+  transform: translate(0%,-25%);
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.busquedas{
+  width: 99%;
+  margin-top: 8px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color:#531a8d ;
+  font-size: 14px;
+  padding: 5px;
+}
+
+
+
+.busquedas:hover{
+  background-color: #dadce0;
+  border-radius: 5px;
+}
+
+.busquedas_{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  flex-direction: column;
+  font-size: 9px;
+  margin-top: 13px;
+}
+
+.busquedas_ p{
+  text-decoration: wavy;
+  color:#777b80;
+}
+
+.busquedas p{
+  margin-left: 10px;
+  transform: translate(0%,3%);
+}
+
+.busquedas img{
+  height: auto;
+  width: 20px;
+}
+.barra_horizontal{
+  background-color: #dadce0;
+  height: 1px;
+  width: 100px;
+}
+
 
 
 form {
   display: flex;  
   gap: 5px; 
+  height: 25px;
+}
+
+.buscador_3{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index: 1;
+  transform: translate(0%,-20%);
 }
 
 .Logo_Google{
-  height: 45px;
-  width: 125px;
+  height: 40px;
+  width: 110px;
   margin-left: 40px;
 }
 
@@ -161,6 +257,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3 ease-in;
 }
 
 
@@ -168,20 +265,6 @@ form {
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-.Imagen_fondo_1{
-  background-color: transparent;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Imagen_fondo_1:hover{
-  background-color: gainsboro;
-  border-radius: 50px;
 }
 
 

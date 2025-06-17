@@ -4,7 +4,7 @@
         "correo": "giusepestu@gmail.com",
         "password": "$2y$10$oq6rFPcgNbCW29.WPKps6eIfW5iXFsrMdJ6Z7ZlVlzYZRrY6KGrfa",
         "imagen_perfil": "perfil_5.jpeg",
-        "conectado": true
+        "conectado": false
     },
     {
         "usuario": "admin_1",
