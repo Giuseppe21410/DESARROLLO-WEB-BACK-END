@@ -117,6 +117,21 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">🐠</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Turismo</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https:/invent_turismo.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
+		</div>
+		</div>
+		<a type="download" class="Link" href="../../../EJERCICIOS/13_Inventario_de_datos_de_hoteles/index.php">Se genera un inventario sobre establecimientos hoteleros</a>
+		<p class="subtitulo">El inventario de hoteles incluye la disponibilidad de habitaciones, tarifas, servicios y condiciones de reserva en tiempo real.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
 			<p class="Logo_Proyecto">📱</p>
 			<div class="Contenedor">
 				<h4 class="Titulo_">Redes Sociales</h4>
@@ -126,7 +141,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>	
 		</div>
 		</div>
-		<a class="Link" href="../../../MARIADB/01_RRSS.php">Se genera un script para crear una base de datos</a>
+		<a class="Link" href="../../../MARIADB/02_Insetar_datos-Crear_Tablas-Actualizar_y_eliminar_datos.php">Se genera un script para crear una base de datos</a>
 		<p class="subtitulo">Una base de datos para redes sociales es el corazón que conecta usuarios, gestiona sus relaciones y almacena sus publicaciones para crear una experiencia interactiva y dinámica.</p>
 	</div>
 

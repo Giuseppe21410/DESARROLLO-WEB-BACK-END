@@ -54,6 +54,7 @@
                 rewind($archivo);
                 $encabezados = fgetcsv($archivo);
 
+                
                 $pagina = isset($_POST['pagina']) ? (int)$_POST['pagina'] : 1;
                 $inicio = ($pagina - 1) * 10;
                 $fin = $inicio + 10;
