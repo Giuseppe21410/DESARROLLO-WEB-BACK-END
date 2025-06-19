@@ -4,9 +4,12 @@ if (isset($H) || isset($VV) || isset($DVV) || isset($DH)){
     unset($H, $VV, $DVV, $DH);
 }
 
+$i_1=0;
+$i_2= 0;
+
 // Incluimos los nombres de los archivos:
-$archivo_VV="../ASSETS/CSV/Viviendas_Vacacionales.csv";
-$archivo_H="../ASSETS/CSV/Establecimientos_Hoteleros.csv";
+$archivo_VV="../../CSV/Viviendas_Vacacionales.csv";
+$archivo_H="../../CSV/Establecimientos_Hoteleros.csv";
 
 // Creamos una tabla  preseleccionando las columnas que nos proponemos a añadir en la base de datos: 
 $csv_1=fopen($archivo_VV,"r");
@@ -55,9 +58,11 @@ $col_postal_4=array_search("direccion_codigo_postal", $encabezados_2);
 // Introducción a las dos tablas reccorriendo los dos CSV en función de las columnas descritas: 
 // CSV Viviendas vacacionales:
 while(($fila= fgetcsv($csv_1)) != false){
+    $i_1++;
     $VV[]=[
         "nombre" => $fila[$col_nombre_1],
         "plazas" => $fila[$col_plazas_1],
+        "id_direccion" => $i_1,
         
     ];
     $DVV[]=[ // Añadimos "[]" para acumular el contenido de las array's.
@@ -72,12 +77,14 @@ while(($fila= fgetcsv($csv_1)) != false){
 
 // CSV Establecimientos Hoteleros:
 while(($fila= fgetcsv($csv_2)) != false){
+    $i_2++;
     $H[]=[
         "nombre" => $fila[$col_nombre_2],
         "tipologia" => ($fila[$col_tipologia_2] == "_U") ? "Tipología desconocida." : $fila[$col_tipologia_2],
-        "calificacion" => ($fila[$col_calificacion_2] == "_U") ? "Con 0 estrellas." : $fila[$col_calificacion_2],
+        "calificacion" => ($fila[$col_calificacion_2] == "_U") ?  0 : $fila[$col_calificacion_2],
         "plazas" => $fila[$col_plazas_2],
         "unidades" => $fila[$col_unidades_2],
+        "id_direccion" => $i_2,
     ];
     $DH[]=[
         "direccion"=> $fila[$col_direccion_4],
