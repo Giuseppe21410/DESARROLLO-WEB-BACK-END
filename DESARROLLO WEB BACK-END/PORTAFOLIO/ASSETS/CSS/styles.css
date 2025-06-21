@@ -30,8 +30,6 @@
   height: 10px;
   width: 680px; 
   background-color: #ffffff;
-  
-
 }
 
 .Buscador_2 {
@@ -45,10 +43,24 @@
   top: 20px;
   background-color: #ffffff;
   z-index: 1;
-
 }
 
 .Buscador_2:hover{
+  box-shadow:  0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.Buscador_2_1 {
+  border-radius: 30px;
+  padding: 15px;
+  box-shadow:  0 0 4px rgba(0, 0, 0, 0.2);
+  height: 300px;
+  width: 680px; 
+  top: 20px;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.Buscador_2_1:hover{
   box-shadow:  0 0 5px rgba(0, 0, 0, 0.6);
 }
 
@@ -86,16 +98,18 @@
   width: 570px;
   height: 25px;
   transform: translate(0%,-25%);
+  border: none;
 }
 
 .Buscador_4{
-  resize: none;
-  outline: none;
   width: 580px;
   height: 25px;
   transform: translate(0%,-25%);
-  margin-left: 20px;
   font-size: 16px;
+  border: none;
+  background: none;
+  resize: none;
+  outline: none;
 }
 
 .Buscador_5{
@@ -104,8 +118,9 @@
   width: 550px;
   height: 25px;
   transform: translate(0%,-25%);
-  margin-left: 20px;
   font-size: 16px;
+  border: none;
+  background: none;
 }
 
 .busquedas{
@@ -166,9 +181,16 @@ form {
 .buscador_3{
   width: 18px;
   height: 18px;
-  position: absolute;
   z-index: 1;
   transform: translate(0%,-20%);
+}
+
+.Boton_7{
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 .Logo_Google{
@@ -183,6 +205,8 @@ form {
   margin-right: 10px;
   cursor: pointer;
   transform: translate(0%,-25%);
+  border: none;
+  background: none;
 }
 
 
@@ -190,6 +214,7 @@ form {
 .Imagen_Boton_1{
   width: 20px;
   height: 20px;
+  background: none;
 }
 
 .Boton_2{
@@ -199,6 +224,8 @@ form {
   margin-left: 10px;
   cursor: pointer;
   transform: translate(0%,-25%);
+  background: none;
+  border: none;
 }
 
 .Imagen_Boton_2{
@@ -212,6 +239,8 @@ form {
   margin-right: 10px;
   cursor: pointer;
   transform: translate(0%,-25%);
+  background: none;
+  border: none;
 }
 
 .Imagen_Boton_3{
@@ -248,6 +277,7 @@ form {
   width: 25px;
   height: 25px;
   cursor: pointer;
+  transform: translate(0px,1px);
 }
 
 .Imagen_fondo{
@@ -562,11 +592,11 @@ form {
  footer{
   margin-top: 20px;
   background-color: #f8f4f4;
-  height: 105px;
+  height: 100px;
   width: 100%;
  }
 
- main{
+ .main{
   flex-grow: 1;
   width: 680px;
   margin-left: 18%;
@@ -640,5 +670,218 @@ body{
 }
 
 .footer_content_2 p:hover{
-  color: black ;
+  color: black ; 
+}
+
+/* Llevamos a cabo los estilos de la interfaz de inicio del portafolio */
+/* HEADER */ 
+.Encabezado_Google_Portal{
+  display: flex;
+  justify-content: space-between;
+}
+
+.Encabezado_Google_Portal_1{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 5px;
+  padding: 25px;
+  
+}
+
+.Encabezado_Google_Portal_1 a{
+  cursor: pointer;
+  color: #1f1f1f;
+  font-size: 13x;
+  text-decoration: none;
+}
+
+.Encabezado_Google_Portal_1 a:hover{
+  text-decoration: underline;
+}
+
+.Encabezado_Google_Portal_2{
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  margin-right: 5px;
+  gap: 10px;
+}
+
+/* .Imagen_Boton_4*/ 
+
+.Logo_Usuario_Portal{
+  height: 35px;
+  width: 35px;
+}
+
+.Encabezado_Google_Portal_2 a{
+  cursor: pointer;
+  color: #1f1f1f;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.Encabezado_Google_Portal_2 a:hover{
+  text-decoration: underline;
+}
+
+/* MAIN */ 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer_main_content{
+  flex: 1;
+  width: 100%;
+}
+
+.footer_main_center{
+  position: absolute;
+  top: 25%;
+  right: 50%;
+  transform: translate(50%,0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo_space{
+  width: 30px;
+}
+.footer_main_titulo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer_main_titulo span {
+  font-size: 90px;
+}
+
+.B_footer{
+  color: #4285f4;
+}
+
+.a_footer{
+  color:#ec4738;
+}
+
+.c_footer{
+  color:#fbbc05;
+}
+
+.k_footer{
+  color:#4285f4;
+}
+
+.E_footer{
+  color: #34a853;
+}
+
+.n_footer{
+  color: #ec4738;
+}
+
+.d_footer{
+  color: #4285f4;
+}
+
+.Buscador_Portal{
+  border-radius: 50px;
+  padding: 15px;
+  box-shadow:  0 0 4px rgba(0, 0, 0, 0.2);
+  height: 10px;
+  width: 590px; 
+  background-color: #ffffff;
+}
+
+.Boton_8{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  transform: translate(0%,-27%);
+  background: none;
+  border: none;
+}
+
+.footer_main_botones{
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer_main_botones a{
+  background-color:#f8f4f4;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #1f1f1f;
+}
+
+.footer_main_botones a:hover{
+  border: 1px solid #dadce0;
+}
+
+/* FOOTER */
+.footer_Portal_1{
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.footer_barra_horizontal{
+  width: 100%;
+  height: 1px;
+  background-color: #dadce0;
+}
+
+.footer_Portal_2{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_Portal_2_1{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 15px;
+  padding: 15px;
+}
+
+.footer_Portal_2_1 a{
+  cursor: pointer;
+  color: #1f1f1f;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer_Portal_2_1 a:hover{
+  text-decoration: underline;
+}
+
+.footer_Portal_2_2{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-right: 15px;
+  padding: 15px;
+}
+
+.footer_Portal_2_2 a{
+  cursor: pointer;
+  color: #1f1f1f;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.footer_Portal_2_2 a:hover{
+  text-decoration: underline;
 }

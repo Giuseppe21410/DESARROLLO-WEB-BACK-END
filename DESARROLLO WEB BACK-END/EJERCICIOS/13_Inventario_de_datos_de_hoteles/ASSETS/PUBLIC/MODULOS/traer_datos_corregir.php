@@ -16,8 +16,8 @@ $csv_1=fopen($archivo_VV,"r");
 $csv_2=fopen($archivo_H,"r");
 
 // Recogemos la primera fila con el nombre de las columnas:
-$encabezados_1= fgetcsv($csv_1);
-$encabezados_2= fgetcsv($csv_2);
+$encabezados_1= fgetcsv($csv_1,0,";");
+$encabezados_2= fgetcsv($csv_2,0,";");
 
 // Creamos los arrays  para cada supuesta tabla: 
 $H=[];// Hoteles
@@ -57,42 +57,42 @@ $col_postal_4=array_search("direccion_codigo_postal", $encabezados_2);
 
 // Introducción a las dos tablas reccorriendo los dos CSV en función de las columnas descritas: 
 // CSV Viviendas vacacionales:
-while(($fila= fgetcsv($csv_1)) != false){
+while(($fila= fgetcsv($csv_1,0,";")) != false){
     $i_1++;
     $VV[]=[
-        "nombre" => $fila[$col_nombre_1],
-        "plazas" => $fila[$col_plazas_1],
+        "nombre" => ($fila[$col_nombre_1] == "_U" || $fila[$col_nombre_1] == "") ? "Nombre desconocido" : trim($fila[$col_nombre_1]),
+        "plazas" => ($fila[$col_plazas_1] == "_U" || $fila[$col_plazas_1] == 0) ? "Número de plazas desconocido" : trim($fila[$col_plazas_1]) ,
         "id_direccion" => $i_1,
         
     ];
     $DVV[]=[ // Añadimos "[]" para acumular el contenido de las array's.
-        "direccion"=> $fila[$col_direccion_3],
-        "isla"=> $fila[$col_isla_3],
-        "provincia"=> $fila[$col_provincia_3],
-        "municipio"=> $fila[$col_municipio_3],
-        "localidad"=> $fila[$col_localidad_3],
-        "CP"=> $fila[$col_postal_3], 
+        "direccion"=> ($fila[$col_direccion_3] == "_U" || $fila[$col_direccion_3] == "") ? "Dirección desconocida" : trim($fila[$col_direccion_3]),
+        "isla"=> ($fila[$col_isla_3] == "_U" || $fila[$col_isla_3] == "") ? "Isla desconocida" : trim($fila[$col_isla_3]),
+        "provincia"=> ($fila[$col_provincia_3] == "_U" || $fila[$col_provincia_3] == "") ? "Provincia desconocida" : trim($fila[$col_provincia_3]),
+        "municipio"=> ($fila[$col_municipio_3] == "_U" || $fila[$col_municipio_3] == "") ? "Municipio desconocido" : trim($fila[$col_municipio_3]),
+        "localidad"=> ($fila[$col_localidad_3]== "_U") ? "Localidad desconocida" : trim($fila[$col_localidad_3]),
+        "CP"=> ($fila[$col_postal_3] == "_U") ? 0 : trim($fila[$col_postal_3]), 
     ];
 }
 
 // CSV Establecimientos Hoteleros:
-while(($fila= fgetcsv($csv_2)) != false){
+while(($fila= fgetcsv($csv_2, 0, ";")) != false){
     $i_2++;
     $H[]=[
-        "nombre" => $fila[$col_nombre_2],
-        "tipologia" => ($fila[$col_tipologia_2] == "_U") ? "Tipología desconocida." : $fila[$col_tipologia_2],
-        "calificacion" => ($fila[$col_calificacion_2] == "_U") ?  0 : $fila[$col_calificacion_2],
-        "plazas" => $fila[$col_plazas_2],
-        "unidades" => $fila[$col_unidades_2],
+        "nombre" =>($fila[$col_nombre_2] == "_U" || $fila[$col_nombre_2]= "") ? "Nombre desconocido" : trim($fila[$col_nombre_2]),
+        "tipologia" => ($fila[$col_tipologia_2] == "_U" || $fila[$col_tipologia_2] == "") ? "Tipología desconocida." : trim($fila[$col_tipologia_2]),
+        "calificacion" => ($fila[$col_calificacion_2] == "_U" || $fila[$col_calificacion_2] == "") ?  "Sin estrellas" : trim($fila[$col_calificacion_2]),
+        "plazas" => ($fila[$col_plazas_2] == "_U" || $fila[$col_plazas_2] == 0 ) ? "Plazas desconocidas" : trim($fila[$col_plazas_2]),
+        "unidades" => ($fila[$col_unidades_2] == "_U" || $fila[$col_unidades_2] == 0 ) ? "Unidades desconocidas" : trim($fila[$col_unidades_2]),
         "id_direccion" => $i_2,
     ];
     $DH[]=[
-        "direccion"=> $fila[$col_direccion_4],
-        "isla"=> $fila[$col_isla_4],
-        "provincia"=> $fila[$col_provincia_4],
-        "municipio"=> $fila[$col_municipio_4],
-        "localidad"=> $fila[$col_localidad_4],
-        "CP"=> $fila[$col_postal_4], 
+        "direccion"=> ($fila[$col_direccion_4] == "_U" || $fila[$col_direccion_4] == "") ? "Dirección desconocida" : trim($fila[$col_direccion_4]) ,
+        "isla"=> ($fila[$col_isla_4] == "_U" || $fila[$col_isla_4] == "") ? "Isla desconocida" : trim($fila[$col_isla_4]) ,
+        "provincia"=>  ($fila[$col_provincia_4] == "_U" || $fila[$col_provincia_4] == "") ? "Provincia desconocida" : trim($fila[$col_provincia_4]),
+        "municipio"=> ($fila[$col_municipio_4] == "_U" || $fila[$col_municipio_4] == "") ? "Municipio desconocido" : trim($fila[$col_municipio_4]),
+        "localidad"=>($fila[$col_localidad_4] == "_U" || $fila[$col_localidad_4]== "") ? "Localidad desconocida" : trim($fila[$col_localidad_4]),
+        "CP"=> ($fila[$col_postal_4] == "_U") ? 0 : trim($fila[$col_postal_4]), 
     ];
 }
 

@@ -73,7 +73,7 @@ $tablas = [
         nombre VARCHAR(255) NOT NULL,
         plazas INT NOT NULL,
         tipologia VARCHAR(255) NOT NULL,
-        calificacion INT NOT NULL,
+        calificacion VARCHAR(255) NOT NULL,
         unidades_explotacion INT NOT NULL,
         id_direccion INT NOT NULL,
         FOREIGN KEY (id_direccion) REFERENCES direccionHoteles(direccion_H_id)

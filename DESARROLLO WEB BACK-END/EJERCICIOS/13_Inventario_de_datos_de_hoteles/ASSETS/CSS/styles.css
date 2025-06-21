@@ -1,0 +1,103 @@
+body {
+      font-family: sans-serif;
+      margin: 20px;
+      background-color: #f0f2f5;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .filtros {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      margin-left: 5px;
+    }
+
+    .filtros_ {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      margin-left: 15px;
+    }
+
+    select {
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    ._ {
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 5px;
+      color: white;
+      background-color:darkgray;
+    }
+
+    .inventario {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .tarjeta {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #2b7a78;
+    }
+
+    .tarjeta h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #2b7a78;
+    }
+
+    .tarjeta p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .paginacion {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .paginacion button {
+      padding: 8px 12px;
+      background: #2b7a78;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .paginacion button[disabled] {
+      background: #ccc;
+      cursor: default;
+    }
+
+    @media (min-width: 600px) {
+      .tarjeta {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .tarjeta > div {
+        flex: 1;
+        padding: 0 10px;
+      }
+    }

@@ -47,7 +47,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 </script>
 <body>
 <header class="Encabezado_Google" id="miEncabezado">
-	<img class="Logo_Google" src="../../ASSETS/IMAGES/Google_2015_logo.svg.png" alt="Google_Logo">
+	<a href="../../../../index.php"><img class="Logo_Google" src="../../ASSETS/IMAGES/Google_2015_logo.svg.png" alt="Google_Logo"></a>
 	<div id="mensaje_1" class="Buscador">
 		<form id="mensaje_5" method="post">
 			<div id="buscador"></div>
@@ -70,7 +70,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </header>
 <div class="Elementos_sub">
-	<a href="../../../../index.php" >PHP</a>
+	<a href="../../../../index_1.php" >PHP</a>
 	<a href="../MARIADB/index.php">Maria DB</a>
 	<a href="">Codelgniter</a>
 	<a href="../../apuntes.php">Apuntes</a>
@@ -79,7 +79,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="Linea"></div>
 
 <div class="page_content" id="mensaje_3">
-	<main>
+	<main class="main">
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
@@ -158,18 +158,6 @@ window.addEventListener('pageshow', (event) => {
 
 	document.getElementById("mensaje_4").innerHTML='<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Cuántos años tiene MariaDB?</p> </div>' + '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Qué es el comunismo?</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Cuántos años tiene el Sol?</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Cuántos planetas hay en el Sistema Solar?</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>Habitantes en el planeta Tierra</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>Manual de Rust</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Quién empezó la Guerra de Corea?</p> </div>'+ '<div class="busquedas_"><p><i>Denunciar predicciones inadecuadas.</i></p><a href=""> Más información</a></div>';
 	
-	
-    input.addEventListener("keydown", function () {
-	  let texto = input.value;
-      if (texto.trim() !== "") {
-        input.className = "Buscador_5";
-        document.getElementById("buscador_2").style.display = 'block';
-      } else {
-        input.className = "Buscador_4";
-        document.getElementById("buscador_2").style.display = 'none';
-      }
-    });
-
 
     input.className = "Buscador_4";
     document.getElementById("mensaje_1").className = "Buscador_2";
@@ -181,6 +169,19 @@ window.addEventListener('pageshow', (event) => {
         9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
       </svg>`;
   });
+
+  const searchInput = document.getElementById("mensaje");
+  const clearButton = document.getElementById("buscador_2");
+
+  searchInput.addEventListener("input", () => {
+      if (searchInput.value.trim() !== "") {
+        searchInput.className = "Buscador_5";
+        clearButton.style.display = 'block';
+      } else {
+        searchInput.className = "Buscador_4";
+        clearButton.style.display = 'none';
+      }
+    });
 
   document.addEventListener("reset", function () {
     const input = document.getElementById("mensaje");

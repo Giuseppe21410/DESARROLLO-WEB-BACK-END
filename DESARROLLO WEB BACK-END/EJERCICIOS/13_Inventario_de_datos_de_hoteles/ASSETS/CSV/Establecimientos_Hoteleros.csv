@@ -1,4 +1,4 @@
-establecimiento_id;establecimiento_nombre_comercial;establecimiento_modalidad;establecimiento_tipologia;establecimiento_clasificacion;direccion;direccion_isla_nombre;direccion_provincia_nombre;direcion_municipio_nombre;direccion_localidad_nombre;direccion_codigo_postal;unidades_explotacion;plazas;longitud;latitud
+establecimiento_id;establecimiento_nombre_comercial;establecimiento_modalidad;establecimiento_tipologia;establecimiento_clasificacion;direccion;direccion_isla_nombre;direccion_provincia_nombre;direccion_municipio_nombre;direccion_localidad_nombre;direccion_codigo_postal;unidades_explotacion;plazas;longitud;latitud
 -38-4-0000001;San Diego;Hotelera;_U;Dos Estrellas;Avda. San Diego, 40;Tenerife;Santa Cruz De Tenerife;San Cristobal De La Laguna;_U;_U;0;0;0;0
 -38-4-0000003;Sin Denominación;Hotelera;_U;Categoria Unica;Calle Carrera Escultor Estévez;Tenerife;Santa Cruz De Tenerife;La Orotava;_U;_U;0;0;0;0
 A-38-4-0006100;Pez Azul;Hotelera;Hotel;Cuatro Estrellas;C/. Rector Benito Rodriguez Rios, 1;Tenerife;Santa Cruz De Tenerife;Puerto De La Cruz;Puerto De La Cruz;38400;135;270;-16.542721;28.412559
