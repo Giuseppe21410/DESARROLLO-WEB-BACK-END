@@ -79,7 +79,7 @@ while(($fila= fgetcsv($csv_1,0,";")) != false){
 while(($fila= fgetcsv($csv_2, 0, ";")) != false){
     $i_2++;
     $H[]=[
-        "nombre" =>($fila[$col_nombre_2] == "_U" || $fila[$col_nombre_2]= "") ? "Nombre desconocido" : trim($fila[$col_nombre_2]),
+        "nombre" =>($fila[$col_nombre_2] == "_U" || $fila[$col_nombre_2]== "") ? "Nombre desconocido" : trim($fila[$col_nombre_2]),
         "tipologia" => ($fila[$col_tipologia_2] == "_U" || $fila[$col_tipologia_2] == "") ? "Tipología desconocida." : trim($fila[$col_tipologia_2]),
         "calificacion" => ($fila[$col_calificacion_2] == "_U" || $fila[$col_calificacion_2] == "") ?  "Sin estrellas" : trim($fila[$col_calificacion_2]),
         "plazas" => ($fila[$col_plazas_2] == "_U" || $fila[$col_plazas_2] == 0 ) ? "Plazas desconocidas" : trim($fila[$col_plazas_2]),

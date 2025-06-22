@@ -58,11 +58,14 @@ echo "Has visitado esta página " . $_SESSION["contador"] . " veces.<br>";
 if (!isset($_COOKIE["visitas"])) {
     setcookie("visitas", 1, time() + (86400 * 30)); // Establece una cookie que expira en 30 días
     echo "Bienvenido por primera vez.<br>";
-} else {
+} else  {
     $visitas = $_COOKIE["visitas"] + 1;
     setcookie("visitas", $visitas, time() + (86400 * 30)); // Actualiza la cookie
     echo "Has visitado esta página $visitas veces.<br>";
 }
+
+// Para eliminar la coockie: 
+setcookie("visitas","",time()-3600); // De esta manera, envimos  la coockie al pasado y se elimina automaticamente.
 // $_FILES se usa para manejar archivos subidos por el usuario
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['archivo'])) {
     $archivo = $_FILES['archivo'];
