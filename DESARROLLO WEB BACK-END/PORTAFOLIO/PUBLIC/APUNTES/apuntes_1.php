@@ -105,89 +105,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="Titulo_Logo">
 			<p class="Logo_Proyecto">📚</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">PHPMailer</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.phpmailer.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="14_PHPMailer.php" class="Link" href="../../../PHP/14_PHPMailer.php">Se descarga los apuntes sobre emails</a>
-		<p class="subtitulo">PHPMailer es una de las bibliotecas más utilizadas en PHP para enviar correos electrónicos de forma segura y sencilla mediante protocolos SMTP, con soporte para adjuntos, HTML y autenticación.</p>
-	</div>
-
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Validación</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.form_validation.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="15_Form_Validation.php" class="Link" href="../../../PHP/15_Form_Validation.php">Se descarga los apuntes sobre validación de formularios</a>
-		<p class="subtitulo">La validación de formularios en PHP es esencial para garantizar que los datos introducidos por el usuario sean seguros, estén completos y tengan el formato correcto antes de ser procesados o almacenados.</p>
-	</div>
-
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Manejo de errores</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.manejo_de_errores.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="16_Manejo_de_errores.php" class="Link" href="../../../PHP/16_Manejo_de_errores.php">Se descarga los apuntes sobre el manejo de errores</a>
-		<p class="subtitulo">El manejo de errores en PHP permite detectar, controlar y registrar fallos en la ejecución del código, mejorando la estabilidad, seguridad y experiencia del usuario en una aplicación web.</p>
-	</div>
-
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Expresiones regulares</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.expresiones_regulares.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="17_Expresiones_regulares.php" class="Link" href="../../../PHP/17_Expresiones_regulares.php">Se descarga los apuntes sobre las expresiones regulares</a>
-		<p class="subtitulo">Las expresiones regulares permiten buscar, validar y manipular patrones complejos dentro de cadenas de texto, siendo una herramienta poderosa para el procesamiento de datos en PHP y otros lenguajes.</p>
-	</div>
-
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Include y Require</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.include_require.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="18_Include_Require.php" class="Link" href="../../../PHP/18_Include_Require.php">Se descarga los apuntes sobre la inclusión de archivos</a>
-		<p class="subtitulo">Las sentencias include y require permiten reutilizar código en PHP importando archivos externos, mejorando la organización y el mantenimiento de las aplicaciones.</p>
-	</div>
-
-
-	
-
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
 				<h4 class="Titulo_">Fechas</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.fechas.es</p>
@@ -230,6 +147,118 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 		<a download="01_MariaDB.txt" class="Link" href="../../../MARIADB/APUNTES/01_MariaDB_comandos.txt">Se descarga los apuntes sobre como manipular bases de datos.</a>
 		<p class="subtitulo">MariaDB es un sistema de gestión de bases de datos relacional, libre y de alto rendimiento, desarrollado como una alternativa compatible con MySQL.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Clases-Objetos</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.clases_objetos.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="21_Clases_Objetos.php" class="Link" href="../../../PHP/21_Clases_Objetos.php">Se descarga los apuntes sobre las clases y los objetos.</a>
+		<p class="subtitulo">En PHP, una clase es un molde que define las propiedades y métodos comunes, mientras que un objeto es una instancia concreta de esa clase que puede usar sus funcionalidades.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Constructor-Destructor</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.constructor_destructor.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="21_OPP_Constructor_Destructor.php" class="Link" href="../../../PHP/22_OPP_Constructor_Destructor.php">Se descarga los apuntes sobre las palabras clave constructor y destructor.</a>
+		<p class="subtitulo">En PHP, el constructor (__construct) se ejecuta automáticamente al crear un objeto para inicializarlo, mientras que el destructor (__destruct) se llama cuando el objeto se destruye, permitiendo liberar recursos o realizar tareas finales.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Modificadores de Acceso</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.modificadoresacceso.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="23_Modificadores_de_Acceso.php" class="Link" href="../../../PHP/23_Modificadores_de_Acceso.php">Se descarga los apuntes sobre los modificadores de acceso en OPP.</a>
+		<p class="subtitulo">Los modificadores de acceso en PHP —public, protected y private— controlan la visibilidad de propiedades y métodos, definiendo desde dónde pueden ser accedidos dentro del código.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Herencia</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.herencia.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="24_Herencia.php" class="Link" href="../../../PHP/24_Herencia.php">Se descarga los apuntes sobre la herencia en OPP.</a>
+		<p class="subtitulo">La herencia en PHP permite que una clase derive de otra, heredando sus propiedades y métodos, lo que favorece la reutilización de código y la creación de jerarquías lógicas entre clases.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Constant Class</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.contactclass.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="25_Constant_Class.php" class="Link" href="../../../PHP/25_Constant_Class.php">Se descarga los apuntes sobre las constantes en clases.</a>
+		<p class="subtitulo">En PHP, una constante de clase se define con const y representa un valor fijo que no puede cambiar; se accede a ella usando el operador de resolución de ámbito (::) sin necesidad de instanciar la clase.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Clases Abstractas e Interfaces</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.interfaces_abstract_classes.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="26_Interfaces_Abstract_Classes.php" class="Link" href="../../../PHP/26_Interfaces_Abstract_Classes.php">Se descarga los apuntes sobre las clases abstractas y las interfaces en OPP.</a>
+		<p class="subtitulo">Tanto las clases abstractas como las interfaces permiten definir estructuras comunes para varias clases, pero mientras las clases abstractas pueden incluir implementación parcial, las interfaces solo definen métodos sin cuerpo que deben ser implementados por completo.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Traits</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://traits.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="27_Traits.php" class="Link" href="../../../PHP/27_Traits.php">Se descarga los apuntes sobre los "traits" en OPP.</a>
+		<p class="subtitulo">Los Traits en PHP permiten reutilizar métodos entre múltiples clases, resolviendo la limitación de la herencia simple al proporcionar una forma flexible de compartir funcionalidades sin necesidad de heredar.</p>
 	</div>
 
 	<div class="Indexacion">

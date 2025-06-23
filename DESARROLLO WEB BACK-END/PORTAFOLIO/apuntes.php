@@ -263,6 +263,86 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">Un array permite almacenar múltiples valores en una sola variable, ya sea como una lista (índices numéricos) o como un conjunto de pares clave-valor (arrays asociativos).</p>
 	</div>
 
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">PHPMailer</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.phpmailer.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="14_PHPMailer.php" class="Link" href="../PHP/14_PHPMailer.php">Se descarga los apuntes sobre emails</a>
+		<p class="subtitulo">PHPMailer es una de las bibliotecas más utilizadas en PHP para enviar correos electrónicos de forma segura y sencilla mediante protocolos SMTP, con soporte para adjuntos, HTML y autenticación.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Validación</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.form_validation.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="15_Form_Validation.php" class="Link" href="../PHP/15_Form_Validation.php">Se descarga los apuntes sobre validación de formularios</a>
+		<p class="subtitulo">La validación de formularios en PHP es esencial para garantizar que los datos introducidos por el usuario sean seguros, estén completos y tengan el formato correcto antes de ser procesados o almacenados.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Manejo de errores</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.manejo_de_errores.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="16_Manejo_de_errores.php" class="Link" href="../PHP/16_Manejo_de_errores.php">Se descarga los apuntes sobre el manejo de errores</a>
+		<p class="subtitulo">El manejo de errores en PHP permite detectar, controlar y registrar fallos en la ejecución del código, mejorando la estabilidad, seguridad y experiencia del usuario en una aplicación web.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Expresiones regulares</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.expresiones_regulares.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="17_Expresiones_regulares.php" class="Link" href="../PHP/17_Expresiones_regulares.php">Se descarga los apuntes sobre las expresiones regulares</a>
+		<p class="subtitulo">Las expresiones regulares permiten buscar, validar y manipular patrones complejos dentro de cadenas de texto, siendo una herramienta poderosa para el procesamiento de datos en PHP y otros lenguajes.</p>
+	</div>
+
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">📚</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Include y Require</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.include_require.es</p>
+					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>
+				
+		    </div>
+		</div>
+		<a download="18_Include_Require.php" class="Link" href="../PHP/18_Include_Require.php">Se descarga los apuntes sobre la inclusión de archivos</a>
+		<p class="subtitulo">Las sentencias include y require permiten reutilizar código en PHP importando archivos externos, mejorando la organización y el mantenimiento de las aplicaciones.</p>
+	</div>
+
 	
 
 	<div class="Indexacion">

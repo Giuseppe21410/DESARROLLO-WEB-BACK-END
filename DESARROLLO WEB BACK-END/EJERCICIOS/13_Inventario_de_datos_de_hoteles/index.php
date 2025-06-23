@@ -117,16 +117,6 @@ function construirConsulta($filters, $limit, $offset)
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sector turístico de Canarias</title>
   <link rel="stylesheet" href="./ASSETS/CSS/styles.css">
-  <style>
-    .disabled {
-      pointer-events: none;
-      color: gray;
-      opacity: 0.5;
-    }
-    .pagina {
-      margin: 0 8px;
-    }
-  </style>
 </head>
 <body>
   <h1>Sector turístico de Canarias</h1>
@@ -208,15 +198,31 @@ function construirConsulta($filters, $limit, $offset)
     ];
 
     $pdo = new PDO("mysql:host=localhost;dbname=viviendas_vacacionales_establecimientos_hoteleros;charset=utf8", "root", "");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $consulta = construirConsulta($filtros, $limit, $offset);
-    $stmt = $pdo->prepare($consulta['sql']);
-    $stmt->execute($consulta['params']);
-    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Procesar eliminación si se ha enviado un formulario
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['eliminar_id'], $_POST['modalidad'])) {
+    $id = intval($_POST['eliminar_id']);
+    $modalidad = $_POST['modalidad'];
 
-    if (count($resultados) > 0) {
-      foreach ($resultados as $fila) {
+    if ($modalidad === "Viviendas Vacacionales") {
+        $sql_eliminar = "DELETE FROM viviendavacacional WHERE vivienda_id = :id";
+    } else {
+        $sql_eliminar = "DELETE FROM establecimientohotelero WHERE establecimiento_id = :id";
+    }
+
+    $stmt = $pdo->prepare($sql_eliminar);
+    $stmt->execute(['id' => $id]);
+}
+
+// Obtener y mostrar resultados
+$consulta = construirConsulta($filtros, $limit, $offset);
+$stmt = $pdo->prepare($consulta['sql']);
+$stmt->execute($consulta['params']);
+$resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (count($resultados) > 0) {
+    foreach ($resultados as $fila) {
         echo '<div class="tarjeta">';
         echo '<h2>' . htmlspecialchars($fila['nombre']) . '</h2>';
         echo "<p>Dirección: " . htmlspecialchars($fila['direccion']) . "</p>";
@@ -225,16 +231,27 @@ function construirConsulta($filters, $limit, $offset)
         echo "<p>Localidad: " . htmlspecialchars($fila['localidad']) . "</p>";
         echo "<p>CP: " . htmlspecialchars($fila['CP']) . "</p>";
         echo "<p>Plazas: " . htmlspecialchars($fila['plazas']) . "</p>";
-        if ($Modalidad == "Establecimientos Hoteleros") {
-          echo "<p>Tipología: " . htmlspecialchars($fila['tipologia']) . "</p>";
-          echo "<p>Calificación: " . htmlspecialchars($fila['calificacion']) . "</p>";
+        if ($Modalidad === "Establecimientos Hoteleros") {
+            echo "<p>Tipología: " . htmlspecialchars($fila['tipologia']) . "</p>";
+            echo "<p>Calificación: " . htmlspecialchars($fila['calificacion']) . "</p>";
         }
+
+        // Determinar ID correcto según modalidad
+        $id = ($Modalidad === "Viviendas Vacacionales") ? $fila['vivienda_id'] : $fila['establecimiento_id'];
+
+        // Formulario con ID oculto y modalidad
+        echo '<form method="POST" class="Eliminar_Fila">';
+        echo '<input type="hidden" name="eliminar_id" value="' . htmlspecialchars($id) . '">';
+        echo '<input type="hidden" name="modalidad" value="' . htmlspecialchars($Modalidad) . '">';
+        echo '<button type="submit" name="EliminarFila">Eliminar</button>';
+        echo '</form>';
+
         echo '</div>';
-      }
-    } else {
-      echo "<p>No se encontraron resultados. Haga una nueva selección.</p>";
     }
-    ?>
+} else {
+    echo "<p>No se encontraron resultados. Haga una nueva selección.</p>";
+}
+?>
   </div>
 
   <div class="paginacion">

@@ -137,7 +137,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	<div class="Indexacion">
 		<div class="Google_1">
 			<div class="Google_2">
-            <a class="mayor_1" href="./../../../../index.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+            <a class="mayor_1" href="./../../../../index_1.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 			<img class="G_1" src="../../ASSETS/IMAGES/G_1.png" alt="e_google">
 			<p class="O">o</p>
 			<p class="active">o</p>
@@ -145,7 +145,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			<img class="g" src="../../ASSETS/IMAGES/g.png" alt="e_google">
 			<img class="L" src="../../ASSETS/IMAGES/l.png" alt="e_google">
 			<img class="E" src="../../ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
-            <a class="mayor" href="./../../../../index.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+            <a class="mayor" href="./../../../../index_1.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 		    </div>
 		</div>
 		
