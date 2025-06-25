@@ -145,6 +145,22 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<p class="subtitulo">Una base de datos para redes sociales es el corazón que conecta usuarios, gestiona sus relaciones y almacena sus publicaciones para crear una experiencia interactiva y dinámica.</p>
 	</div>
 
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">🗣</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Agenda de Contactos</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https:/agenda_contactos.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
+		</div>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/14_Agenda_Contactos/wiew.php">Se genera una agenda para almacenar, eliminar y modificar contactos.</a>
+		<p class="subtitulo">Una agenda de contactos es una herramienta organizada que permite almacenar, consultar y gestionar fácilmente la información personal y profesional de diversas personas.
+</p>
+	</div>
+
     <h3  class="Titulo_Imagenes">Imágenes</h3>
     <div class="Imagenes">
 		<img src="../../ASSETS/IMAGES/image_5.jpg" alt="Imagen_1">
