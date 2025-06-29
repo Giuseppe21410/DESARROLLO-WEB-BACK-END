@@ -8,11 +8,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		$busqueda = htmlspecialchars(trim($_POST['busqueda']));
 		header("Location:https://www.google.com/search?q=" . urlencode($busqueda));
 		exit();
-	} else {
-		// Si no hay término de búsqueda, redirigir a la página principal
-		header("Location: ./DESARROLLO WEB BACK-END/PORTAFOLIO/apuntes.php");
-		exit();
-	}
+	} 
 }
 ?>
 
@@ -23,7 +19,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portafolio_Giuseppe</title>
-	<link rel="stylesheet" href="./ASSETS/CSS/styles.css">
+	<link rel="stylesheet" href="../../ASSETS/CSS/styles.css">
     <script>
      // Espera a que el DOM esté completamente cargado
      document.addEventListener("DOMContentLoaded", function() {
@@ -68,7 +64,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <header class="Encabezado_Google" id="miEncabezado">
-	<a href="../../../index.php"><img class="Logo_Google" src="./ASSETS/IMAGES/Google_2015_logo.svg.png" alt="Google_Logo"></a>
+	<a href="../../../../index.php"><img class="Logo_Google" src="../../ASSETS/IMAGES/Google_2015_logo.svg.png" alt="Google_Logo"></a>
 	<div id="mensaje_1" class="Buscador">
 		<form id="mensaje_5" method="post">
 			<div id="buscador"></div>
@@ -87,15 +83,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="Imagen_fondo">
 		<a href="http://localhost/phpmyadmin/"><svg class="Imagen_Boton_4" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></a>	
 		</div>
-	    <img  class="Logo_Usuario" src="./ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		<div class="Imagen_fondo_1">
+			<img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		</div> 
     </div>
 </header>
 <div class="Elementos_sub">
-	<a href="../../index_1.php" >PHP</a>
-	<a href="./PUBLIC/MARIADB/index.php">Maria DB</a>
-	<a href="">Codelgniter</a>
-	<a class="active" href="./apuntes.php">Apuntes</a>
-	<a  href="./PUBLIC/PROYECTOS/proyectos.php">Proyectos</a>
+	<a href="../PHP/index.php" >PHP</a>
+	<a href="../MARIADB/index.php">Maria DB</a>
+	<a class="active" href="./index.php">Apuntes</a>
+	<a  href="../PROYECTOS/index.php">Proyectos</a>
 </div>
 <div class="Linea"></div>
 <div class="page_content" id="mensaje_3">
@@ -108,13 +105,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Variables</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.Variables.com</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		</div>
 			
 		</div>
-		<a download="02_Variables_y_tipos_de_datos.php" class="Link" href="../PHP/02_Variables_y_tipos_de_datos.php">Se descarga los apuntes sobre variables y tipos de datos</a>
+		<a download="02_Variables_y_tipos_de_datos.php" class="Link" href="../../../PHP/02_Variables_y_tipos_de_datos.php">Se descarga los apuntes sobre variables y tipos de datos</a>
 		<p class="subtitulo">Las variables en PHP se utilizan para almacenar información que puede cambiar a lo largo de la ejecución del programa, como números, textos o resultados de operaciones.</p>
 	</div>
 
@@ -125,13 +122,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">String</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.string.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		</div>
 			
 		</div>
-		<a download="03_String.php" class="Link" href="../PHP/03_String.php">Se descarga los apuntes sobre cadenas de texto</a>
+		<a download="03_String.php" class="Link" href="../../../PHP/03_String.php">Se descarga los apuntes sobre cadenas de texto</a>
 		<p class="subtitulo">Los strings son secuencias de caracteres que permiten trabajar con texto, ya sea para mostrar mensajes, guardar nombres o realizar búsquedas dentro de palabras y frases.</p>
 	</div>
 
@@ -142,12 +139,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Maths</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.maths.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="04_Matemáticas.php" class="Link" href="../PHP/04_Matemáticas.php">Se descarga los apuntes sobre matemáticas básicas.</a>
+		<a download="04_Matemáticas.php" class="Link" href="../../../PHP/04_Matemáticas.php">Se descarga los apuntes sobre matemáticas básicas.</a>
 		<p class="subtitulo">PHP incluye operadores matemáticos para realizar cálculos como sumas, restas, multiplicaciones,raíces o incluso potencias, muy útiles en todo tipo de programas.</p>
 	</div>
 
@@ -158,12 +155,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Operadores</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.operadores.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="05_Operadores.php" class="Link" href="../PHP/05_Operadores.php">Se descarga los apuntes sobre operadores.</a>
+		<a download="05_Operadores.php" class="Link" href="../../../PHP/05_Operadores.php">Se descarga los apuntes sobre operadores.</a>
 		<p class="subtitulo">Los operadores permiten manipular valores y variables, ya sea comparándolos (==, >, <), realizando cálculos (+, -) o evaluando condiciones lógicas (&&, ||).</p>
 	</div>
 
@@ -174,12 +171,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Condicionales</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.condicionales.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="06_Condicionales.php" class="Link" href="../PHP/06_Condicionales.php">Se descarga los apuntes sobre condicionales.</a>
+		<a download="06_Condicionales.php" class="Link" href="../../../PHP/06_Condicionales.php">Se descarga los apuntes sobre condicionales.</a>
 		<p class="subtitulo">Las estructuras condicionales como if y else permiten ejecutar distintos bloques de código según se cumplan o no ciertas condiciones, lo que añade lógica al flujo del programa.</p>
 	</div>
 
@@ -190,12 +187,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Switch</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.switch.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="07_Switch.php" class="Link" href="../PHP/07_Switch.php">Se descarga los apuntes sobre switch.</a>
+		<a download="07_Switch.php" class="Link" href="../../../PHP/07_Switch.php">Se descarga los apuntes sobre switch.</a>
 		<p class="subtitulo">El switch es una alternativa a múltiples if, útil cuando una variable puede tener varios valores distintos, y se desea ejecutar un bloque de código específico según el caso.</p>
 	</div>
 
@@ -206,12 +203,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Bucles</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.bucles.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="08_Bucles.php" class="Link" href="../PHP/08_Bucles.php">Se descarga los apuntes sobre bucles.</a>
+		<a download="08_Bucles.php" class="Link" href="../../../PHP/08_Bucles.php">Se descarga los apuntes sobre bucles.</a>
 		<p class="subtitulo">Los bucles (while, for, foreach) permiten ejecutar una o más instrucciones de forma repetida, facilitando tareas como recorrer listas, repetir acciones o procesar formularios.</p>
 	</div>
 
@@ -222,12 +219,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Funciones</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.funciones.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="09_Funciones.php" class="Link" href="../PHP/09_Funciones.php">Se descarga los apuntes sobre funciones.</a>
+		<a download="09_Funciones.php" class="Link" href="../../../PHP/09_Funciones.php">Se descarga los apuntes sobre funciones.</a>
 		<p class="subtitulo">Las funciones son bloques de código que se pueden definir una vez y reutilizar muchas veces, ayudando a organizar mejor el código y evitar repeticiones innecesarias.</p>
 	</div> 
 
@@ -238,12 +235,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Super Globals</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.super_globals.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="11_SuperGlobals.php" class="Link" href="../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
+		<a download="11_SuperGlobals.php" class="Link" href="../../../PHP/11_Super_Globals.php">Se descarga los apuntes sobre los Super Globals.</a>
 		<p class="subtitulo">Las superglobales son variables predefinidas en PHP que permiten acceder a información importante como los datos enviados por formularios ($_POST), parámetros de URL ($_GET), sesiones ($_SESSION), y más.</p>
 	</div>
 
@@ -254,12 +251,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Array</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.array.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="10_Array.php" class="Link" href="../PHP/10_Array.php">Se descarga los apuntes sobre los array</a>
+		<a download="10_Array.php" class="Link" href="../../../PHP/10_Array.php">Se descarga los apuntes sobre los array</a>
 		<p class="subtitulo">Un array permite almacenar múltiples valores en una sola variable, ya sea como una lista (índices numéricos) o como un conjunto de pares clave-valor (arrays asociativos).</p>
 	</div>
 
@@ -270,12 +267,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">PHPMailer</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.phpmailer.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="14_PHPMailer.php" class="Link" href="../PHP/14_PHPMailer.php">Se descarga los apuntes sobre emails</a>
+		<a download="14_PHPMailer.php" class="Link" href="../../../PHP/14_PHPMailer.php">Se descarga los apuntes sobre emails</a>
 		<p class="subtitulo">PHPMailer es una de las bibliotecas más utilizadas en PHP para enviar correos electrónicos de forma segura y sencilla mediante protocolos SMTP, con soporte para adjuntos, HTML y autenticación.</p>
 	</div>
 
@@ -286,12 +283,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Validación</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.form_validation.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="15_Form_Validation.php" class="Link" href="../PHP/15_Form_Validation.php">Se descarga los apuntes sobre validación de formularios</a>
+		<a download="15_Form_Validation.php" class="Link" href="../../../PHP/15_Form_Validation.php">Se descarga los apuntes sobre validación de formularios</a>
 		<p class="subtitulo">La validación de formularios en PHP es esencial para garantizar que los datos introducidos por el usuario sean seguros, estén completos y tengan el formato correcto antes de ser procesados o almacenados.</p>
 	</div>
 
@@ -302,12 +299,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Manejo de errores</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.manejo_de_errores.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="16_Manejo_de_errores.php" class="Link" href="../PHP/16_Manejo_de_errores.php">Se descarga los apuntes sobre el manejo de errores</a>
+		<a download="16_Manejo_de_errores.php" class="Link" href="../../../PHP/16_Manejo_de_errores.php">Se descarga los apuntes sobre el manejo de errores</a>
 		<p class="subtitulo">El manejo de errores en PHP permite detectar, controlar y registrar fallos en la ejecución del código, mejorando la estabilidad, seguridad y experiencia del usuario en una aplicación web.</p>
 	</div>
 
@@ -318,12 +315,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Expresiones regulares</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.expresiones_regulares.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="17_Expresiones_regulares.php" class="Link" href="../PHP/17_Expresiones_regulares.php">Se descarga los apuntes sobre las expresiones regulares</a>
+		<a download="17_Expresiones_regulares.php" class="Link" href="../../../PHP/17_Expresiones_regulares.php">Se descarga los apuntes sobre las expresiones regulares</a>
 		<p class="subtitulo">Las expresiones regulares permiten buscar, validar y manipular patrones complejos dentro de cadenas de texto, siendo una herramienta poderosa para el procesamiento de datos en PHP y otros lenguajes.</p>
 	</div>
 
@@ -334,12 +331,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				<h4 class="Titulo_">Include y Require</h4>
 				<div class="Contenedor_1">
 					<p class="Subtitulo_">https://www.include_require.es</p>
-					<img src="./ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
 		    </div>
 		</div>
-		<a download="18_Include_Require.php" class="Link" href="../PHP/18_Include_Require.php">Se descarga los apuntes sobre la inclusión de archivos</a>
+		<a download="18_Include_Require.php" class="Link" href="../../../PHP/18_Include_Require.php">Se descarga los apuntes sobre la inclusión de archivos</a>
 		<p class="subtitulo">Las sentencias include y require permiten reutilizar código en PHP importando archivos externos, mejorando la organización y el mantenimiento de las aplicaciones.</p>
 	</div>
 
@@ -348,20 +345,20 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	<div class="Indexacion">
 		<div class="Google_1">
 			<div class="Google">
-			<img class="G_1" src="./ASSETS/IMAGES/G_1.png" alt="e_google">
+			<img class="G_1" src="../../ASSETS/IMAGES/G_1.png" alt="e_google">
 			<p class="active">o</p>
 			<p class="O">o</p>
 			<p class="O">o</p>
-			<img class="g" src="./ASSETS/IMAGES/g.png" alt="g_google">
-			<img class="L" src="./ASSETS/IMAGES/l.png" alt="l_google">
-			<img class="E" src="./ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
-			<a class="mayor" href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index_1.php"><img src="./ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+			<img class="g" src="../../ASSETS/IMAGES/g.png" alt="g_google">
+			<img class="L" src="../../ASSETS/IMAGES/l.png" alt="l_google">
+			<img class="E" src="../../ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
+			<a class="mayor" href="./index_1.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 		    </div>
 		</div>
 		
 		<div class="Enlaces">
 			<a class="active">1</a>
-			<a href="./PUBLIC/APUNTES/apuntes_1.php" class="Enlace_2">2</a>
+			<a href="./index_1.php" class="Enlace_2">2</a>
 			<a class="Enlace_3">3</a>
 	   </div>
     </div>

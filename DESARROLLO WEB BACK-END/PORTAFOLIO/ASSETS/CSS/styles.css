@@ -19,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 0px 0px 0px;
 }
 
 .Buscador {
@@ -81,6 +82,7 @@
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opcional para darle sombra */
   margin: 0;
+  padding: 20px;
 }
 
 .Barra_lateral{
@@ -251,8 +253,8 @@ form {
 .Logo_Usuario{
   height: 40px;
   width: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+   transform: translate(0px,1px);
+
 }
 
 .Elementos_Derecha{
@@ -277,7 +279,7 @@ form {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  transform: translate(0px,1px);
+  transform: translate(0.2px,2px);
 }
 
 .Imagen_fondo{
@@ -289,6 +291,22 @@ form {
   justify-content: center;
   transition: all 0.3 ease-in;
 }
+
+.Imagen_fondo_1{
+  background-color: transparent;
+  width: 51px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3 ease-in;
+}
+
+.Imagen_fondo_1:hover{
+  background-color: gainsboro;
+  border-radius: 50px;
+}
+
 
 
 .Imagen_Boton_5 {
@@ -318,6 +336,7 @@ form {
   margin-left: 25px;
   padding-bottom: 10px;
   position: relative;
+  margin-top: 20px;
 }
 
 .Elementos_sub a.active{
@@ -351,13 +370,33 @@ form {
   margin-bottom: 20px;
 }
 
+.Imagenes_1{
+  display: flex;
+  gap:40px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+.Imagenes_1 img{
+  margin-top: 20px;
+  width: 600px;
+  height: 450px;
+  border-radius: 15px;
+  transition: all 0.3s ease
+}
+
+.Imagenes_1 img:hover{
+  transform: scale(1.1);
+}
+
 .Imagenes{
   display: flex;
   gap:40px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .Imagenes img{
+  margin-top: 20px;
   width: 200px;
   height: 150px;
   border-radius: 15px;
@@ -435,7 +474,7 @@ form {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  margin-left:415px;
+  margin-left:395px;
   transform: translate(-50%,-50%);
 }
 
@@ -444,7 +483,7 @@ form {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  margin-left:393px;
+  margin-left:370px;
   transform: translate(-50%,-50%);
 }
 
@@ -460,6 +499,7 @@ form {
   position: relative;
   top:5px;
   margin-left: 2px;
+  filter: saturate(1.5);
 
 }
 
@@ -469,6 +509,7 @@ form {
   position: relative;
   bottom:2px;
   margin-left: 2px;
+  filter: saturate(1.5);
 }
 
 .E{
@@ -477,6 +518,7 @@ form {
   position: relative;
   top:3px;
   margin-left: 2px;
+  filter: saturate(1.5);
 }
 
 .Google p{
@@ -485,32 +527,37 @@ form {
   color: #fbbc05;
 }
 
-.Google_2 p{
-  margin-left: 2px;
+.O{
+  margin-left: 1px;
   font-size: 32px;
   color: #fbbc05;
+  font-weight: 600;
 }
+
 
 .G_1{
   width: 22px;
   height: 26px;
   position: relative;
-  top:0px;
+  top:-1px;
   margin-left: 2px;
+  filter: saturate(1.5);
 }
 
 .Enlaces{
   position: absolute;
   display: flex;
   align-items: center;
-  margin-left:313px;
+  margin-left:285px;
+  gap: 1px;
 }
 
 .Enlaces_1{
   position: absolute;
   display: flex;
   align-items: center;
-  margin-left:314px;
+  margin-left:280px;
+  gap: 1px;
 
 }
 
@@ -558,26 +605,24 @@ form {
 
 .Google p.active{
   color: #ec4738;
+  font-weight: 600;
 }
 
-.Google_2 p.active{
+.O.active{
   color:#ec4738;
+  font-weight: 600;
 }
 
 .mayor{
   margin-left: 10px;
 }
 
-.mayor img{
-  filter: saturate(4);
-}
 
 .mayor_1{
   margin-right: 10px;
 }
 
 .mayor_1 img{
-  filter: saturate(4);
   transform: rotate(180deg);
 }
 
@@ -608,10 +653,16 @@ body{
 }
 
 .footer_content{
-  max-width: 1000;
   margin-left: 18%;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.footer_content_10{
+  margin-left: 18%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 20px 0px 0px;
 }
 
 .ubicación{

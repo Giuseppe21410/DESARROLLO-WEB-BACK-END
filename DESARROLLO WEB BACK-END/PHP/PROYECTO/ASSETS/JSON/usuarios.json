@@ -19,5 +19,12 @@
         "password": "$2y$10$4t4K1VArFt5NbtjQ6JaiR.5v9wYfChA0s1HmjN9cspwqWfBhMXO52",
         "imagen_perfil": "perfil_4.jpeg",
         "conectado": false
+    },
+    {
+        "usuario": "Nuria",
+        "correo": "joan@gmail.com",
+        "password": "$2y$10$oxwzU0r19lj6Xl8rAp1E3.JEZ7yu0cL6eT.Lgi.0inV8jOxIQW4RW",
+        "imagen_perfil": "perfil_3.jpeg",
+        "conectado": true
     }
 ]

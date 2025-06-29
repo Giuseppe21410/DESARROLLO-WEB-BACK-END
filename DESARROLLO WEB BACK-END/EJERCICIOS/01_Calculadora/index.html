@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Científica</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+  <div class="calculadora">
+    <div class="pantalla" id="pantalla"></div>
+    <div class="botones">
+      <button id="boton_1" class="boton limpiar">C</button>
+      <button id="boton_2" class="boton funcion">√</button>
+      <button id="boton_3" class="boton funcion">^</button>
+      <button id="boton_4" class="boton operador">/</button>
+
+      <button id="boton_5" class="boton">7</button>
+      <button id="boton_6" class="boton">8</button>
+      <button id="boton_7" class="boton">9</button>
+      <button id="boton_8" class="boton operador">*</button>
+
+      <button id="boton_10" class="boton">4</button>
+      <button id="boton_11" class="boton">5</button>
+      <button id="boton_12" class="boton">6</button>
+      <button id="boton_13" class="boton operador">-</button>
+
+      <button id="boton_14" class="boton">1</button>
+      <button id="boton_15" class="boton">2</button>
+      <button id="boton_16" class="boton">3</button>
+      <button id="boton_17" class="boton operador">+</button>
+
+      <button id="boton_18" class="boton">0</button>
+      <button id="boton_19" class="boton">.</button>
+      <button id="boton_20" class="boton funcion">sin</button>
+      <button id="boton_21" class="boton funcion">cos</button>
+
+      <button id="boton_22" class="boton igual">=</button>
+    </div>
+  </div>
+<script>
+    // Variables esenciales: 
+    let num1;
+    let num2;
+    let pantalla_punto;
+    let condicion;
+    const regex=/\./; // Detecta si hay un punto en la pantalla.
+    // Números y función C (Eliminar.): 
+    const boton_1 = document.getElementById("boton_1");
+    const pantalla= document.getElementById("pantalla");
+    // Eliminar contenido:
+    boton_1.addEventListener("click", function() {
+     num1=0;
+     num2=0;
+     pantalla.innerHTML="";
+     condicion="";
+    });
+    // Número 1: 
+    const boton_2 = document.getElementById("boton_14");
+    boton_2.addEventListener("click", function() {
+     pantalla.innerHTML+="1";
+    });
+    // Número 2: 
+    const boton_3 = document.getElementById("boton_15");
+    boton_3.addEventListener("click", function() {
+     pantalla.innerHTML+="2";
+    });
+    // Número 3: 
+    const boton_4 = document.getElementById("boton_16");
+    boton_4.addEventListener("click", function() {
+     pantalla.innerHTML+="3";
+    });
+    // Número 4: 
+    const boton_5 = document.getElementById("boton_10");
+    boton_5.addEventListener("click", function() {
+     pantalla.innerHTML+="4";
+    });
+    // Número 5: 
+    const boton_6 = document.getElementById("boton_11");
+    boton_6.addEventListener("click", function() {
+     pantalla.innerHTML+="5";
+    });
+    // Número 6: 
+    const boton_7 = document.getElementById("boton_12");
+    boton_7.addEventListener("click", function() {
+     pantalla.innerHTML+="6";
+    });
+    // Número 7: 
+    const boton_8 = document.getElementById("boton_5");
+    boton_8.addEventListener("click", function() {
+     pantalla.innerHTML+="7";
+    });
+    // Número 8:
+    const boton_9 = document.getElementById("boton_6");
+    boton_9.addEventListener("click", function() {
+     pantalla.innerHTML+="8";
+    });
+    // Número 9:
+    const boton_10 = document.getElementById("boton_7");
+    boton_10.addEventListener("click", function() {
+     pantalla.innerHTML+="9";
+    });
+    // Número 0:
+    const boton_12 = document.getElementById("boton_18");
+    boton_12.addEventListener("click", function() {
+     pantalla.innerHTML+="0";
+    });
+    const boton_11 = document.getElementById("boton_19");
+    boton_11.addEventListener("click", function() {
+     if (regex.test(pantalla.textContent)){
+        pantalla.innerHTML+="";
+     } else{
+        pantalla.innerHTML+=".";
+     }
+    });
+
+
+    // Operaciones de dos números:
+    // Suma:
+    const boton_suma= document.getElementById("boton_17");
+    boton_suma.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if(pantalla.textContent == ""){
+                
+            } else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="+";
+                pantalla.innerHTML="";
+            }
+        }      
+    });
+
+    // Resta:
+    const boton_resta= document.getElementById("boton_13");
+    boton_resta.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if (pantalla.textContent == ""){
+
+            }else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="-";
+                pantalla.innerHTML="";
+            }
+            
+        }     
+    });
+
+    // División:
+    const boton_division= document.getElementById("boton_4");
+    boton_division.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if (pantalla.textContent == ""){
+
+            }else{
+                 num1=parseFloat(pantalla.textContent);
+                 condicion="/";
+                 pantalla.innerHTML="";
+            } 
+        }     
+    });
+
+    // Multiplicación:
+    const boton_multiplicacion= document.getElementById("boton_8");
+    boton_multiplicacion.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if(pantalla.textContent == ""){
+                
+            }else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="*";
+                pantalla.innerHTML="";
+            }  
+        }     
+    });
+
+    // Potencia:
+    const boton_potencia= document.getElementById("boton_3");
+    boton_potencia.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if (pantalla.textContent == ""){
+
+            }else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="^";
+                pantalla.innerHTML="";
+            }   
+        }     
+    });
+
+    // Seno:
+    const boton_seno= document.getElementById("boton_20");
+    boton_seno.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if (pantalla.textContent == ""){
+
+            }else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="sen";
+                pantalla.innerHTML=`sin(${num1})`;
+            }    
+        }     
+    });
+
+    // Coseno:
+    const boton_coseno= document.getElementById("boton_21");
+    boton_coseno.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if (pantalla.textContent == ""){
+
+            }else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="cos";
+                pantalla.innerHTML=`cos(${num1})`;
+            }     
+        }     
+    });
+
+    // Raíz Cuadrada:
+    const boton_raiz= document.getElementById("boton_2");
+    boton_raiz.addEventListener("click",function(){
+        if (condicion){
+
+        }else{
+            if(pantalla.textContent == ""){
+
+            }else{
+                num1=parseFloat(pantalla.textContent);
+                condicion="raiz";
+                pantalla.innerHTML=`√${num1}`;
+            }   
+        }     
+    });
+
+    // Resolución de la condición: 
+    const resultado= document.getElementById("boton_22");
+    let resultado_final;
+
+    resultado.addEventListener("click", function(){
+        num2=parseFloat(pantalla.textContent);
+        if (condicion){
+            switch (condicion) {
+        case "+":
+            resultado_final = num1 + num2;
+            condicion="";
+            break;
+        case "-":
+            resultado_final = num1 - num2;
+            condicion="";
+            break;
+        case "*":
+            resultado_final = num1 * num2;
+            condicion="";
+            break;
+        case "sen":
+            resultado_final =Math.sin(num1);
+            condicion="";
+            break;
+        case "cos":
+            resultado_final =Math.cos(num1);
+            condicion="";
+            break;
+        case "raiz":
+            if (num1<0){
+                pantalla.innerHTML = "Error: num<0";
+                condicion="";
+                return;
+            }
+            resultado_final =Math.sqrt(num1);
+            condicion="";
+            break;
+        case "/":
+            if (num2 === 0) {
+                pantalla.innerHTML = "Error: ÷0";
+                condicion="";
+                return;
+            }
+            resultado_final = num1 / num2;
+            condicion="";
+            break;
+        case "^":
+            resultado_final = num1 ** num2;
+            condicion="";
+            break;
+        default:
+            pantalla.innerHTML = "Operación inválida";
+            return;
+    } 
+    pantalla.innerHTML = resultado_final; 
+   }else{
+    pantalla.innerHTML="No hay operación.";
+   }
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

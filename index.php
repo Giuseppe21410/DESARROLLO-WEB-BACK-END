@@ -5,7 +5,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		exit();
   }
 	if (isset($_POST['busqueda']) && !empty($_POST['busqueda'])) {
-		header("Location:./index_1.php");
+		header("Location:./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index.php");
 		exit();
   }
 }
@@ -109,7 +109,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
           <div id="suggestions-box"></div>
         </div>
         <div class="footer_main_botones" id="searchBottons">
-            <a href="./index_1.php">Buscar con Google</a>
+            <a href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index.php">Buscar con Google</a>
             <a href="https://doodles.google">Voy a tener suerte</a>
         </div>
       </div>
@@ -167,7 +167,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>¿Quién fue el escritor de Hamlet?</p></div>
         <div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>¿Años de las piramides?</p></div>
         <div class="footer_main_botones" id="searchBottons">
-            <a href="./index_1.php" >Buscar con Google</a>
+            <a href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index.php" >Buscar con Google</a>
             <a href="https://doodles.google">Voy a tener suerte</a>
         </div>
         <div class="busquedas_"><p><i>Denunciar predicciones inadecuadas.</i></p><a href=""> Más información</a></div>
@@ -182,7 +182,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
       clearButton.style.display = 'block';
       searchForm.style.borderBottom = "0px";
       suggestionsBox.innerHTML = "";
-      searchBottons.innerHTML='<a href="./index_1.php" >Buscar con Google</a><a href="https://doodles.google">Voy a tener suerte</a>';
+      searchBottons.innerHTML='<a href="./DESARROLLO WEB BACK-END/PORTAFOLIO/PUBLIC/PHP/index.php" >Buscar con Google</a><a href="https://doodles.google">Voy a tener suerte</a>';
     }
 
     // Al hacer clic fuera del buscador (en el main), se resetea.

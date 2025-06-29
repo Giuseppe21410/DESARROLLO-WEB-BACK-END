@@ -64,6 +64,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 });
 </script>
+
+
 </head>
 <body>
 <header class="Encabezado_Google" id="miEncabezado">
@@ -86,15 +88,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="Imagen_fondo">
 		<a href="http://localhost/phpmyadmin/"><svg class="Imagen_Boton_4" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></a>	
 		</div>
-	    <img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		<div class="Imagen_fondo_1">
+			<img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		</div>    
     </div>
 </header>
 <div class="Elementos_sub">
-	<a href="../../../../index_1.php">PHP</a>
+	<a href="" class="active">PHP</a>
 	<a href="../MARIADB/index.php">Maria DB</a>
-	<a href="">Codelgniter</a>
-	<a class="active" href="../../apuntes.php">Apuntes</a>
-	<a  href="../PROYECTOS/proyectos.php">Proyectos</a>
+	<a href="../APUNTES/index.php">Apuntes</a>
+	<a  href="../PROYECTOS/index.php">Proyectos</a>
 </div>
 <div class="Linea"></div>
 
@@ -103,182 +106,167 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">👋</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Fechas</h4>
+				<h4 class="Titulo_">Hola Mundo!</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.fechas.es</p>
+					<p class="Subtitulo_">https://www.hola_mundo.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
 				
-		    </div>
 		</div>
-		<a download="12_Fechas.php" class="Link" href="../../../PHP/12_Fechas.php">Se descarga los apuntes sobre las fechas</a>
-		<p class="subtitulo">Las fechas marcan momentos, pero los recuerdos les dan sentido.</p>
+			
+		</div>
+		<a class="Link" href="../../../PHP/01_Hello_World.php">Se imprime "Hola Mundo"</a>
+		<p class="subtitulo">Este proyecto imprime "Hola Mundo" como prueba inicial.Sirve para verificar que el entorno PHP está funcionando correctamente.</p>
+	</div>
+
+	
+	<div class="Contenedor_Proyect">
+		<div class="Titulo_Logo">
+			<p class="Logo_Proyecto">🧮</p>
+			<div class="Contenedor">
+				<h4 class="Titulo_">Calculadora</h4>
+				<div class="Contenedor_1">
+					<p class="Subtitulo_">https://www.calculadora.es</p>
+					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
+				</div>	
+		</div>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/01_Calculadora/index.html">Permite crea una calculadora virtual</a>
+		<p class="subtitulo">Una calculadora es una herramienta que permite realizar operaciones matemáticas de forma rápida, precisa y sencilla, facilitando la resolución de cálculos cotidianos o complejos.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">👤</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">PDF</h4>
+				<h4 class="Titulo_">Inicia Sesión</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.pdf.es</p>
+					<p class="Subtitulo_">https://www.sesion_inicio.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
-				
-		    </div>
 		</div>
-		<a download="13_PDF.php" class="Link" href="../../../PHP/13_PDF.php">Se descarga los apuntes sobre como generar un PDF.</a>
-		<p class="subtitulo">Los documentos PDF conservan la forma, el contenido y la intención, sin importar dónde o cómo se abran.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/02_Inicia_Sesion/index.php">Despliega una interfaz de sesión</a>
+		<p class="subtitulo">Una buena interfaz de inicio de sesión debe ser intuitiva, rápida y transmitir seguridad al usuario desde el primer momento.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">📝</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">MARIADB</h4>
+				<h4 class="Titulo_">Notas Alumnado</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.mariadb.es</p>
+					<p class="Subtitulo_">https://www.notas.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
-				
-		    </div>
 		</div>
-		<a download="01_MariaDB.txt" class="Link" href="../../../MARIADB/APUNTES/01_MariaDB_comandos.txt">Se descarga los apuntes sobre como manipular bases de datos.</a>
-		<p class="subtitulo">MariaDB es un sistema de gestión de bases de datos relacional, libre y de alto rendimiento, desarrollado como una alternativa compatible con MySQL.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/03_Notas/index.php">Despliega una interfaz que permite almacenar las notas del alumnado</a>
+		<p class="subtitulo">La interfaz debe permitir al profesorado registrar, consultar y gestionar fácilmente las notas del alumnado de forma intuitiva y segura.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">💵</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Clases-Objetos</h4>
+				<h4 class="Titulo_">Cambio divisa</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.clases_objetos.es</p>
+					<p class="Subtitulo_">https://www.divisa_change.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
 				</div>
-				
-		    </div>
 		</div>
-		<a download="21_Clases_Objetos.php" class="Link" href="../../../PHP/21_Clases_Objetos.php">Se descarga los apuntes sobre las clases y los objetos.</a>
-		<p class="subtitulo">En PHP, una clase es un molde que define las propiedades y métodos comunes, mientras que un objeto es una instancia concreta de esa clase que puede usar sus funcionalidades.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/04_Cambio_Divisa/index.php">Despliega una interfaz que permite cambiar el valor de una moneda a otra</a>
+		<p class="subtitulo">La interfaz debe permitir al cliente cambiar y consultar fácilmente el valor de una cantidad de dinero para diferentes monedas.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">❔</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Constructor-Destructor</h4>
+				<h4 class="Titulo_">Funciones matemáticas</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.constructor_destructor.es</p>
+					<p class="Subtitulo_">https://www.funciones.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
+				</div>	
 		</div>
-		<a download="21_OPP_Constructor_Destructor.php" class="Link" href="../../../PHP/22_OPP_Constructor_Destructor.php">Se descarga los apuntes sobre las palabras clave constructor y destructor.</a>
-		<p class="subtitulo">En PHP, el constructor (__construct) se ejecuta automáticamente al crear un objeto para inicializarlo, mientras que el destructor (__destruct) se llama cuando el objeto se destruye, permitiendo liberar recursos o realizar tareas finales.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/05_Funciones/index.php">Despliega una interfaz que te permite realizar diferentes tipos de operaciones</a>
+		<p class="subtitulo">Estas herramientas interactivas facilitan cálculos numéricos comunes de manera sencilla y rápida, combinando la potencia de las funciones.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">🧮</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Modificadores de Acceso</h4>
+				<h4 class="Titulo_">Tabla de multiplicaciones</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.modificadoresacceso.es</p>
+					<p class="Subtitulo_">https://www.tabla_multiplicar.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
+				</div>	
 		</div>
-		<a download="23_Modificadores_de_Acceso.php" class="Link" href="../../../PHP/23_Modificadores_de_Acceso.php">Se descarga los apuntes sobre los modificadores de acceso en OPP.</a>
-		<p class="subtitulo">Los modificadores de acceso en PHP —public, protected y private— controlan la visibilidad de propiedades y métodos, definiendo desde dónde pueden ser accedidos dentro del código.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/06_Tablas_de_Multiplicar/index.php">Despliega una tabla de multiplicar</a>
+		<p class="subtitulo">Multiplicar 3 por 4 significa sumar el número 3 cuatro veces, lo que da como resultado 12.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">📦</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Herencia</h4>
+				<h4 class="Titulo_">Mostrar inventario</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.herencia.es</p>
+					<p class="Subtitulo_">https://www.inventario.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
+				</div>	
 		</div>
-		<a download="24_Herencia.php" class="Link" href="../../../PHP/24_Herencia.php">Se descarga los apuntes sobre la herencia en OPP.</a>
-		<p class="subtitulo">La herencia en PHP permite que una clase derive de otra, heredando sus propiedades y métodos, lo que favorece la reutilización de código y la creación de jerarquías lógicas entre clases.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/07_Inventario_Array/index.php">Despliega el inventario de productos de un cliente</a>
+		<p class="subtitulo">El inventario de productos está actualizado y refleja con precisión la disponibilidad de cada artículo en el almacén.</p>
 	</div>
 
 	<div class="Contenedor_Proyect">
 		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
+			<p class="Logo_Proyecto">📦</p>
 			<div class="Contenedor">
-				<h4 class="Titulo_">Constant Class</h4>
+				<h4 class="Titulo_">Mostrar inventario de ventas</h4>
 				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.contactclass.es</p>
+					<p class="Subtitulo_">https://www.inventario_ventas.es</p>
 					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
+				</div>		
 		</div>
-		<a download="25_Constant_Class.php" class="Link" href="../../../PHP/25_Constant_Class.php">Se descarga los apuntes sobre las constantes en clases.</a>
-		<p class="subtitulo">En PHP, una constante de clase se define con const y representa un valor fijo que no puede cambiar; se accede a ella usando el operador de resolución de ámbito (::) sin necesidad de instanciar la clase.</p>
+		</div>
+		<a class="Link" href="../../../EJERCICIOS/08_Inventario_CSV/index.php">Despliega el inventario de ventas de una empresa</a>
+		<p class="subtitulo">El inventario de ventas de la empresa refleja los productos comercializados, sus precios, unidades vendidas y fechas clave, permitiendo un control eficiente del rendimiento y la demanda del mercado.</p>
 	</div>
 
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Clases Abstractas e Interfaces</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://www.interfaces_abstract_classes.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="26_Interfaces_Abstract_Classes.php" class="Link" href="../../../PHP/26_Interfaces_Abstract_Classes.php">Se descarga los apuntes sobre las clases abstractas y las interfaces en OPP.</a>
-		<p class="subtitulo">Tanto las clases abstractas como las interfaces permiten definir estructuras comunes para varias clases, pero mientras las clases abstractas pueden incluir implementación parcial, las interfaces solo definen métodos sin cuerpo que deben ser implementados por completo.</p>
-	</div>
 
-	<div class="Contenedor_Proyect">
-		<div class="Titulo_Logo">
-			<p class="Logo_Proyecto">📚</p>
-			<div class="Contenedor">
-				<h4 class="Titulo_">Traits</h4>
-				<div class="Contenedor_1">
-					<p class="Subtitulo_">https://traits.es</p>
-					<img src="../../ASSETS/IMAGES/Tres_Puntos.png" alt="Tres_Puntos" class="Tres_Puntos">
-				</div>
-				
-		    </div>
-		</div>
-		<a download="27_Traits.php" class="Link" href="../../../PHP/27_Traits.php">Se descarga los apuntes sobre los "traits" en OPP.</a>
-		<p class="subtitulo">Los Traits en PHP permiten reutilizar métodos entre múltiples clases, resolviendo la limitación de la herencia simple al proporcionar una forma flexible de compartir funcionalidades sin necesidad de heredar.</p>
+    <h3  class="Titulo_Imagenes">Imágenes</h3>
+    <div class="Imagenes">
+		<img src="../../ASSETS/IMAGES/image_1.jpeg" alt="Imagen_1">
+		<img src="../../ASSETS/IMAGES/image_2.jpg" alt="Imagen_2">
+		<img src="../../ASSETS/IMAGES/image_3.jpg" alt="Image_3">
 	</div>
 
 	<div class="Indexacion">
 		<div class="Google_1">
-			<div class="Google_2">
-            <a class="mayor_1" href="../../apuntes.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+			<div class="Google">
 			<img class="G_1" src="../../ASSETS/IMAGES/G_1.png" alt="e_google">
-			<p class="O">o</p>
 			<p class="active">o</p>
 			<p class="O">o</p>
-			<img class="g" src="../../ASSETS/IMAGES/g.png" alt="e_google">
-			<img class="L" src="../../ASSETS/IMAGES/l.png" alt="e_google">
+			<p class="O">o</p>
+			<img class="g" src="../../ASSETS/IMAGES/g.png" alt="g_google">
+			<img class="L" src="../../ASSETS/IMAGES/l.png" alt="l_google">
 			<img class="E" src="../../ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
-            <a class="mayor" href="../../apuntes.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+			<a class="mayor" href="./index_1.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 		    </div>
 		</div>
 		
-		<div class="Enlaces_1">
-			<a href="../../apuntes.php" class="Enlace_4">1</a>
-			<a class="active">2</a>
+		<div class="Enlaces">
+			<a class="active">1</a>
+			<a href="./index_1.php" class="Enlace_2">2</a>
 			<a class="Enlace_3">3</a>
 	   </div>
  </div>
@@ -301,7 +289,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	</div>
 </footer>
 </div>
-	<script>
+
+<script>
   document.getElementById("mensaje_3").addEventListener("click", function () {
     document.getElementById("mensaje_1").className = "Buscador";
     document.getElementById("buscador").innerHTML = '';
@@ -323,6 +312,9 @@ window.addEventListener('pageshow', (event) => {
 
 });
 
+
+
+
   document.getElementById("mensaje_1").addEventListener("click", function () {
 	const input = document.getElementById("mensaje");
     let texto = input.value;
@@ -333,8 +325,8 @@ window.addEventListener('pageshow', (event) => {
 	document.getElementById("mensaje_5").style.borderBottom = "1px solid #dadce0";
 
 
-	document.getElementById("mensaje_4").innerHTML='<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Cuántos integrantes tiene el grupo Cutting Crew?</p> </div>' + '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Qué es el anarcocapitalismo?</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿La Tierra es plana?</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Hay multiversos?</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>Habitantes en Italia</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>Manual de Node.JS</p> </div>'+ '<div class="busquedas"><img src="../../ASSETS/IMAGES/reloj.png" alt=""> <p>¿Quién empezó la Guerra de los Cien Años?</p> </div>'+ '<div class="busquedas_"><p><i>Denunciar predicciones inadecuadas.</i></p><a href=""> Más información</a></div>';
-	
+	document.getElementById("mensaje_4").innerHTML='<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>Actores de Hollywood</p> </div>' + '<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>¿Qué es el capitalismo?</p> </div>'+ '<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>¿Existen los extreterrestes?</p> </div>'+ '<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>¿Quién fue el escritor de Hamlet?</p> </div>'+ '<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>Habitantes en España</p> </div>'+ '<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>Manual de PHP</p> </div>'+ '<div class="busquedas"><img src="./DESARROLLO WEB BACK-END/PORTAFOLIO/ASSETS/IMAGES/reloj.png" alt=""> <p>¿Cuándo empezó la Segunda Guerra Munidal?</p> </div>'+ '<div class="busquedas_"><p><i>Denunciar predicciones inadecuadas.</i></p><a href=""> Más información</a></div>';
+
 
     input.className = "Buscador_4";
     document.getElementById("mensaje_1").className = "Buscador_2";
@@ -371,5 +363,8 @@ window.addEventListener('pageshow', (event) => {
     }, 0);
   });
 </script>
+
+
+
 </body>
 </html>

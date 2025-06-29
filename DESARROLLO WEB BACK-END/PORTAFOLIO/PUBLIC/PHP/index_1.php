@@ -66,15 +66,16 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="Imagen_fondo">
 		<a href="http://localhost/phpmyadmin/"><svg class="Imagen_Boton_4" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></a>	
 		</div>
-	    <img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		<div class="Imagen_fondo_1">
+			<img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		</div>
     </div>
 </header>
 <div class="Elementos_sub">
 	<a href="" class="active">PHP</a>
 	<a href="../MARIADB/index.php">Maria DB</a>
-	<a href="">Codelgniter</a>
-	<a href="../../apuntes.php">Apuntes</a>
-	<a  href="../PROYECTOS/proyectos.php">Proyectos</a>
+	<a href="../APUNTES/index.php">Apuntes</a>
+	<a  href="../PROYECTOS/index.php">Proyectos</a>
 </div>
 <div class="Linea"></div>
 
@@ -137,22 +138,22 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	<div class="Indexacion">
 		<div class="Google_1">
 			<div class="Google_2">
-            <a class="mayor_1" href="./../../../../index_1.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+            <a class="mayor_1" href="./index.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 			<img class="G_1" src="../../ASSETS/IMAGES/G_1.png" alt="e_google">
 			<p class="O">o</p>
-			<p class="active">o</p>
+			<p class="O active">o</p>
 			<p class="O">o</p>
 			<img class="g" src="../../ASSETS/IMAGES/g.png" alt="e_google">
 			<img class="L" src="../../ASSETS/IMAGES/l.png" alt="e_google">
 			<img class="E" src="../../ASSETS/IMAGES/Google_2015_logo.png" alt="e_google">
-            <a class="mayor" href="./../../../../index_1.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
+            <a class="mayor" href="./index.php"><img src="../../ASSETS/IMAGES/mayor que.png" alt="mayor_google"></a>
 		    </div>
 		</div>
 		
 		<div class="Enlaces_1">
-			<a href="../../../../index_1.php" class="Enlace_4">1</a>
-			<a class="active">2</a>
-			<a class="Enlace_3">3</a>
+			<a href="./index.php" class="Enlace_4">1</a>
+			<a href="./index_1.php" class="active">2</a>
+			<a href="./index.php" class="Enlace_3">3</a>
 	   </div>
  </div>
 </main>

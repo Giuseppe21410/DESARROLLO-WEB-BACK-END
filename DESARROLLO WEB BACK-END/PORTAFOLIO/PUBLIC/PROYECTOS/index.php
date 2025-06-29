@@ -66,14 +66,15 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		<div class="Imagen_fondo">
 		<a href="http://localhost/phpmyadmin/"><svg class="Imagen_Boton_4" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></a>	
 		</div>
-	    <img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		<div class="Imagen_fondo_1">
+			<img  class="Logo_Usuario" src="../../ASSETS/IMAGES/Diseño sin título-Photoroom.png" alt="Logo_Usuario">
+		</div>
     </div>
 </header>
 <div class="Elementos_sub">
-	<a href="../../../../index_1.php" >PHP</a>
+	<a href="../PHP/index.php" >PHP</a>
 	<a href="../MARIADB/index.php">Maria DB</a>
-	<a href="">Codelgniter</a>
-	<a href="../../apuntes.php">Apuntes</a>
+	<a href="../APUNTES/index.php">Apuntes</a>
     <a class="active" href="./proyectos.php">Proyectos</a>
 </div>
 <div class="Linea"></div>
@@ -92,16 +93,40 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 				</div>	
 		</div>
 		</div>
-		<a class="Link" href="../../../PHP/PROYECTO/index.php">Se genera un foro multifuncional</a>
+		<a class="Link" href="../../../PHP/PROYECTO/index.php">Se genera el foro ForoConecta</a>
 		<p class="subtitulo">Un foro es un espacio abierto de intercambio donde las ideas, dudas y conocimientos se comparten para que todos aprendan.</p>
 	</div>
 
     <h3  class="Titulo_Imagenes">Imágenes</h3>
-    <div class="Imagenes">
-		<img styles="width:400px" src="../../ASSETS/IMAGES/image_1.png" alt="Imagen_1">
-		<img src="../../ASSETS/IMAGES/image_5.webp" alt="Imagen_2">
-		<img src="../../ASSETS/IMAGES/image_6.webp" alt="Image_3">
-	</div> 
+	<div class="Imagenes_1"></div>
+
+    <script>
+    const contenedor = document.getElementsByClassName("Imagenes_1")[0];
+    const srcS = [
+        "../../ASSETS/IMAGES/image_1.png",
+        "../../ASSETS/IMAGES/image_5.webp",
+        "../../ASSETS/IMAGES/image_6.webp"
+    ];
+
+	const urlS = [
+		"../../../PHP/PROYECTO/index.php",
+		"https://www.google.com",
+		"https://www.google.com"
+	]
+
+    let indice_1 = 0;
+	let indice_2 = 0;
+
+    function carruselSinBotones() {
+        contenedor.innerHTML = `<a href="${urlS[indice_2]}"><img src="${srcS[indice_1]}" alt="Imagen carrusel"></a>`;
+        indice_1 = (indice_1 + 1) % srcS.length; // Vuelve al inicio al final en cuanto a SRC's.
+		indice_2 = (indice_2 + 1) % urlS.length; // Vuelve al inicio al fina en cuanto a URL's.
+    }
+
+    // Iniciar carrusel
+    carruselSinBotones();
+    setInterval(carruselSinBotones, 5000); // cambia cada 5 segundos
+    </script>
 
 </main>
 <footer>
