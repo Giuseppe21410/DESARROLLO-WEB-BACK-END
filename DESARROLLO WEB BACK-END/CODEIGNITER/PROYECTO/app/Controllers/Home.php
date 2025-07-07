@@ -2,10 +2,19 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+use CodeIgniter\Controller;
+
+class Home extends Controller
 {
-    public function index(): string
+    public function index()
     {
-        return view('welcome_message');
+        helper('session');
+        if (!session()->has('logged_in')) {
+        // Redirigir si no está logueado:
+        return redirect()->to('/login');
+    }
+        return view('home');  
     }
 }
+
+?>
